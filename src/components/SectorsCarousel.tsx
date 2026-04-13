@@ -25,8 +25,10 @@ const AUTO_PLAY_INTERVAL = 4000;
 
 const SectorsCarousel = () => {
   const [current, setCurrent] = useState(0);
+  const [prevCurrent, setPrevCurrent] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(4);
   const [isHovered, setIsHovered] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
 
   const maxIndex = Math.max(0, sectors.length - itemsPerView);
 
@@ -44,14 +46,25 @@ const SectorsCarousel = () => {
     if (current > maxIndex) setCurrent(maxIndex);
   }, [maxIndex, current]);
 
-  const next = useCallback(() => setCurrent((c) => Math.min(c + 1, maxIndex)), [maxIndex]);
-  const prev = useCallback(() => setCurrent((c) => Math.max(c - 1, 0)), []);
+  const slideTo = useCallback((val: number) => {
+    setPrevCurrent(current);
+    setCurrent(val);
+    setAnimKey((k) => k + 1);
+  }, [current]);
+
+  const next = useCallback(() => slideTo(Math.min(current + 1, maxIndex)), [current, maxIndex, slideTo]);
+  const prev = useCallback(() => slideTo(Math.max(current - 1, 0)), [current, slideTo]);
 
   // Auto-play
   useEffect(() => {
     if (isHovered) return;
     const timer = setInterval(() => {
-      setCurrent((c) => (c >= maxIndex ? 0 : c + 1));
+      setCurrent((c) => {
+        const next = c >= maxIndex ? 0 : c + 1;
+        setPrevCurrent(c);
+        setAnimKey((k) => k + 1);
+        return next;
+      });
     }, AUTO_PLAY_INTERVAL);
     return () => clearInterval(timer);
   }, [maxIndex, isHovered]);
@@ -104,13 +117,26 @@ const SectorsCarousel = () => {
             className="flex transition-transform duration-500 ease-out"
             style={{ transform: `translateX(-${current * (100 / itemsPerView)}%)` }}
           >
-            {sectors.map((sector) => (
-              <div
-                key={sector.title}
-                className="shrink-0 px-2.5"
-                style={{ width: `${100 / itemsPerView}%` }}
-              >
-                <div className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-8 group hover:bg-white/[0.08] transition-all duration-300 overflow-hidden h-full">
+            {sectors.map((sector, i) => {
+              const isVisible = i >= current && i < current + itemsPerView;
+              const staggerIdx = i - current;
+              return (
+                <div
+                  key={sector.title}
+                  className="shrink-0 px-2.5"
+                  style={{ width: `${100 / itemsPerView}%` }}
+                >
+                  <div
+                    key={`${sector.title}-${animKey}`}
+                    className={`relative rounded-2xl bg-white/[0.04] border border-white/10 p-8 group hover:bg-white/[0.08] transition-all duration-500 overflow-hidden h-full ${
+                      isVisible
+                        ? "opacity-100 translate-y-0 scale-100"
+                        : "opacity-0 translate-y-4 scale-95"
+                    }`}
+                    style={{
+                      transitionDelay: isVisible ? `${staggerIdx * 80}ms` : "0ms",
+                    }}
+                  >
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${sector.color === "primary" ? "from-primary to-primary/30" : "from-accent to-accent/30"} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                   <div className="relative z-10">
                     <div className={`mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${sector.color === "primary" ? "from-primary/20 to-primary/5 group-hover:from-primary/30 group-hover:to-accent/10" : "from-accent/20 to-accent/5 group-hover:from-accent/30 group-hover:to-primary/10"} transition-all duration-300`}>
@@ -119,9 +145,10 @@ const SectorsCarousel = () => {
                     <h4 className="font-bold text-lg text-white leading-snug mb-2">{sector.title}</h4>
                     <p className="text-sm text-white/40 leading-relaxed">{sector.desc}</p>
                   </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -130,7 +157,7 @@ const SectorsCarousel = () => {
           {Array.from({ length: maxIndex + 1 }).map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrent(i)}
+              onClick={() => slideTo(i)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 i === current ? "w-8 bg-accent" : "w-1.5 bg-white/20 hover:bg-white/40"
               }`}
