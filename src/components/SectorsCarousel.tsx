@@ -117,13 +117,26 @@ const SectorsCarousel = () => {
             className="flex transition-transform duration-500 ease-out"
             style={{ transform: `translateX(-${current * (100 / itemsPerView)}%)` }}
           >
-            {sectors.map((sector) => (
-              <div
-                key={sector.title}
-                className="shrink-0 px-2.5"
-                style={{ width: `${100 / itemsPerView}%` }}
-              >
-                <div className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-8 group hover:bg-white/[0.08] transition-all duration-300 overflow-hidden h-full">
+            {sectors.map((sector, i) => {
+              const isVisible = i >= current && i < current + itemsPerView;
+              const staggerIdx = i - current;
+              return (
+                <div
+                  key={sector.title}
+                  className="shrink-0 px-2.5"
+                  style={{ width: `${100 / itemsPerView}%` }}
+                >
+                  <div
+                    key={`${sector.title}-${animKey}`}
+                    className={`relative rounded-2xl bg-white/[0.04] border border-white/10 p-8 group hover:bg-white/[0.08] transition-all duration-500 overflow-hidden h-full ${
+                      isVisible
+                        ? "opacity-100 translate-y-0 scale-100"
+                        : "opacity-0 translate-y-4 scale-95"
+                    }`}
+                    style={{
+                      transitionDelay: isVisible ? `${staggerIdx * 80}ms` : "0ms",
+                    }}
+                  >
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${sector.color === "primary" ? "from-primary to-primary/30" : "from-accent to-accent/30"} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                   <div className="relative z-10">
                     <div className={`mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${sector.color === "primary" ? "from-primary/20 to-primary/5 group-hover:from-primary/30 group-hover:to-accent/10" : "from-accent/20 to-accent/5 group-hover:from-accent/30 group-hover:to-primary/10"} transition-all duration-300`}>
