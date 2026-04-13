@@ -161,88 +161,113 @@ const Services = () => (
     {/* Auto Gas Station Installation - Dark Section */}
     <section id="autogas-station" className="py-28 bg-foreground text-background relative overflow-hidden scroll-mt-20">
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/4" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] translate-y-1/3 translate-x-1/4" />
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px] -translate-y-1/2 -translate-x-1/4" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] translate-y-1/3 translate-x-1/4" />
+      <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[180px] -translate-x-1/2 -translate-y-1/2" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80 mb-4 border border-white/10">
-            <Fuel className="h-4 w-4 text-accent" /> Specialized Service
+        <div className="text-center mb-20">
+          <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent/20 to-primary/20 px-5 py-2 text-sm font-semibold text-accent mb-5 border border-accent/20 backdrop-blur-sm">
+            <Fuel className="h-4 w-4" /> Specialized Service
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Auto Gas Station Installation</h2>
-          <p className="max-w-2xl mx-auto mt-3 text-lg text-white/50">We design, build, and install complete auto gas refueling stations with the highest safety standards.</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">Auto Gas Station Installation</h2>
+          <p className="max-w-2xl mx-auto mt-4 text-lg text-white/40">We design, build, and install complete auto gas refueling stations with the highest safety standards.</p>
+          <div className="mx-auto mt-6 h-1 w-20 bg-gradient-to-r from-accent to-primary rounded-full" />
         </div>
 
-        <div className="relative rounded-3xl border border-white/10 bg-white/[0.03] overflow-hidden mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12">
-            <div className="lg:col-span-5 relative lg:order-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5" />
-              <img src={autogasImg} alt="Auto gas station installation" loading="lazy" className="w-full h-full min-h-[400px] object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-white/[0.02] hidden lg:block" />
-            </div>
-            <div className="lg:col-span-7 p-8 lg:p-14 flex flex-col justify-center lg:order-1">
-              <p className="text-white/70 text-lg leading-relaxed mb-8">
-                From site planning to commissioning — Jamuna Gas delivers <strong className="text-white">turnkey auto gas station solutions</strong> with cutting-edge equipment, advanced safety systems, and full regulatory compliance.
-              </p>
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-6 group hover:bg-white/[0.08] transition-all duration-300">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 rounded-t-2xl" />
-                  <div className="flex items-center gap-3 mb-3 pt-1">
-                    <div className="h-10 w-10 rounded-xl bg-accent/20 flex items-center justify-center">
-                      <ShieldCheck className="h-5 w-5 text-accent" />
+        {/* Hero card */}
+        <div className="relative group mb-20">
+          <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-accent/10 via-primary/10 to-accent/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+          <div className="relative rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] overflow-hidden shadow-2xl shadow-black/20">
+            <div className="h-[2px] bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+            <div className="grid grid-cols-1 lg:grid-cols-12">
+              <div className="lg:col-span-5 relative lg:order-2">
+                <img src={autogasImg} alt="Auto gas station installation" loading="lazy" className="w-full h-full min-h-[450px] object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent lg:bg-gradient-to-l lg:from-transparent lg:to-foreground/20" />
+                {/* Floating badge on image */}
+                <div className="absolute bottom-6 left-6 right-6 lg:bottom-8 lg:left-8 lg:right-8 flex gap-3">
+                  {[
+                    { value: "100%", label: "Safety Record" },
+                    { value: "50+", label: "Stations Built" },
+                  ].map((s) => (
+                    <div key={s.label} className="bg-black/60 backdrop-blur-md rounded-xl px-4 py-3 border border-white/10 flex-1 text-center">
+                      <p className="text-lg font-extrabold text-white">{s.value}</p>
+                      <p className="text-[10px] text-white/50 uppercase tracking-wider">{s.label}</p>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-white">Safety First</h3>
-                      <span className="text-xs text-white/40">International Standards</span>
-                    </div>
-                  </div>
-                  <p className="text-sm text-white/50 leading-relaxed">Advanced fire suppression, leak detection, and emergency systems at every station.</p>
-                </div>
-                <div className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-6 group hover:bg-white/[0.08] transition-all duration-300">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-t-2xl" />
-                  <div className="flex items-center gap-3 mb-3 pt-1">
-                    <div className="h-10 w-10 rounded-xl bg-primary/20 flex items-center justify-center">
-                      <Wrench className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-white">Expert Install</h3>
-                      <span className="text-xs text-white/40">Turnkey Solutions</span>
-                    </div>
-                  </div>
-                  <p className="text-sm text-white/50 leading-relaxed">Complete design, construction, equipment installation, and staff training.</p>
+                  ))}
                 </div>
               </div>
-              <div className="flex flex-wrap gap-3 mb-6">
-                {["Turnkey Setup", "Fire Safety", "Digital Metering", "Staff Training"].map((tag) => (
-                  <span key={tag} className="bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs font-medium text-white/50 hover:bg-white/10 transition-colors">{tag}</span>
-                ))}
-              </div>
-              <div className="flex items-center gap-6 text-sm text-white/50">
-                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Licensed</div>
-                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Certified</div>
-                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Insured</div>
+              <div className="lg:col-span-7 p-8 lg:p-14 flex flex-col justify-center lg:order-1">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-10 w-1.5 bg-gradient-to-b from-accent via-primary to-accent/30 rounded-full" />
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">Turnkey Station Solutions</h3>
+                </div>
+                <p className="text-white/60 text-lg leading-relaxed mb-8">
+                  From site planning to commissioning — Jamuna Gas delivers <strong className="text-white">turnkey auto gas station solutions</strong> with cutting-edge equipment, advanced safety systems, and full regulatory compliance.
+                </p>
+
+                {/* Feature highlight cards */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="relative rounded-2xl bg-white/[0.04] border border-white/[0.08] p-6 group/card hover:bg-white/[0.08] transition-all duration-300 overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent to-accent/30 scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 origin-left" />
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-accent/25 to-accent/10 flex items-center justify-center">
+                        <ShieldCheck className="h-6 w-6 text-accent" />
+                      </div>
+                      <div>
+                        <h3 className="text-base font-bold text-white">Safety First</h3>
+                        <span className="text-[10px] text-white/35 uppercase tracking-wider">International Standards</span>
+                      </div>
+                    </div>
+                    <p className="text-sm text-white/45 leading-relaxed">Advanced fire suppression, leak detection, and emergency systems at every station.</p>
+                  </div>
+                  <div className="relative rounded-2xl bg-white/[0.04] border border-white/[0.08] p-6 group/card hover:bg-white/[0.08] transition-all duration-300 overflow-hidden">
+                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-primary/30 scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 origin-left" />
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-primary/25 to-primary/10 flex items-center justify-center">
+                        <Wrench className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="text-base font-bold text-white">Expert Install</h3>
+                        <span className="text-[10px] text-white/35 uppercase tracking-wider">Turnkey Solutions</span>
+                      </div>
+                    </div>
+                    <p className="text-sm text-white/45 leading-relaxed">Complete design, construction, equipment installation, and staff training.</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3">
+                  {["Turnkey Setup", "Fire Safety", "Digital Metering", "Staff Training"].map((tag) => (
+                    <span key={tag} className="bg-white/[0.04] border border-white/[0.08] rounded-full px-4 py-1.5 text-xs font-medium text-white/40 hover:bg-white/[0.08] hover:text-white/60 transition-all">{tag}</span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Features grid */}
         <div>
-          <h3 className="text-2xl font-bold text-white mb-3 flex items-center gap-3">
-            <div className="h-8 w-1 bg-accent rounded-full" />
-            What's Included
-          </h3>
-          <p className="text-white/50 mb-8 ml-5">Every aspect of your auto gas station, handled by experts.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {autogasFeatures.map((f) => (
-              <div key={f.title} className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-6 group hover:bg-white/[0.08] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.02] to-primary/[0.03] opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative z-10 flex gap-4">
-                  <div className="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center group-hover:from-accent/30 group-hover:to-primary/10 transition-all duration-300">
-                    <f.icon className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-sm text-white mb-0.5">{f.title}</h4>
-                    <p className="text-xs text-white/50 leading-relaxed">{f.desc}</p>
+          <div className="flex items-center gap-3 mb-3">
+            <div className="h-8 w-1.5 bg-gradient-to-b from-accent to-primary rounded-full" />
+            <h3 className="text-2xl font-bold text-white">What's Included</h3>
+          </div>
+          <p className="text-white/40 mb-10 ml-5">Every aspect of your auto gas station, handled by experts.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {autogasFeatures.map((f, idx) => (
+              <div key={f.title} className="relative rounded-2xl bg-white/[0.03] border border-white/[0.08] p-7 group hover:bg-white/[0.07] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.03] to-primary/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent to-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className="relative z-10">
+                  <div className="flex items-start gap-4">
+                    <div className="h-12 w-12 shrink-0 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center group-hover:from-accent/30 group-hover:to-primary/15 transition-all duration-300 shadow-sm">
+                      <f.icon className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-accent/50 mb-1 block">0{idx + 1}</span>
+                      <h4 className="font-bold text-sm text-white mb-1.5">{f.title}</h4>
+                      <p className="text-xs text-white/45 leading-relaxed">{f.desc}</p>
+                    </div>
                   </div>
                 </div>
               </div>
