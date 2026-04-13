@@ -15,6 +15,7 @@ import {
   Leaf, TreePine, Recycle, Wind,
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import SectorsCarousel from "@/components/SectorsCarousel";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
