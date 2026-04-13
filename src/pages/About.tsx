@@ -89,27 +89,53 @@ const About = () => (
     </section>
 
     {/* Board of Directors */}
-    <section className="py-20 bg-muted/50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-4">Board of Directors</h2>
-        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
-          Meet the leadership team driving Jamuna Gas toward excellence and sustainable growth.
-        </p>
-        <div className="space-y-20">
+    <section className="py-28 bg-foreground text-background relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/4" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] translate-y-1/3 translate-x-1/4" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-20">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80 mb-4 border border-white/10">
+            <Trophy className="h-4 w-4 text-accent" /> Leadership
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Board of Directors</h2>
+          <p className="max-w-2xl mx-auto mt-3 text-lg text-white/50">
+            Meet the leadership team driving Jamuna Gas toward excellence and sustainable growth.
+          </p>
+        </div>
+
+        <div className="space-y-16">
           {boardMembers.map((member, i) => (
-            <div key={member.name} className={`grid grid-cols-1 lg:grid-cols-3 gap-10 items-start ${i % 2 !== 0 ? "lg:direction-rtl" : ""}`}>
-              <div className={`flex flex-col items-center text-center ${i % 2 !== 0 ? "lg:order-3" : ""}`}>
-                <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-primary/20 mb-4">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" loading="lazy" />
+            <div key={member.name} className="relative rounded-3xl border border-white/10 bg-white/[0.03] overflow-hidden backdrop-blur-sm">
+              <div className="grid grid-cols-1 lg:grid-cols-12">
+                {/* Photo side */}
+                <div className={`lg:col-span-4 flex flex-col items-center justify-center p-10 lg:p-14 relative ${i % 2 !== 0 ? "lg:order-2" : ""}`}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-b from-accent/20 to-primary/20 rounded-full blur-3xl scale-110 opacity-50" />
+                    <div className="relative w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl shadow-black/30 mb-6">
+                      <img src={member.image} alt={member.name} className="w-full h-full object-cover" loading="lazy" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white text-center">{member.name}</h3>
+                  <span className="inline-flex items-center gap-1.5 mt-2 rounded-full bg-accent/20 border border-accent/20 px-4 py-1 text-xs font-medium text-accent">
+                    {member.title}
+                  </span>
                 </div>
-                <h3 className="text-xl font-bold">{member.name}</h3>
-                <p className="text-sm text-primary font-medium">{member.title}</p>
-              </div>
-              <div className={`lg:col-span-2 ${i % 2 !== 0 ? "lg:order-1" : ""}`}>
-                <h3 className="text-2xl font-bold mb-4 text-primary">{member.heading}</h3>
-                {member.message.split("\n\n").map((para, j) => (
-                  <p key={j} className="text-muted-foreground leading-relaxed mb-4">{para}</p>
-                ))}
+
+                {/* Message side */}
+                <div className={`lg:col-span-8 p-8 lg:p-14 flex flex-col justify-center ${i % 2 !== 0 ? "lg:order-1" : ""}`}>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="h-8 w-1 bg-gradient-to-b from-accent to-primary rounded-full" />
+                    <h3 className="text-2xl font-bold text-white">{member.heading}</h3>
+                  </div>
+                  <div className="space-y-4">
+                    {member.message.split("\n\n").map((para, j) => (
+                      <p key={j} className="text-white/60 leading-relaxed text-[15px]">{para}</p>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
