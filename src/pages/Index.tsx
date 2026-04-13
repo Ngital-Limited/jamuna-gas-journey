@@ -395,29 +395,6 @@ const Index = () => (
 
 
 
-    {/* Timeline */}
-    <section className="py-24 bg-foreground text-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80 mb-4">
-            <Calendar className="h-4 w-4" /> Our Journey
-          </span>
-          <h2 className="section-title text-white">Company Milestones</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {timeline.map((t, i) => (
-            <div key={i} className="relative group">
-              <div className="rounded-2xl bg-white/5 border border-white/10 p-7 hover:bg-white/10 hover:border-white/20 transition-all duration-300 h-full">
-                <div className="text-accent font-extrabold text-3xl mb-3">{t.year}</div>
-                <h3 className="font-bold text-lg mb-2 text-white">{t.title}</h3>
-                <p className="text-sm text-white/60 leading-relaxed">{t.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
     {/* Sustainability Section */}
     <section className="py-28 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/3" />
