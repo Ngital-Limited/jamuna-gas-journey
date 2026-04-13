@@ -10,6 +10,7 @@ import {
   Target, Eye, Compass, Trophy, Award, Shield,
   Calendar, Users, TrendingUp, ArrowRight, Truck,
   CheckCircle, Phone, MapPin, Mail, Clock,
+  UtensilsCrossed, Droplets, Cookie, Hotel, Factory, Scissors, Glasses, Shirt, Fuel, Ship, Cog,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -271,7 +272,47 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Why Choose Us */}
+    {/* Sectors Benefiting from LP Gas */}
+    <section className="py-28 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <span className="section-badge"><Flame className="h-4 w-4" /> Diverse Applications</span>
+          <h2 className="section-title">Sectors Benefiting from LP Gas</h2>
+          <p className="section-subtitle">From household kitchens to heavy industries — LPG powers a wide range of sectors across Bangladesh.</p>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {[
+            { icon: UtensilsCrossed, title: "Household Cooking & Catering", color: "primary" },
+            { icon: Droplets, title: "Water Heating Systems", color: "accent" },
+            { icon: Cookie, title: "Street Food", color: "primary" },
+            { icon: Hotel, title: "Hotels & Restaurants", color: "accent" },
+            { icon: Factory, title: "Bakeries & Food Manufacturing", color: "primary" },
+            { icon: TrendingUp, title: "Farming Industry", color: "accent" },
+            { icon: Scissors, title: "Cutting & Welding", color: "primary" },
+            { icon: Glasses, title: "Glass & Ceramic Manufacturing", color: "accent" },
+            { icon: Shirt, title: "Garments Industries", color: "primary" },
+            { icon: Fuel, title: "Auto Gas for Vehicles", color: "accent" },
+            { icon: Ship, title: "LPG-Powered Vessels & Ships", color: "primary" },
+            { icon: Cog, title: "Automotive Industry", color: "accent" },
+          ].map((sector) => (
+            <div key={sector.title} className="relative rounded-2xl border border-border/40 bg-card p-6 text-center group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className={`absolute inset-0 bg-gradient-to-b ${sector.color === "primary" ? "from-primary/[0.02] to-primary/[0.06]" : "from-accent/[0.02] to-accent/[0.06]"} opacity-0 group-hover:opacity-100 transition-opacity`} />
+              <div className="relative z-10">
+                <div className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${sector.color === "primary" ? "from-primary/10 to-primary/5 group-hover:from-primary/20 group-hover:to-accent/10" : "from-accent/10 to-accent/5 group-hover:from-accent/20 group-hover:to-primary/10"} transition-all duration-300`}>
+                  <sector.icon className={`h-7 w-7 ${sector.color === "primary" ? "text-primary" : "text-accent"}`} />
+                </div>
+                <h4 className="font-semibold text-sm leading-snug">{sector.title}</h4>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <section className="py-24 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
       <div className="container mx-auto px-4 relative z-10">
