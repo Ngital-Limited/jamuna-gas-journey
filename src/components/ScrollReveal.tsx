@@ -5,7 +5,6 @@ interface ScrollRevealProps {
   className?: string;
   delay?: number;
   threshold?: number;
-  as?: keyof JSX.IntrinsicElements;
 }
 
 const ScrollReveal = ({
@@ -13,7 +12,6 @@ const ScrollReveal = ({
   className = "",
   delay = 0,
   threshold = 0.15,
-  as: Tag = "div",
 }: ScrollRevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -37,15 +35,15 @@ const ScrollReveal = ({
   }, [threshold]);
 
   return (
-    <Tag
-      ref={ref as any}
+    <div
+      ref={ref}
       className={`transition-all duration-700 ease-out ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
-    </Tag>
+    </div>
   );
 };
 
