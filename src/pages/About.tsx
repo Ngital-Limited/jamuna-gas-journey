@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Compass, Trophy, Award, Shield, Leaf, Globe, Calendar } from "lucide-react";
+import aboutHero from "@/assets/about-hero.jpg";
 
 const values = [
   { icon: Target, title: "Mission", desc: "Continuously strive to meet customer needs by offering the best possible service, price, and support." },
@@ -25,10 +26,12 @@ const timeline = [
 
 const About = () => (
   <Layout>
-    <section className="bg-primary py-16">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-primary-foreground mb-3">About Jamuna Gas</h1>
-        <p className="text-primary-foreground/70 max-w-xl">Bangladesh's pioneer in LPG — delivering energy, trust, and excellence since 2000.</p>
+    <section className="relative min-h-[60vh] flex items-center justify-center">
+      <img src={aboutHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+      <div className="container mx-auto px-4 relative z-10 py-20">
+        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">About Jamuna Gas</h1>
+        <p className="text-white/70 text-lg max-w-xl">Bangladesh's pioneer in LPG — delivering energy, trust, and excellence since 2000.</p>
       </div>
     </section>
 
