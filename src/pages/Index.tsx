@@ -55,12 +55,12 @@ const timeline = [
 ];
 
 const whyChoose = [
-  "First government-approved private LPG plant",
-  "ISO certified quality and safety standards",
-  "Nationwide distribution network with 15+ depots",
-  "4 bottling plants across Bangladesh",
-  "Serving 1.5 million+ satisfied customers",
-  "24+ years of trusted energy solutions",
+  { icon: Shield, title: "Government Approved", desc: "First government-approved private LPG plant in Bangladesh." },
+  { icon: TrendingUp, title: "Nationwide Network", desc: "15+ depots and 4 bottling plants across the country." },
+  { icon: Users, title: "1.5M+ Customers", desc: "Serving over 1.5 million satisfied customers daily." },
+  { icon: Award, title: "Award Winning", desc: "Best Brand Award winner for trust and customer satisfaction." },
+  { icon: Truck, title: "Reliable Delivery", desc: "On-time delivery through our robust logistics network." },
+  { icon: Flame, title: "24+ Years Legacy", desc: "Two decades of trusted energy solutions since 2000." },
 ];
 
 const Index = () => (
