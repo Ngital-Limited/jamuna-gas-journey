@@ -3,8 +3,8 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import {
   Leaf, Droplets, Wind, Recycle, TreePine, Globe, Sun, Zap,
-  ArrowRight, CheckCircle, Target, TrendingUp, Shield, Factory,
-  Flame, Heart, Award
+  ArrowRight, Target, TrendingUp, Shield,
+  Heart, Award
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
