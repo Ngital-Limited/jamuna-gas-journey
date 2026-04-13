@@ -145,9 +145,10 @@ const SectorsCarousel = () => {
                     <h4 className="font-bold text-lg text-white leading-snug mb-2">{sector.title}</h4>
                     <p className="text-sm text-white/40 leading-relaxed">{sector.desc}</p>
                   </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
