@@ -8,6 +8,7 @@ import {
   Calendar, Star, Users, TrendingUp,
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
   { icon: Calendar, value: "16+", label: "Years of Experience" },
