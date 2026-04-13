@@ -124,22 +124,29 @@ const Products = () => (
           <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center"><Building2 className="h-5 w-5 text-primary" /></div>
           <h2 className="text-3xl font-bold">Commercial LPG</h2>
         </div>
-        <p className="text-muted-foreground max-w-2xl mb-8">
-          Jamuna Gas offers 35 kg and 45 kg LPG cylinders, specially designed for commercial operations and large apartment reticulation systems. Built with international safety and quality standards.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="border-accent/30 bg-card">
-            <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-2">35 kg Cylinder</h3>
-              <p className="text-sm text-muted-foreground">Where high gas consumption is needed — ideal for restaurants, hotels, and catering services.</p>
-            </CardContent>
-          </Card>
-          <Card className="border-accent/30 bg-card">
-            <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-2">45 kg Cylinder</h3>
-              <p className="text-sm text-muted-foreground">For even higher LPG consumption — perfect for institutional kitchens and medium-scale industrial facilities.</p>
-            </CardContent>
-          </Card>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div className="rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1">
+            <img src={commercialImg} alt="Jamuna Gas commercial LPG cylinders" loading="lazy" width={1024} height={768} className="w-full h-full object-cover" />
+          </div>
+          <div className="order-1 lg:order-2">
+            <p className="text-muted-foreground mb-8">
+              Jamuna Gas offers 35 kg and 45 kg LPG cylinders, specially designed for commercial operations and large apartment reticulation systems. Built with international safety and quality standards.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Card className="border-accent/30 bg-card">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">35 kg Cylinder</h3>
+                  <p className="text-sm text-muted-foreground">Where high gas consumption is needed — ideal for restaurants, hotels, and catering services.</p>
+                </CardContent>
+              </Card>
+              <Card className="border-accent/30 bg-card">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">45 kg Cylinder</h3>
+                  <p className="text-sm text-muted-foreground">For even higher LPG consumption — perfect for institutional kitchens and medium-scale industrial facilities.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </div>
     </section>
