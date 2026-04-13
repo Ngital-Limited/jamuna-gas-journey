@@ -290,42 +290,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Depot Table */}
-          <div className="relative rounded-3xl border border-border/30 bg-gradient-to-br from-card via-card to-muted/30 overflow-hidden">
-            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
-
-            <div className="relative z-10 overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-border/30">
-                    <th className="text-left p-5 font-bold text-xs uppercase tracking-wider text-muted-foreground">Depot</th>
-                    <th className="text-left p-5 font-bold text-xs uppercase tracking-wider text-muted-foreground">Address</th>
-                    <th className="text-left p-5 font-bold text-xs uppercase tracking-wider text-muted-foreground">Mobile Number</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {depots.map((d, i) => (
-                    <tr key={d.name} className={`border-t border-border/20 hover:bg-muted/30 transition-colors ${i % 2 === 0 ? "" : "bg-muted/10"}`}>
-                      <td className="p-5 font-semibold whitespace-nowrap">
-                        <div className="flex items-center gap-2.5">
-                          <div className="h-7 w-7 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                            <Building2 className="h-3.5 w-3.5 text-accent" />
-                          </div>
-                          {d.name}
-                        </div>
-                      </td>
-                      <td className="p-5 text-muted-foreground">{d.address}</td>
-                      <td className="p-5 whitespace-nowrap">
-                        <a href={`tel:${d.phone.replace(/\s/g, "")}`} className="text-primary hover:text-primary/80 transition-colors font-medium">
-                          {d.phone}
-                        </a>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
 
           {/* Bottom stats */}
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 mt-12">
