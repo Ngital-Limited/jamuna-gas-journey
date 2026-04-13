@@ -92,89 +92,155 @@ const Contact = () => {
 
       {/* Corporate Contact + Form */}
       <section className="py-28 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3" />
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <span className="section-badge"><MessageSquare className="h-4 w-4" /> Reach Out</span>
             <h2 className="section-title">Get in Touch</h2>
-            <p className="section-subtitle">Have questions or need a quote? We're here to help you find the perfect LPG solution.</p>
+            <p className="section-subtitle max-w-2xl mx-auto">Have questions or need a quote? We're here to help you find the perfect LPG solution.</p>
+            <div className="mx-auto mt-6 h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            {/* Contact Info Cards */}
-            <div className="lg:col-span-5 space-y-4">
-              {[
-                { icon: MapPin, title: "Corporate Address", info: "House 99, Rupayan Golden Age (2nd Floor), Gulshan Avenue, Dhaka-1212, Bangladesh", color: "primary" as const },
-                { icon: Clock, title: "Opening Hours", info: "Sat–Thu: 9 am – 5 pm\nFriday: Weekend", color: "accent" as const },
-                { icon: Phone, title: "Phone", info: "+880 2-9844940", color: "primary" as const },
-                { icon: Mail, title: "Email", info: "info@jamunagas.com", color: "accent" as const },
-              ].map((c) => (
-                <div key={c.title} className="relative rounded-2xl border border-border/40 bg-card p-6 group hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${c.color === "primary" ? "from-primary/[0.02] to-primary/[0.05]" : "from-accent/[0.02] to-accent/[0.05]"} opacity-0 group-hover:opacity-100 transition-opacity`} />
-                  <div className="relative z-10 flex items-start gap-4">
-                    <div className={`h-12 w-12 shrink-0 rounded-xl bg-gradient-to-br ${c.color === "primary" ? "from-primary/15 to-primary/5 group-hover:from-primary/25 group-hover:to-accent/10" : "from-accent/15 to-accent/5 group-hover:from-accent/25 group-hover:to-primary/10"} flex items-center justify-center transition-all duration-300`}>
-                      <c.icon className={`h-5 w-5 ${c.color === "primary" ? "text-primary" : "text-accent"}`} />
+          {/* Contact info highlight bar */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+            {[
+              { icon: Phone, title: "Call Us", info: "+880 2-9844940", href: "tel:+88029844940", accent: true },
+              { icon: Mail, title: "Email Us", info: "info@jamunagas.com", href: "mailto:info@jamunagas.com", accent: false },
+              { icon: Clock, title: "Working Hours", info: "Sat–Thu: 9am – 5pm", href: null, accent: false },
+              { icon: MapPin, title: "Head Office", info: "Gulshan Avenue, Dhaka-1212", href: null, accent: false },
+            ].map((c) => (
+              <div key={c.title} className="relative group rounded-2xl border border-border/40 bg-card overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className="p-6 flex flex-col items-center text-center">
+                  <div className={`h-14 w-14 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 ${c.accent ? "bg-gradient-to-br from-accent/20 to-accent/10 group-hover:from-accent/30 group-hover:to-accent/15" : "bg-gradient-to-br from-primary/15 to-primary/5 group-hover:from-primary/25 group-hover:to-primary/10"}`}>
+                    <c.icon className={`h-6 w-6 ${c.accent ? "text-accent" : "text-primary"}`} />
+                  </div>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/60 font-semibold mb-1.5">{c.title}</p>
+                  {c.href ? (
+                    <a href={c.href} className={`text-sm font-bold hover:text-accent transition-colors ${c.accent ? "text-accent text-lg" : "text-foreground"}`}>{c.info}</a>
+                  ) : (
+                    <p className="text-sm font-bold">{c.info}</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            {/* Left — Address & Details */}
+            <div className="lg:col-span-5 space-y-6">
+              <div className="relative rounded-3xl border border-border/30 bg-gradient-to-br from-card via-card to-muted/30 p-8 overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="h-10 w-1.5 bg-gradient-to-b from-primary via-accent to-primary/30 rounded-full" />
+                    <h3 className="text-xl font-bold">Corporate Office</h3>
+                  </div>
+
+                  <div className="space-y-5">
+                    <div className="flex items-start gap-4 group/item">
+                      <div className="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center group-hover/item:from-primary/25 transition-all">
+                        <MapPin className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-wider text-muted-foreground/50 font-semibold mb-1">Address</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">House 99, Rupayan Golden Age (2nd Floor), Gulshan Avenue, Dhaka-1212, Bangladesh</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-bold text-sm mb-1">{c.title}</h3>
-                      {c.info.split("\n").map((line, i) => (
-                        <p key={i} className="text-sm text-muted-foreground leading-relaxed">{line}</p>
-                      ))}
+
+                    <div className="flex items-start gap-4 group/item">
+                      <div className="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-accent/15 to-accent/5 flex items-center justify-center group-hover/item:from-accent/25 transition-all">
+                        <Phone className="h-5 w-5 text-accent" />
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-wider text-muted-foreground/50 font-semibold mb-1">Phone</p>
+                        <a href="tel:+88029844940" className="text-lg font-bold text-foreground hover:text-accent transition-colors">+880 2-9844940</a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 group/item">
+                      <div className="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center group-hover/item:from-primary/25 transition-all">
+                        <Mail className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-wider text-muted-foreground/50 font-semibold mb-1">Email</p>
+                        <a href="mailto:info@jamunagas.com" className="text-sm font-medium text-foreground hover:text-accent transition-colors">info@jamunagas.com</a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 group/item">
+                      <div className="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-accent/15 to-accent/5 flex items-center justify-center group-hover/item:from-accent/25 transition-all">
+                        <Clock className="h-5 w-5 text-accent" />
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-wider text-muted-foreground/50 font-semibold mb-1">Hours</p>
+                        <p className="text-sm text-muted-foreground">Saturday – Thursday: 9:00 AM – 5:00 PM</p>
+                        <p className="text-xs text-muted-foreground/60 mt-0.5">Friday: Weekend</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
 
-              {/* Quick trust badges */}
-              <div className="flex items-center gap-4 pt-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-1.5"><CheckCircle className="h-4 w-4 text-primary" /> Quick Response</div>
-                <div className="flex items-center gap-1.5"><CheckCircle className="h-4 w-4 text-primary" /> Free Consultation</div>
+              {/* Trust badges */}
+              <div className="flex flex-wrap gap-3">
+                {["Quick Response", "Free Consultation", "ISO Certified"].map((badge) => (
+                  <div key={badge} className="flex items-center gap-2 bg-muted/60 rounded-full px-4 py-2">
+                    <CheckCircle className="h-3.5 w-3.5 text-primary" />
+                    <span className="text-xs font-medium text-muted-foreground">{badge}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
             {/* Contact Form */}
             <div className="lg:col-span-7">
-              <div className="relative rounded-3xl border border-border/30 bg-gradient-to-br from-card via-card to-muted/30 p-8 lg:p-10 overflow-hidden">
-                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
-                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-accent to-primary rounded-t-3xl" />
+              <div className="relative group rounded-3xl border border-border/30 bg-gradient-to-br from-card via-card to-muted/30 overflow-hidden shadow-xl">
+                <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="relative">
+                  <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
+                  <div className="h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-accent to-primary rounded-t-3xl" />
 
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-8">
-                    <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary/15 to-accent/10 flex items-center justify-center">
-                      <Send className="h-5 w-5 text-primary" />
+                  <div className="relative z-10 p-8 lg:p-10">
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center shadow-sm">
+                        <Send className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <h2 className="text-2xl font-bold">Send us a Message</h2>
+                        <p className="text-sm text-muted-foreground">We'll get back to you within 24 hours</p>
+                      </div>
                     </div>
-                    <div>
-                      <h2 className="text-2xl font-bold">Send us a Message</h2>
-                      <p className="text-sm text-muted-foreground">We'll get back to you within 24 hours</p>
-                    </div>
+
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="name" className="text-sm font-semibold flex items-center gap-1">Name <span className="text-accent">*</span></Label>
+                          <Input id="name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your full name" maxLength={100} className="h-12 rounded-xl border-border/50 bg-background/50 focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all" />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="email" className="text-sm font-semibold flex items-center gap-1">Email <span className="text-accent">*</span></Label>
+                          <Input id="email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="your@email.com" maxLength={255} className="h-12 rounded-xl border-border/50 bg-background/50 focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all" />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="phone" className="text-sm font-semibold">Phone <span className="text-muted-foreground/50 font-normal">(optional)</span></Label>
+                        <Input id="phone" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+880 1XXX-XXXXXX" maxLength={20} className="h-12 rounded-xl border-border/50 bg-background/50 focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="message" className="text-sm font-semibold flex items-center gap-1">Message <span className="text-accent">*</span></Label>
+                        <Textarea id="message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your requirements..." rows={5} maxLength={1000} className="rounded-xl border-border/50 bg-background/50 focus:border-primary focus:ring-1 focus:ring-primary/20 resize-none transition-all" />
+                      </div>
+                      <Button type="submit" size="lg" className="w-full h-14 rounded-xl bg-gradient-to-r from-primary to-accent text-white hover:opacity-90 font-bold text-base shadow-lg shadow-primary/20 group">
+                        Send Message
+                        <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                      <p className="text-center text-xs text-muted-foreground/50">By submitting, you agree to our privacy policy</p>
+                    </form>
                   </div>
-
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name" className="text-sm font-medium">Name *</Label>
-                        <Input id="name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your name" maxLength={100} className="h-12 rounded-xl border-border/50 bg-background/50 focus:border-primary" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email" className="text-sm font-medium">Email *</Label>
-                        <Input id="email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="Your email" maxLength={255} className="h-12 rounded-xl border-border/50 bg-background/50 focus:border-primary" />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone" className="text-sm font-medium">Phone</Label>
-                      <Input id="phone" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="Your phone number" maxLength={20} className="h-12 rounded-xl border-border/50 bg-background/50 focus:border-primary" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="message" className="text-sm font-medium">Message *</Label>
-                      <Textarea id="message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="How can we help?" rows={5} maxLength={1000} className="rounded-xl border-border/50 bg-background/50 focus:border-primary resize-none" />
-                    </div>
-                    <Button type="submit" size="lg" className="w-full h-13 rounded-xl bg-gradient-to-r from-primary to-accent text-white hover:opacity-90 font-bold text-base shadow-lg shadow-primary/20 group">
-                      Send Message
-                      <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </form>
                 </div>
               </div>
             </div>
