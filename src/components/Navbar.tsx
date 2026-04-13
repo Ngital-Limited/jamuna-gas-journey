@@ -7,6 +7,7 @@ import logo from "@/assets/jamuna-logo.png";
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "Products", to: "/products" },
+  { label: "Services", to: "/services" },
   { label: "About Us", to: "/about" },
   { label: "Safety Tips", to: "/safety" },
   { label: "Contact", to: "/contact" },
