@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { toast } from "sonner";
 import {
   Flame, Home, Building2, Car,
   Target, Eye, Compass, Trophy, Award,
   Calendar, Users, TrendingUp, ArrowRight, Truck,
-  CheckCircle,
+  CheckCircle, Phone, MapPin, Mail, Clock,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -319,14 +323,79 @@ const Index = () => (
       </div>
     </section>
 
-    {/* CTA */}
-    <section className="py-24">
+    {/* Contact Section */}
+    <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-primary to-primary/80 p-12 md:p-20 text-center">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        <div className="text-center mb-16">
+          <span className="section-badge"><Phone className="h-4 w-4" /> Get In Touch</span>
+          <h2 className="section-title">Contact Us</h2>
+          <p className="section-subtitle">Have questions or need a quote? Reach out — we're here to help.</p>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Contact Info Cards */}
+          <div className="space-y-4">
+            {[
+              { icon: MapPin, title: "Corporate Office", info: "House 99, Rupayan Golden Age (2nd Floor), Gulshan Avenue, Dhaka-1212", color: "bg-primary/10 text-primary" },
+              { icon: Phone, title: "Call Us", info: "+880 2-9844940", color: "bg-accent/10 text-accent" },
+              { icon: Mail, title: "Email Us", info: "info@jamunagas.com", color: "bg-primary/10 text-primary" },
+              { icon: Clock, title: "Working Hours", info: "Sat–Thu: 9 am – 5 pm", color: "bg-accent/10 text-accent" },
+            ].map((c) => (
+              <Card key={c.title} className="border-border/50 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                <CardContent className="p-5 flex items-center gap-4">
+                  <div className={`h-12 w-12 shrink-0 rounded-xl ${c.color} flex items-center justify-center`}>
+                    <c.icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-sm">{c.title}</div>
+                    <div className="text-sm text-muted-foreground">{c.info}</div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
+
+          {/* Quick Contact Form */}
+          <Card className="lg:col-span-2 border-border/50 shadow-lg">
+            <CardContent className="p-8">
+              <h3 className="text-xl font-bold mb-6">Send us a Message</h3>
+              <form onSubmit={(e) => { e.preventDefault(); toast.success("Thank you! Your message has been sent."); }} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="home-name">Name *</Label>
+                    <Input id="home-name" placeholder="Your name" maxLength={100} className="rounded-lg" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="home-email">Email *</Label>
+                    <Input id="home-email" type="email" placeholder="Your email" maxLength={255} className="rounded-lg" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="home-phone">Phone</Label>
+                  <Input id="home-phone" placeholder="Your phone number" maxLength={20} className="rounded-lg" />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="home-message">Message *</Label>
+                  <Textarea id="home-message" placeholder="How can we help?" rows={4} maxLength={1000} className="rounded-lg" />
+                </div>
+                <div className="flex flex-wrap items-center gap-4">
+                  <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-8 h-12 shadow-md shadow-primary/20">
+                    Send Message
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                  <span className="text-sm text-muted-foreground">or call <a href="tel:+88029844940" className="text-primary font-semibold hover:underline">+880 2-9844940</a></span>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA */}
+    <section className="py-24 relative overflow-hidden">
+      <div className="container mx-auto px-4">
+        <div className="relative rounded-3xl bg-gradient-to-br from-primary via-primary to-primary/80 p-12 md:p-16 text-center overflow-hidden">
+          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
           <div className="relative z-10">
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Ready to Get Started?</h2>
             <p className="text-white/80 mb-10 max-w-lg mx-auto text-lg">
