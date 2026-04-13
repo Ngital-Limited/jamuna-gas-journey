@@ -157,7 +157,7 @@ const SectorsCarousel = () => {
           {Array.from({ length: maxIndex + 1 }).map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrent(i)}
+              onClick={() => slideTo(i)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 i === current ? "w-8 bg-accent" : "w-1.5 bg-white/20 hover:bg-white/40"
               }`}
