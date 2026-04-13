@@ -8,6 +8,7 @@ import {
 import householdImg from "@/assets/household-lpg.jpg";
 import commercialImg from "@/assets/commercial-lpg.jpg";
 import autoGasImg from "@/assets/auto-gas.jpg";
+import productsHero from "@/assets/products-hero.jpg";
 
 const householdApps = [
   { icon: UtensilsCrossed, title: "Household Cooking", desc: "Primarily used in home kitchens for daily cooking needs." },
@@ -34,10 +35,12 @@ const autoFeatures = [
 const Products = () => (
   <Layout>
     {/* Hero */}
-    <section className="bg-primary py-16">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-primary-foreground mb-3">Our Products</h1>
-        <p className="text-primary-foreground/70 max-w-xl">Comprehensive LPG solutions for households, businesses, industries, and vehicles.</p>
+    <section className="relative min-h-[60vh] flex items-center justify-center">
+      <img src={productsHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+      <div className="container mx-auto px-4 relative z-10 py-20">
+        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">Our Products</h1>
+        <p className="text-white/70 text-lg max-w-xl">Comprehensive LPG solutions for households, businesses, industries, and vehicles.</p>
       </div>
     </section>
 

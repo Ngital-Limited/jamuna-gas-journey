@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { toast } from "sonner";
+import contactHero from "@/assets/contact-hero.jpg";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
@@ -23,10 +24,12 @@ const Contact = () => {
 
   return (
     <Layout>
-      <section className="bg-primary py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-primary-foreground mb-3">Contact Us</h1>
-          <p className="text-primary-foreground/70 max-w-xl">We'd love to hear from you. Reach out for inquiries, partnerships, or support.</p>
+      <section className="relative min-h-[60vh] flex items-center justify-center">
+        <img src={contactHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+        <div className="container mx-auto px-4 relative z-10 py-20">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">Contact Us</h1>
+          <p className="text-white/70 text-lg max-w-xl">We'd love to hear from you. Reach out for inquiries, partnerships, or support.</p>
         </div>
       </section>
 
