@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  Flame, Home, Building2, Factory, Car,
-  Target, Eye, Compass, Trophy,
+  Flame, Home, Building2, Car,
+  Target, Eye, Compass, Trophy, Award,
   Calendar, Users, TrendingUp, ArrowRight, Truck,
   CheckCircle,
 } from "lucide-react";
