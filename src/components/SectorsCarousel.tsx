@@ -46,8 +46,14 @@ const SectorsCarousel = () => {
     if (current > maxIndex) setCurrent(maxIndex);
   }, [maxIndex, current]);
 
-  const next = useCallback(() => setCurrent((c) => Math.min(c + 1, maxIndex)), [maxIndex]);
-  const prev = useCallback(() => setCurrent((c) => Math.max(c - 1, 0)), []);
+  const slideTo = useCallback((val: number) => {
+    setPrevCurrent(current);
+    setCurrent(val);
+    setAnimKey((k) => k + 1);
+  }, [current]);
+
+  const next = useCallback(() => slideTo(Math.min(current + 1, maxIndex)), [current, maxIndex, slideTo]);
+  const prev = useCallback(() => slideTo(Math.max(current - 1, 0)), [current, slideTo]);
 
   // Auto-play
   useEffect(() => {
