@@ -47,7 +47,7 @@ const Index = () => (
   <Layout>
     {/* Hero */}
     <section className="relative overflow-hidden bg-primary py-20 md:py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(38,92%,50%,0.15),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(0,72%,45%,0.2),transparent_60%)]" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 px-4 py-1.5 text-sm text-accent mb-6">
