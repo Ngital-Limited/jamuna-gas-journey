@@ -65,7 +65,7 @@ const Navbar = () => {
               className={`hidden sm:flex items-center gap-2 text-sm font-semibold transition-all duration-300 rounded-xl px-4 py-2 ${
                 scrolled
                   ? "text-primary hover:bg-primary/5"
-                  : "text-white/80 hover:text-white"
+                  : "text-foreground hover:bg-foreground/5"
               }`}
             >
               <Phone className="h-4 w-4" />
