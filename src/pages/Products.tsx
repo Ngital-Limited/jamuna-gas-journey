@@ -6,7 +6,7 @@ import {
   Fuel, DollarSign, Wrench, Shield,
 } from "lucide-react";
 import householdImg from "@/assets/jamuna-12kg-cylinder.png";
-import commercialImg from "@/assets/commercial-lpg.jpg";
+import commercialImg from "@/assets/jamuna-45kg-cylinder.png";
 import autoGasImg from "@/assets/auto-gas.jpg";
 import productsHero from "@/assets/products-hero.jpg";
 
@@ -128,8 +128,8 @@ const Products = () => (
           <h2 className="text-3xl font-bold">Commercial LPG</h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div className="rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1">
-            <img src={commercialImg} alt="Jamuna Gas commercial LPG cylinders" loading="lazy" width={1024} height={768} className="w-full h-full object-cover" />
+          <div className="flex items-center justify-center bg-gradient-to-b from-muted/30 to-muted/60 rounded-2xl p-8 order-2 lg:order-1">
+            <img src={commercialImg} alt="Jamuna Gas 45kg commercial LPG cylinder" loading="lazy" className="max-h-[400px] object-contain drop-shadow-xl" />
           </div>
           <div className="order-1 lg:order-2">
             <p className="text-muted-foreground mb-8">
