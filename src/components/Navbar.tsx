@@ -90,9 +90,7 @@ const Navbar = () => {
               className={`relative z-[60] p-2.5 rounded-xl transition-all duration-300 ${
                 open
                   ? "bg-white/10 text-white"
-                  : scrolled
-                    ? "hover:bg-muted/60 text-foreground"
-                    : "hover:bg-white/10 text-white"
+                  : "hover:bg-foreground/10 text-foreground"
               }`}
               aria-label="Toggle menu"
             >
