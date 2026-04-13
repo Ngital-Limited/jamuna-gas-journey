@@ -341,64 +341,8 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Sectors Benefiting from LP Gas - Dark Section */}
-    <section className="py-28 bg-foreground text-background relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80 mb-4 border border-white/10">
-            <Flame className="h-4 w-4 text-accent" /> Diverse Applications
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Sectors Benefiting from LP Gas</h2>
-          <p className="max-w-2xl mx-auto mt-3 text-lg text-white/50">From household kitchens to heavy industries — LPG powers a wide range of sectors across Bangladesh.</p>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-          {[
-            { icon: UtensilsCrossed, title: "Household Cooking & Catering", desc: "Daily cooking for families & events", color: "primary" },
-            { icon: Droplets, title: "Water Heating Systems", desc: "Efficient hot water solutions", color: "accent" },
-            { icon: Cookie, title: "Street Food", desc: "Powering street food vendors", color: "primary" },
-            { icon: Hotel, title: "Hotels & Restaurants", desc: "Commercial kitchen fuel supply", color: "accent" },
-            { icon: Factory, title: "Bakeries & Food Manufacturing", desc: "Industrial-scale food production", color: "primary" },
-            { icon: TrendingUp, title: "Farming Industry", desc: "Agricultural drying & processing", color: "accent" },
-            { icon: Scissors, title: "Cutting & Welding", desc: "Precision metalwork fuel", color: "primary" },
-            { icon: Glasses, title: "Glass & Ceramic Manufacturing", desc: "High-temperature production", color: "accent" },
-            { icon: Shirt, title: "Garments Industries", desc: "Textile processing & finishing", color: "primary" },
-            { icon: Fuel, title: "Auto Gas for Vehicles", desc: "Clean vehicular fuel alternative", color: "accent" },
-            { icon: Ship, title: "LPG-Powered Vessels & Ships", desc: "Maritime fuel solutions", color: "primary" },
-            { icon: Cog, title: "Automotive Industry", desc: "Vehicle manufacturing support", color: "accent" },
-          ].map((sector) => (
-            <div key={sector.title} className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-6 text-center group hover:bg-white/[0.08] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-              <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${sector.color === "primary" ? "from-primary to-primary/30" : "from-accent to-accent/30"} opacity-0 group-hover:opacity-100 transition-opacity`} />
-              <div className="relative z-10">
-                <div className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${sector.color === "primary" ? "from-primary/20 to-primary/5 group-hover:from-primary/30 group-hover:to-accent/10" : "from-accent/20 to-accent/5 group-hover:from-accent/30 group-hover:to-primary/10"} transition-all duration-300`}>
-                  <sector.icon className={`h-7 w-7 ${sector.color === "primary" ? "text-primary" : "text-accent"}`} />
-                </div>
-                <h4 className="font-semibold text-sm text-white leading-snug mb-1.5">{sector.title}</h4>
-                <p className="text-[11px] text-white/35 leading-relaxed">{sector.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom stat line */}
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16 mt-14">
-          {[
-            { value: "12+", label: "Industries Served" },
-            { value: "1.5M+", label: "Customers Nationwide" },
-            { value: "24+", label: "Years of Service" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-2xl md:text-3xl font-extrabold text-white mb-1">{stat.value}</div>
-              <div className="text-xs text-white/30 uppercase tracking-wider font-medium">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    {/* Sectors Benefiting from LP Gas - Carousel */}
+    <SectorsCarousel />
 
     <section className="py-24 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
