@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import {
   Home, Building2, Car, Flame, UtensilsCrossed, Building,
   Tent, Hotel, Truck, Droplets, Leaf, Box, ShieldCheck,
-  Fuel, DollarSign, Wrench, Shield, Factory, Zap, Paintbrush, Cog, Sparkles,
+  Fuel, DollarSign, Wrench, Shield, Factory, Zap, Paintbrush, Cog, Sparkles, Phone,
   ArrowRight, CheckCircle, ChevronRight,
 } from "lucide-react";
 import householdImg from "@/assets/jamuna-12kg-cylinder.png";
