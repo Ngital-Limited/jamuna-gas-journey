@@ -22,10 +22,10 @@ const stats = [
 ];
 
 const products = [
-  { icon: Home, title: "Household LPG", desc: "12 kg and 5.5 kg cylinders for everyday cooking needs.", link: "/products" },
-  { icon: Building2, title: "Commercial LPG", desc: "35 kg and 45 kg cylinders for restaurants, hotels, and institutions.", link: "/products" },
-  { icon: Truck, title: "Bulk LPG", desc: "Large-scale energy for industrial operations via tank trucks.", link: "/products" },
-  { icon: Car, title: "Auto Gas", desc: "Clean-burning, cost-effective LPG for vehicles.", link: "/products" },
+  { icon: Home, title: "Household LPG", desc: "12 kg and 5.5 kg cylinders for everyday cooking needs.", link: "/products#household", tag: "Most Popular", color: "primary" as const },
+  { icon: Building2, title: "Commercial LPG", desc: "35 kg and 45 kg cylinders for restaurants, hotels, and institutions.", link: "/products#commercial", tag: "High Capacity", color: "accent" as const },
+  { icon: Truck, title: "Bulk LPG", desc: "Large-scale energy for industrial operations via tank trucks.", link: "/products#bulk", tag: "Industrial", color: "primary" as const },
+  { icon: Car, title: "Auto Gas", desc: "Clean-burning, cost-effective LPG for vehicles.", link: "/products#autogas", tag: "Eco-Friendly", color: "accent" as const },
 ];
 
 const values = [
@@ -219,31 +219,54 @@ const Index = () => (
       </div>
     </section>
 
-    <section className="py-24">
-      <div className="container mx-auto px-4">
+    {/* Products */}
+    <section className="py-24 bg-foreground text-background relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <span className="section-badge"><Flame className="h-4 w-4" /> What We Offer</span>
-          <h2 className="section-title">Our Products</h2>
-          <p className="section-subtitle">Comprehensive LPG solutions for every need — from household cooking to powering industries.</p>
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80 mb-4 border border-white/10">
+            <Flame className="h-4 w-4 text-accent" /> What We Offer
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Our Products</h2>
+          <p className="max-w-2xl mx-auto mt-3 text-lg text-white/50">Comprehensive LPG solutions for every need — from household cooking to powering industries.</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((p) => (
-            <Link to={p.link} key={p.title}>
-              <Card className="group h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-border/50 overflow-hidden">
-                <CardContent className="p-7 text-center relative">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                  <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 group-hover:from-primary/20 group-hover:to-accent/10 transition-all duration-300">
-                    <p.icon className="h-8 w-8 text-primary group-hover:text-primary transition-colors" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">{p.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-                  <div className="mt-4 text-primary text-sm font-semibold flex items-center justify-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                    Learn More <ArrowRight className="h-3.5 w-3.5" />
-                  </div>
-                </CardContent>
-              </Card>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {products.map((p, i) => (
+            <Link to={p.link} key={p.title} className="group">
+              <div className="relative h-full rounded-2xl bg-white/[0.04] border border-white/10 p-7 hover:bg-white/[0.08] transition-all duration-500 overflow-hidden">
+                {/* Top glow */}
+                <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${p.color === 'primary' ? 'from-transparent via-primary to-transparent' : 'from-transparent via-accent to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                
+                {/* Tag */}
+                <span className={`inline-block text-[10px] font-semibold uppercase tracking-wider rounded-full px-3 py-1 mb-5 ${p.color === 'primary' ? 'bg-primary/20 text-primary' : 'bg-accent/20 text-accent'}`}>
+                  {p.tag}
+                </span>
+
+                <div className={`mb-5 flex h-14 w-14 items-center justify-center rounded-2xl ${p.color === 'primary' ? 'bg-primary/10 group-hover:bg-primary/20' : 'bg-accent/10 group-hover:bg-accent/20'} transition-colors duration-300`}>
+                  <p.icon className={`h-7 w-7 ${p.color === 'primary' ? 'text-primary' : 'text-accent'}`} />
+                </div>
+
+                <h3 className="font-bold text-lg mb-2 text-white">{p.title}</h3>
+                <p className="text-sm text-white/50 leading-relaxed mb-6">{p.desc}</p>
+                
+                <div className={`flex items-center gap-1.5 text-sm font-semibold ${p.color === 'primary' ? 'text-primary' : 'text-accent'} group-hover:gap-2.5 transition-all duration-300`}>
+                  Explore <ArrowRight className="h-3.5 w-3.5" />
+                </div>
+              </div>
             </Link>
           ))}
+        </div>
+
+        {/* Bottom trust line */}
+        <div className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-white/30 text-sm">
+          <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> ISO Certified Quality</span>
+          <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> Nationwide Delivery</span>
+          <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> 24+ Years of Trust</span>
+          <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> 1.5M+ Customers</span>
         </div>
       </div>
     </section>
