@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import {
   Flame, Home, Building2, Car,
-  Target, Eye, Compass, Trophy, Award,
+  Target, Eye, Compass, Trophy, Award, Shield,
   Calendar, Users, TrendingUp, ArrowRight, Truck,
   CheckCircle, Phone, MapPin, Mail, Clock,
 } from "lucide-react";
@@ -55,12 +55,12 @@ const timeline = [
 ];
 
 const whyChoose = [
-  "First government-approved private LPG plant",
-  "ISO certified quality and safety standards",
-  "Nationwide distribution network with 15+ depots",
-  "4 bottling plants across Bangladesh",
-  "Serving 1.5 million+ satisfied customers",
-  "24+ years of trusted energy solutions",
+  { icon: Shield, title: "Government Approved", desc: "First government-approved private LPG plant in Bangladesh." },
+  { icon: TrendingUp, title: "Nationwide Network", desc: "15+ depots and 4 bottling plants across the country." },
+  { icon: Users, title: "1.5M+ Customers", desc: "Serving over 1.5 million satisfied customers daily." },
+  { icon: Award, title: "Award Winning", desc: "Best Brand Award winner for trust and customer satisfaction." },
+  { icon: Truck, title: "Reliable Delivery", desc: "On-time delivery through our robust logistics network." },
+  { icon: Flame, title: "24+ Years Legacy", desc: "Two decades of trusted energy solutions since 2000." },
 ];
 
 const Index = () => (
@@ -272,45 +272,63 @@ const Index = () => (
     </section>
 
     {/* Why Choose Us */}
+    <section className="py-24 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <span className="section-badge"><Award className="h-4 w-4" /> Why Jamuna Gas</span>
+          <h2 className="section-title">Bangladesh's Most Trusted LPG Brand</h2>
+          <p className="section-subtitle">With over two decades of experience, we've built the nation's most reliable LPG distribution network.</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto mb-12">
+          {whyChoose.map((item) => (
+            <div key={item.title} className="relative rounded-2xl border border-border/40 bg-card p-6 group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] to-accent/[0.03] opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10 flex gap-4">
+                <div className="h-12 w-12 shrink-0 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center group-hover:from-primary/20 group-hover:to-accent/10 transition-all duration-300">
+                  <item.icon className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-bold mb-1">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Button asChild variant="outline" size="lg" className="rounded-xl border-primary/30 text-primary hover:bg-primary/5 group">
+            <Link to="/about">
+              Learn More About Us
+              <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    {/* Certifications & Memberships */}
     <section className="py-24 bg-muted/40">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="section-badge"><Award className="h-4 w-4" /> Why Jamuna Gas</span>
-            <h2 className="section-title mb-6">Bangladesh's Most Trusted LPG Brand</h2>
-            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              With over two decades of experience, we've built the nation's most reliable LPG distribution network, certified by international quality and safety standards.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {whyChoose.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm text-foreground/80">{item}</span>
-                </div>
-              ))}
+        <div className="text-center mb-16">
+          <span className="section-badge"><Shield className="h-4 w-4" /> Quality Assurance</span>
+          <h2 className="section-title">Certifications & Memberships</h2>
+          <p className="section-subtitle">Internationally certified and globally recognized — your guarantee of quality, safety, and excellence.</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {certifications.map((c) => (
+            <div key={c.title} className="relative rounded-2xl border border-border/40 bg-card p-8 text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-2xl bg-muted/60 group-hover:bg-muted transition-colors p-3">
+                <img src={c.img} alt={c.title} className="h-full w-auto object-contain" />
+              </div>
+              <h3 className="font-bold mb-1.5">{c.title}</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">{c.desc}</p>
             </div>
-            <div className="mt-8">
-              <Button asChild variant="outline" className="rounded-xl border-primary/30 text-primary hover:bg-primary/5 group">
-                <Link to="/about">
-                  About Our Story
-                  <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {certifications.map((c) => (
-              <Card key={c.title} className="border-border/50 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-                <CardContent className="p-6 text-center">
-                  <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center">
-                    <img src={c.img} alt={c.title} className="h-16 w-auto object-contain" />
-                  </div>
-                  <h3 className="font-bold text-sm mb-1">{c.title}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{c.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </section>
