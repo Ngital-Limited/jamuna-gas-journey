@@ -25,8 +25,10 @@ const AUTO_PLAY_INTERVAL = 4000;
 
 const SectorsCarousel = () => {
   const [current, setCurrent] = useState(0);
+  const [prevCurrent, setPrevCurrent] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(4);
   const [isHovered, setIsHovered] = useState(false);
+  const [animKey, setAnimKey] = useState(0);
 
   const maxIndex = Math.max(0, sectors.length - itemsPerView);
 
