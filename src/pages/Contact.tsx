@@ -251,10 +251,23 @@ const Contact = () => {
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {depots.map((d) => (
-                  <Marker key={d.name} position={[d.lat, d.lng]}>
+                {plants.map((p) => (
+                  <Marker key={p.name} position={[p.lat, p.lng]} icon={plantIcon}>
                     <Popup>
                       <div className="text-sm">
+                        <span className="inline-block bg-red-100 text-red-700 text-[10px] font-bold uppercase px-2 py-0.5 rounded mb-1">Plant</span>
+                        <strong className="block text-base mb-1">{p.name}</strong>
+                        <span className="block text-muted-foreground mb-1">{p.address}</span>
+                        <a href={`tel:${p.phone.replace(/\s/g, "")}`} className="text-primary font-medium">{p.phone}</a>
+                      </div>
+                    </Popup>
+                  </Marker>
+                ))}
+                {depots.map((d) => (
+                  <Marker key={d.name} position={[d.lat, d.lng]} icon={depotIcon}>
+                    <Popup>
+                      <div className="text-sm">
+                        <span className="inline-block bg-blue-100 text-blue-700 text-[10px] font-bold uppercase px-2 py-0.5 rounded mb-1">Depot</span>
                         <strong className="block text-base mb-1">{d.name}</strong>
                         <span className="block text-muted-foreground mb-1">{d.address}</span>
                         <a href={`tel:${d.phone.replace(/\s/g, "")}`} className="text-primary font-medium">{d.phone}</a>
@@ -263,6 +276,17 @@ const Contact = () => {
                   </Marker>
                 ))}
               </MapContainer>
+            </div>
+            {/* Legend */}
+            <div className="absolute bottom-4 left-4 z-[1000] bg-white/90 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg border border-border/30 flex items-center gap-5 text-xs font-medium">
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-3 h-3 rounded-full bg-red-500" />
+                Plants ({plants.length})
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-3 h-3 rounded-full bg-blue-500" />
+                Depots ({depots.length})
+              </div>
             </div>
           </div>
 
