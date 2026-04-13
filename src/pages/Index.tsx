@@ -10,6 +10,7 @@ import {
   Target, Eye, Compass, Trophy, Award, Shield,
   Calendar, Users, TrendingUp, ArrowRight, Truck,
   CheckCircle, Phone, MapPin, Mail, Clock,
+  UtensilsCrossed, Droplets, Cookie, Hotel, Factory, Scissors, Glasses, Shirt, Fuel, Ship, Cog,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroBg from "@/assets/hero-bg.jpg";
