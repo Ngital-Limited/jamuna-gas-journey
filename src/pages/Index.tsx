@@ -46,25 +46,25 @@ const timeline = [
 
 const Index = () => (
   <Layout>
-    {/* Hero */}
-    <section className="relative overflow-hidden bg-primary py-20 md:py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(0,72%,45%,0.2),transparent_60%)]" />
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="relative min-h-[100vh] flex items-center overflow-hidden">
+      <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+      <div className="container mx-auto px-4 relative z-10 py-20">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-accent/20 px-4 py-1.5 text-sm text-accent mb-6">
-            <Flame className="h-4 w-4" /> Since 2000 — Bangladesh's Pioneer in LPG
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 text-sm text-white mb-6">
+            <Flame className="h-4 w-4 text-primary" /> Since 2000 — Bangladesh's Pioneer in LPG
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground leading-tight mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
             Powering Bangladesh's Future
           </h1>
-          <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
+          <p className="text-lg md:text-xl text-white/80 mb-8 max-w-xl">
             The first government-approved private LPG plant — delivering safe, reliable energy to over 1.5 million customers across the nation.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8">
               <Link to="/products">Explore Products</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button asChild variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10 text-base px-8">
               <Link to="/about">Learn More</Link>
             </Button>
           </div>
