@@ -21,11 +21,31 @@ L.Icon.Default.mergeOptions({
 });
 
 const plants = [
-  { name: "Kaligonj Plant", address: "Barihati, Sluice Gate, Kaliganj -1720", phone: "+88 01769-969496" },
-  { name: "Mongla Plant", address: "14, Mongla Port Industrial Area, Mongla, Bagerhat, Khulna", phone: "+88 01769-969482" },
-  { name: "Bogra Plant", address: "Dhaka Rangpur Highway, Noymile, Bogra", phone: "+88 01755-555345" },
-  { name: "Cumilla Plant", address: "Anandapur, Patodda Bazar, Chauddagram, Comilla", phone: "+88 01769-969420" },
+  { name: "Kaligonj Plant", address: "Barihati, Sluice Gate, Kaliganj -1720", phone: "+88 01769-969496", lat: 23.3975, lng: 90.2183 },
+  { name: "Mongla Plant", address: "14, Mongla Port Industrial Area, Mongla, Bagerhat, Khulna", phone: "+88 01769-969482", lat: 22.4934, lng: 89.5977 },
+  { name: "Bogra Plant", address: "Dhaka Rangpur Highway, Noymile, Bogra", phone: "+88 01755-555345", lat: 24.8465, lng: 89.3773 },
+  { name: "Cumilla Plant", address: "Anandapur, Patodda Bazar, Chauddagram, Comilla", phone: "+88 01769-969420", lat: 23.2200, lng: 91.1800 },
 ];
+
+const plantIcon = new L.Icon({
+  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
+  iconRetinaUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
+  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
+
+const depotIcon = new L.Icon({
+  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png",
+  iconRetinaUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png",
+  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
 
 const depots = [
   { name: "Chittagong Office", address: "House: 05, Lane:05, Road No: 01, Block: L Halishahar Housing Estate, Chittagong", phone: "+88 01755-555382", lat: 22.3569, lng: 91.7832 },
@@ -231,10 +251,23 @@ const Contact = () => {
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {depots.map((d) => (
-                  <Marker key={d.name} position={[d.lat, d.lng]}>
+                {plants.map((p) => (
+                  <Marker key={p.name} position={[p.lat, p.lng]} icon={plantIcon}>
                     <Popup>
                       <div className="text-sm">
+                        <span className="inline-block bg-red-100 text-red-700 text-[10px] font-bold uppercase px-2 py-0.5 rounded mb-1">Plant</span>
+                        <strong className="block text-base mb-1">{p.name}</strong>
+                        <span className="block text-muted-foreground mb-1">{p.address}</span>
+                        <a href={`tel:${p.phone.replace(/\s/g, "")}`} className="text-primary font-medium">{p.phone}</a>
+                      </div>
+                    </Popup>
+                  </Marker>
+                ))}
+                {depots.map((d) => (
+                  <Marker key={d.name} position={[d.lat, d.lng]} icon={depotIcon}>
+                    <Popup>
+                      <div className="text-sm">
+                        <span className="inline-block bg-blue-100 text-blue-700 text-[10px] font-bold uppercase px-2 py-0.5 rounded mb-1">Depot</span>
                         <strong className="block text-base mb-1">{d.name}</strong>
                         <span className="block text-muted-foreground mb-1">{d.address}</span>
                         <a href={`tel:${d.phone.replace(/\s/g, "")}`} className="text-primary font-medium">{d.phone}</a>
@@ -243,6 +276,17 @@ const Contact = () => {
                   </Marker>
                 ))}
               </MapContainer>
+            </div>
+            {/* Legend */}
+            <div className="absolute bottom-4 left-4 z-[1000] bg-white/90 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg border border-border/30 flex items-center gap-5 text-xs font-medium">
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-3 h-3 rounded-full bg-red-500" />
+                Plants ({plants.length})
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="inline-block w-3 h-3 rounded-full bg-blue-500" />
+                Depots ({depots.length})
+              </div>
             </div>
           </div>
 
