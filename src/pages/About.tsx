@@ -66,12 +66,13 @@ const boardMembers = [
 
 const About = () => (
   <Layout>
-    <section className="relative min-h-[60vh] flex items-center justify-center">
+    <section className="relative min-h-[70vh] flex items-center justify-center">
       <img src={aboutHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
-      <div className="container mx-auto px-4 relative z-10 py-20">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">About Jamuna Gas</h1>
-        <p className="text-white/70 text-lg max-w-xl">Bangladesh's pioneer in LPG — delivering energy, trust, and excellence since 2000.</p>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+      <div className="container mx-auto px-4 relative z-10 py-24 text-center">
+        <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white border border-white/20 backdrop-blur-sm mb-6"><Target className="h-4 w-4" /> About Us</span>
+        <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">About Jamuna Gas</h1>
+        <p className="text-white/70 text-lg max-w-2xl mx-auto">Bangladesh's pioneer in LPG — delivering energy, trust, and excellence since 2000.</p>
       </div>
     </section>
 

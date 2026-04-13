@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
-import { AlertTriangle, Cylinder, Factory, Sun, Wind, Zap, Users, Wrench } from "lucide-react";
+import { AlertTriangle, Cylinder, Factory, Sun, Wind, Zap, Users, Wrench, ShieldCheck } from "lucide-react";
 import safetyHero from "@/assets/safety-hero.jpg";
 
 const cylinderTips = [

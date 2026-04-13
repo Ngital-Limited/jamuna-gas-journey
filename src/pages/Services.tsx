@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Building, Home, Factory, Fuel, ShieldCheck, Wrench, CheckCircle } from "lucide-react";
+import { Building, Home, Factory, Fuel, ShieldCheck, Wrench, CheckCircle, ChevronRight } from "lucide-react";
 import servicesHero from "@/assets/services-hero.jpg";
 import reticulationImg from "@/assets/reticulation-service.jpg";
 import autogasImg from "@/assets/autogas-station.jpg";
