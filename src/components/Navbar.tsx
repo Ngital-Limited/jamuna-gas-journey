@@ -65,7 +65,7 @@ const Navbar = () => {
               className={`hidden sm:flex items-center gap-2 text-sm font-semibold transition-all duration-300 rounded-xl px-4 py-2 ${
                 scrolled
                   ? "text-primary hover:bg-primary/5"
-                  : "text-white/80 hover:text-white"
+                  : "text-foreground hover:bg-foreground/5"
               }`}
             >
               <Phone className="h-4 w-4" />
@@ -90,21 +90,19 @@ const Navbar = () => {
               className={`relative z-[60] p-2.5 rounded-xl transition-all duration-300 ${
                 open
                   ? "bg-white/10 text-white"
-                  : scrolled
-                    ? "hover:bg-muted/60 text-foreground"
-                    : "hover:bg-white/10 text-white"
+                  : "hover:bg-foreground/10 text-foreground"
               }`}
               aria-label="Toggle menu"
             >
               <div className="w-6 h-5 flex flex-col justify-between relative">
                 <span className={`block h-[2px] rounded-full transition-all duration-300 origin-center ${
-                  open ? "bg-white rotate-45 translate-y-[9px]" : scrolled ? "bg-foreground" : "bg-white"
+                  open ? "bg-white rotate-45 translate-y-[9px]" : "bg-foreground"
                 }`} />
                 <span className={`block h-[2px] rounded-full transition-all duration-300 ${
-                  open ? "opacity-0 scale-x-0" : scrolled ? "bg-foreground opacity-100" : "bg-white opacity-100"
+                  open ? "opacity-0 scale-x-0" : "bg-foreground opacity-100"
                 }`} />
                 <span className={`block h-[2px] rounded-full transition-all duration-300 origin-center ${
-                  open ? "bg-white -rotate-45 -translate-y-[9px]" : scrolled ? "bg-foreground" : "bg-white"
+                  open ? "bg-white -rotate-45 -translate-y-[9px]" : "bg-foreground"
                 }`} />
               </div>
             </button>
