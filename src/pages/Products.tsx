@@ -196,53 +196,80 @@ const Products = () => (
       </div>
     </section>
 
-    {/* Divider */}
-    <div className="container mx-auto px-4"><div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" /></div>
+    {/* Commercial - Dark Section */}
+    <section id="commercial" className="py-24 bg-foreground text-background relative overflow-hidden scroll-mt-20">
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/4" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] translate-y-1/3 translate-x-1/4" />
 
-    {/* Commercial */}
-    <section id="commercial" className="py-24 scroll-mt-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <span className="section-badge"><Building2 className="h-4 w-4" /> Commercial Use</span>
-          <h2 className="section-title">Commercial LPG</h2>
-          <p className="section-subtitle">Specially designed 35 kg and 45 kg cylinders for commercial operations and large apartment reticulation systems.</p>
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80 mb-4 border border-white/10">
+            <Building2 className="h-4 w-4 text-accent" /> Commercial Use
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Commercial LPG</h2>
+          <p className="max-w-2xl mx-auto mt-3 text-lg text-white/50">Specially designed 35 kg and 45 kg cylinders for commercial operations and large apartment reticulation systems.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="order-2 lg:order-1">
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Jamuna Gas offers heavy-duty LPG cylinders built with international safety and quality standards — powering restaurants, hotels, catering services, and institutional kitchens across Bangladesh.
-            </p>
-            <div className="grid gap-5 mb-8">
-              <Card className="border-border/50 overflow-hidden group hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-0 flex">
-                  <div className="w-2 bg-primary shrink-0 group-hover:w-3 transition-all" />
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">35 kg Cylinder</h3>
-                    <p className="text-muted-foreground">Where high gas consumption is needed — ideal for restaurants, hotels, and catering services.</p>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="border-border/50 overflow-hidden group hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-0 flex">
-                  <div className="w-2 bg-accent shrink-0 group-hover:w-3 transition-all" />
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">45 kg Cylinder</h3>
-                    <p className="text-muted-foreground">For even higher LPG consumption — perfect for institutional kitchens and medium-scale industrial facilities.</p>
-                  </div>
-                </CardContent>
-              </Card>
+        <div className="relative rounded-3xl border border-white/10 bg-white/[0.03] overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            {/* Product Image */}
+            <div className="lg:col-span-5 flex items-center justify-center p-10 lg:p-16 relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-l-3xl" />
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-primary/10 rounded-full blur-3xl scale-75" />
+                <img src={commercialImg} alt="Jamuna Gas 45kg commercial LPG cylinder" loading="lazy" className="relative max-h-[450px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" />
+              </div>
             </div>
-            <div className="flex flex-wrap gap-3">
-              {["Restaurants", "Hotels", "Catering", "Apartments", "Institutions"].map((tag) => (
-                <span key={tag} className="bg-muted rounded-full px-4 py-1.5 text-xs font-medium text-muted-foreground">{tag}</span>
-              ))}
-            </div>
-          </div>
-          <div className="order-1 lg:order-2 relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-accent/5 to-primary/5 rounded-3xl -z-10" />
-            <div className="bg-gradient-to-b from-muted/20 to-muted/50 rounded-2xl p-10 flex items-center justify-center">
-              <img src={commercialImg} alt="Jamuna Gas 45kg commercial LPG cylinder" loading="lazy" className="max-h-[420px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+
+            {/* Details */}
+            <div className="lg:col-span-7 p-8 lg:p-14 flex flex-col justify-center">
+              <p className="text-white/70 text-lg leading-relaxed mb-8">
+                Jamuna Gas offers heavy-duty LPG cylinders built with international safety and quality standards — powering <strong className="text-white">restaurants, hotels, catering services</strong>, and institutional kitchens across Bangladesh.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-6 group hover:bg-white/[0.08] transition-all duration-300">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-t-2xl" />
+                  <div className="flex items-center gap-3 mb-3 pt-1">
+                    <div className="h-10 w-10 rounded-xl bg-primary/20 flex items-center justify-center">
+                      <Flame className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-white">35 kg</h3>
+                      <span className="text-xs text-white/40">Heavy Duty</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-white/50 leading-relaxed">Ideal for restaurants, hotels, and catering services with high gas consumption.</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className="text-[10px] font-medium bg-primary/20 text-primary rounded-full px-2.5 py-1">High Output</span>
+                    <span className="text-[10px] font-medium bg-primary/20 text-primary rounded-full px-2.5 py-1">Durable</span>
+                  </div>
+                </div>
+                <div className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-6 group hover:bg-white/[0.08] transition-all duration-300">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 rounded-t-2xl" />
+                  <div className="flex items-center gap-3 mb-3 pt-1">
+                    <div className="h-10 w-10 rounded-xl bg-accent/20 flex items-center justify-center">
+                      <Flame className="h-5 w-5 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-white">45 kg</h3>
+                      <span className="text-xs text-white/40">Maximum Capacity</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-white/50 leading-relaxed">Perfect for institutional kitchens and medium-scale industrial facilities.</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className="text-[10px] font-medium bg-accent/20 text-accent rounded-full px-2.5 py-1">Max Capacity</span>
+                    <span className="text-[10px] font-medium bg-accent/20 text-accent rounded-full px-2.5 py-1">Industrial</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                {["Restaurants", "Hotels", "Catering", "Apartments", "Institutions"].map((tag) => (
+                  <span key={tag} className="bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs font-medium text-white/50 hover:bg-white/10 transition-colors">{tag}</span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
