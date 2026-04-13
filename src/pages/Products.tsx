@@ -84,80 +84,115 @@ const Products = () => (
           <h2 className="section-title">Household LPG</h2>
           <p className="section-subtitle">We serve 12 kg and 5.5 kg cylinders for domestic use — ideal for everyday cooking with portability and practicality.</p>
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl -z-10" />
-            <div className="bg-gradient-to-b from-muted/20 to-muted/50 rounded-2xl p-10 flex items-center justify-center">
-              <img src={householdImg} alt="Jamuna Gas 12kg household LPG cylinder" loading="lazy" className="max-h-[420px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+
+        {/* Hero Product Showcase */}
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/[0.03] via-muted/40 to-accent/[0.03] border border-border/30 mb-20">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 relative z-10">
+            {/* Product Image */}
+            <div className="lg:col-span-5 flex items-center justify-center p-10 lg:p-16">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-primary/10 rounded-full blur-3xl scale-75" />
+                <img src={householdImg} alt="Jamuna Gas 12kg household LPG cylinder" loading="lazy" className="relative max-h-[450px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" />
+              </div>
             </div>
-          </div>
-          <div>
-            <div className="grid gap-5">
-              <Card className="border-border/50 overflow-hidden group hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-0 flex">
-                  <div className="w-2 bg-primary shrink-0 group-hover:w-3 transition-all" />
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-2">
+            
+            {/* Product Details */}
+            <div className="lg:col-span-7 p-8 lg:p-14 flex flex-col justify-center">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                The backbone of Bangladesh's household energy. Our cylinders are designed for safety, convenience, and long-lasting performance — trusted by over <strong className="text-foreground">1.5 million families</strong> nationwide.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div className="relative rounded-2xl border border-primary/20 bg-card p-6 group hover:shadow-lg hover:border-primary/40 transition-all duration-300">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-t-2xl" />
+                  <div className="flex items-center gap-3 mb-3 pt-1">
+                    <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
                       <Flame className="h-5 w-5 text-primary" />
-                      <h3 className="text-xl font-bold">12 kg Cylinder</h3>
                     </div>
-                    <p className="text-muted-foreground">Easy to carry and simple to use. One cylinder can smoothly serve a small family for a whole month!</p>
+                    <div>
+                      <h3 className="text-lg font-bold">12 kg</h3>
+                      <span className="text-xs text-muted-foreground">Family Size</span>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
-              <Card className="border-border/50 overflow-hidden group hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-0 flex">
-                  <div className="w-2 bg-accent shrink-0 group-hover:w-3 transition-all" />
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-2">
+                  <p className="text-sm text-muted-foreground leading-relaxed">Serves a small family for a whole month. Easy to carry and simple to use.</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className="text-[10px] font-medium bg-primary/10 text-primary rounded-full px-2.5 py-1">~30 days</span>
+                    <span className="text-[10px] font-medium bg-primary/10 text-primary rounded-full px-2.5 py-1">Portable</span>
+                  </div>
+                </div>
+                <div className="relative rounded-2xl border border-accent/20 bg-card p-6 group hover:shadow-lg hover:border-accent/40 transition-all duration-300">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 rounded-t-2xl" />
+                  <div className="flex items-center gap-3 mb-3 pt-1">
+                    <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center">
                       <Flame className="h-5 w-5 text-accent" />
-                      <h3 className="text-xl font-bold">5.5 kg Cylinder</h3>
                     </div>
-                    <p className="text-muted-foreground">Most commonly used for food courts and picnics — easy to carry and go anywhere!</p>
+                    <div>
+                      <h3 className="text-lg font-bold">5.5 kg</h3>
+                      <span className="text-xs text-muted-foreground">Compact Size</span>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Perfect for food courts and picnics — ultra-portable and go anywhere!</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className="text-[10px] font-medium bg-accent/10 text-accent rounded-full px-2.5 py-1">Lightweight</span>
+                    <span className="text-[10px] font-medium bg-accent/10 text-accent rounded-full px-2.5 py-1">On-the-go</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> ISO Certified</div>
+                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> Leak-proof Valve</div>
+                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> BPC Approved</div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Applications */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
+          <h3 className="text-2xl font-bold mb-3 flex items-center gap-3">
             <div className="h-8 w-1 bg-primary rounded-full" />
-            Applications
+            Where It's Used
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {householdApps.map((a) => (
-              <Card key={a.title} className="border-border/40 hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                <CardContent className="p-5 text-center">
-                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <a.icon className="h-6 w-6 text-primary" />
+          <p className="text-muted-foreground mb-8 ml-5">Our household LPG powers everyday life across Bangladesh.</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {householdApps.map((a, i) => (
+              <div key={a.title} className="relative rounded-2xl border border-border/40 bg-card p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.02] to-primary/[0.06] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative z-10">
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 group-hover:from-primary/20 group-hover:to-accent/10 transition-all duration-300">
+                    <a.icon className="h-7 w-7 text-primary" />
                   </div>
-                  <h4 className="font-semibold text-sm mb-1">{a.title}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{a.desc}</p>
-                </CardContent>
-              </Card>
+                  <h4 className="font-semibold text-sm mb-1.5">{a.title}</h4>
+                  <p className="text-[11px] text-muted-foreground leading-relaxed">{a.desc}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Benefits */}
-        <div className="bg-gradient-to-r from-primary/5 via-transparent to-accent/5 rounded-2xl p-8 md:p-12">
-          <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-            <div className="h-8 w-1 bg-accent rounded-full" />
-            Benefits of Using LPG
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {benefits.map((b) => (
-              <div key={b.title} className="flex gap-3">
-                <div className="h-10 w-10 shrink-0 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <b.icon className="h-5 w-5 text-accent" />
+        <div className="relative rounded-3xl overflow-hidden bg-foreground text-background p-8 md:p-12">
+          <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
+          <div className="relative z-10">
+            <h3 className="text-2xl font-bold mb-2 text-white">Benefits of Using LPG</h3>
+            <p className="text-white/50 mb-8">Why millions of families trust Jamuna Gas for their daily energy needs.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {benefits.map((b) => (
+                <div key={b.title} className="rounded-xl bg-white/5 border border-white/10 p-5 hover:bg-white/10 transition-colors">
+                  <div className="h-10 w-10 rounded-lg bg-accent/20 flex items-center justify-center mb-4">
+                    <b.icon className="h-5 w-5 text-accent" />
+                  </div>
+                  <h4 className="font-semibold text-sm mb-1.5 text-white">{b.title}</h4>
+                  <p className="text-xs text-white/60 leading-relaxed">{b.desc}</p>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-sm mb-1">{b.title}</h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{b.desc}</p>
+              ))}
+            </div>
+          </div>
+        </div>
                 </div>
               </div>
             ))}
