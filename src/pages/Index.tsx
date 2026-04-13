@@ -4,15 +4,7 @@ import {
   Flame, Home, Building2, Car,
   Target, Eye, Trophy, Award, Shield,
   Calendar, Users, TrendingUp, ArrowRight, Truck,
-  CheckCircle,
-  Leaf, TreePine, Recycle, Wind,
-} from "lucide-react";
-  Flame, Home, Building2, Car,
-  Target, Eye, Compass, Trophy, Award, Shield,
-  Calendar, Users, TrendingUp, ArrowRight, Truck,
-  CheckCircle, Phone, MapPin, Mail, Clock,
-  UtensilsCrossed, Droplets, Cookie, Hotel, Factory, Scissors, Glasses, Shirt, Fuel, Ship, Cog,
-  Leaf, TreePine, Recycle, Wind,
+  CheckCircle, Leaf, TreePine, Recycle, Wind,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
