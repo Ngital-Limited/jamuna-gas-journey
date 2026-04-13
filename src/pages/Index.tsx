@@ -272,7 +272,73 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Sectors Benefiting from LP Gas */}
+    {/* LPG Solutions */}
+    <section className="py-28 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <span className="section-badge"><Flame className="h-4 w-4" /> LPG Solutions</span>
+          <h2 className="section-title">LPG Solutions</h2>
+          <p className="section-subtitle">Tailored energy solutions for every scale — from home kitchens to large-scale industrial operations.</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              icon: Home,
+              title: "For Household LPG",
+              desc: "The 12 kg cylinder is an ideal choice for household cooking. Regions of size and weight are designed in such a way that it can be easily placed in any kitchen.",
+              color: "primary" as const,
+              tag: "12 kg Cylinder",
+              link: "/products#household",
+            },
+            {
+              icon: Building2,
+              title: "For Commercial LPG",
+              desc: "Jamuna Gas provides 35 kg and 45 kg cylinders for commercial use. These cylinders are specifically designed for industries, restaurants, and high-rise buildings.",
+              color: "accent" as const,
+              tag: "35 kg & 45 kg",
+              link: "/products#commercial",
+            },
+            {
+              icon: Truck,
+              title: "For Business",
+              desc: "Jamuna Gas offers bulk LPG supply as per requirements. Where cylinders are not affordable or suitable for business, we support bulk LPG across the whole country.",
+              color: "primary" as const,
+              tag: "Bulk Supply",
+              link: "/products#bulk",
+            },
+          ].map((solution) => (
+            <Link to={solution.link} key={solution.title} className="group">
+              <div className="relative h-full rounded-3xl border border-border/30 bg-gradient-to-br from-card via-card to-muted/30 p-8 lg:p-10 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
+                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
+                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${solution.color === "primary" ? "from-primary via-primary/70 to-primary/30" : "from-accent via-accent/70 to-accent/30"} rounded-t-3xl`} />
+
+                <div className="relative z-10">
+                  <span className={`inline-block text-[10px] font-semibold uppercase tracking-wider rounded-full px-3 py-1 mb-6 ${solution.color === "primary" ? "bg-primary/10 text-primary" : "bg-accent/10 text-accent"}`}>
+                    {solution.tag}
+                  </span>
+
+                  <div className={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${solution.color === "primary" ? "from-primary/15 to-primary/5 group-hover:from-primary/25 group-hover:to-accent/10" : "from-accent/15 to-accent/5 group-hover:from-accent/25 group-hover:to-primary/10"} transition-all duration-300`}>
+                    <solution.icon className={`h-8 w-8 ${solution.color === "primary" ? "text-primary" : "text-accent"}`} />
+                  </div>
+
+                  <h3 className="text-xl font-bold mb-3">{solution.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-8">{solution.desc}</p>
+
+                  <div className={`flex items-center gap-2 text-sm font-semibold ${solution.color === "primary" ? "text-primary" : "text-accent"} group-hover:gap-3 transition-all duration-300`}>
+                    Learn More <ArrowRight className="h-4 w-4" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <section className="py-28 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3" />
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
