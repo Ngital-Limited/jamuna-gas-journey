@@ -276,51 +276,112 @@ const Products = () => (
       </div>
     </section>
 
-    {/* Bulk LPG - Dark Section */}
-    <section id="bulk" className="py-24 bg-foreground text-background scroll-mt-20">
-      <div className="container mx-auto px-4">
+    {/* Bulk LPG - Premium Dark Section */}
+    <section id="bulk" className="py-24 bg-foreground text-background scroll-mt-20 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] translate-x-1/4 -translate-y-1/4" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] -translate-x-1/4 translate-y-1/4" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80 mb-4 border border-white/10">
-            <Truck className="h-4 w-4" /> Industrial Scale
+            <Truck className="h-4 w-4 text-accent" /> Industrial Scale
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Bulk LPG System</h2>
-          <p className="max-w-2xl mx-auto mt-3 text-lg text-white/60">Designed for uninterrupted, high-demand usage — efficient, safe, and cost-effective energy for heavy industries.</p>
+          <p className="max-w-2xl mx-auto mt-3 text-lg text-white/50">Designed for uninterrupted, high-demand usage — efficient, safe, and cost-effective energy for heavy industries.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          <div>
-            <p className="text-white/70 text-lg leading-relaxed mb-8">
-              Jamuna Gas Bulk LPG is a modern, large-scale energy solution where liquefied petroleum gas is transported via specialized tank trucks and stored in high-capacity containers at the user's site.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="rounded-xl bg-white/5 border border-white/10 p-5 hover:bg-white/10 transition-colors">
-                <DollarSign className="h-8 w-8 text-accent mb-3" />
-                <h4 className="font-bold text-white mb-1">Cost Efficiency</h4>
-                <p className="text-sm text-white/60">Lower per-unit costs helping businesses save significantly over time.</p>
+        {/* Premium Showcase Card */}
+        <div className="relative rounded-3xl border border-white/10 bg-white/[0.03] overflow-hidden mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            {/* Image */}
+            <div className="lg:col-span-5 flex items-center justify-center p-10 lg:p-16 relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-l-3xl" />
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-primary/10 rounded-full blur-3xl scale-75" />
+                <img src={bulkImg} alt="Jamuna Gas bulk LPG transport truck" loading="lazy" className="relative max-h-[400px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" />
               </div>
-              <div className="rounded-xl bg-white/5 border border-white/10 p-5 hover:bg-white/10 transition-colors">
-                <Zap className="h-8 w-8 text-accent mb-3" />
-                <h4 className="font-bold text-white mb-1">Reliable Supply</h4>
-                <p className="text-sm text-white/60">On-site storage ensures continuous supply, reducing downtime risk.</p>
+            </div>
+
+            {/* Content */}
+            <div className="lg:col-span-7 p-8 lg:p-14 flex flex-col justify-center">
+              <p className="text-white/70 text-lg leading-relaxed mb-8">
+                Jamuna Gas Bulk LPG is a modern, large-scale energy solution where liquefied petroleum gas is transported via specialized tank trucks and stored in <strong className="text-white">high-capacity containers</strong> at the user's site — ensuring uninterrupted operations for heavy industries.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                <div className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-6 group hover:bg-white/[0.08] transition-all duration-300">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-t-2xl" />
+                  <div className="flex items-center gap-3 mb-3 pt-1">
+                    <div className="h-10 w-10 rounded-xl bg-primary/20 flex items-center justify-center">
+                      <DollarSign className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-white">Cost Efficiency</h3>
+                      <span className="text-xs text-white/40">Bulk Pricing</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-white/50 leading-relaxed">Lower per-unit costs helping businesses save significantly over time with bulk purchasing.</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className="text-[10px] font-medium bg-primary/20 text-primary rounded-full px-2.5 py-1">Save 20%+</span>
+                    <span className="text-[10px] font-medium bg-primary/20 text-primary rounded-full px-2.5 py-1">Volume Discount</span>
+                  </div>
+                </div>
+                <div className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-6 group hover:bg-white/[0.08] transition-all duration-300">
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 rounded-t-2xl" />
+                  <div className="flex items-center gap-3 mb-3 pt-1">
+                    <div className="h-10 w-10 rounded-xl bg-accent/20 flex items-center justify-center">
+                      <Zap className="h-5 w-5 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-white">Reliable Supply</h3>
+                      <span className="text-xs text-white/40">24/7 Operations</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-white/50 leading-relaxed">On-site storage ensures continuous supply, eliminating downtime and production delays.</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className="text-[10px] font-medium bg-accent/20 text-accent rounded-full px-2.5 py-1">Zero Downtime</span>
+                    <span className="text-[10px] font-medium bg-accent/20 text-accent rounded-full px-2.5 py-1">On-site Tank</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-3 mb-6">
+                {["Safety Certified", "Custom Capacity", "Scheduled Delivery", "24/7 Support"].map((tag) => (
+                  <span key={tag} className="bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-xs font-medium text-white/50 hover:bg-white/10 transition-colors">{tag}</span>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-6 text-sm text-white/50">
+                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> ISO 9001</div>
+                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> BPC Licensed</div>
+                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Fire Safety</div>
               </div>
             </div>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-            <img src={bulkImg} alt="Jamuna Gas bulk LPG transport truck" loading="lazy" className="w-full h-full object-cover" />
-          </div>
         </div>
 
-        <h3 className="text-2xl font-bold text-white mb-2">Industrial Applications</h3>
-        <p className="text-white/60 mb-8">We support any industry with high LPG consumption.</p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          {bulkApps.map((app) => (
-            <div key={app.title} className="rounded-xl bg-white/5 border border-white/10 p-5 text-center hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 group">
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/20 group-hover:bg-accent/30 transition-colors">
-                <app.icon className="h-6 w-6 text-accent" />
+        {/* Industrial Applications */}
+        <div>
+          <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-3">
+            <div className="h-8 w-1 bg-accent rounded-full" />
+            Industrial Applications
+          </h3>
+          <p className="text-white/50 mb-8 ml-5">Powering Bangladesh's key industries with bulk LPG solutions.</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {bulkApps.map((app) => (
+              <div key={app.title} className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-6 text-center hover:bg-white/[0.08] hover:-translate-y-1 transition-all duration-300 group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-accent/[0.02] to-primary/[0.03] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative z-10">
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 group-hover:from-accent/30 group-hover:to-primary/10 transition-all duration-300">
+                    <app.icon className="h-7 w-7 text-accent" />
+                  </div>
+                  <h4 className="font-semibold text-sm text-white mb-1.5">{app.title}</h4>
+                  <p className="text-[11px] text-white/40 leading-relaxed">{app.desc}</p>
+                </div>
               </div>
-              <h4 className="font-semibold text-sm text-white">{app.title}</h4>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
