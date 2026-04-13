@@ -5,7 +5,7 @@ import {
   Tent, Hotel, Truck, Droplets, Leaf, Box, ShieldCheck,
   Fuel, DollarSign, Wrench, Shield,
 } from "lucide-react";
-import householdImg from "@/assets/household-lpg.jpg";
+import householdImg from "@/assets/jamuna-12kg-cylinder.png";
 import commercialImg from "@/assets/commercial-lpg.jpg";
 import autoGasImg from "@/assets/auto-gas.jpg";
 import productsHero from "@/assets/products-hero.jpg";
@@ -77,8 +77,8 @@ const Products = () => (
               </Card>
             </div>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img src={householdImg} alt="Jamuna Gas household LPG cylinders" loading="lazy" width={1024} height={768} className="w-full h-full object-cover" />
+          <div className="flex items-center justify-center bg-gradient-to-b from-muted/30 to-muted/60 rounded-2xl p-8">
+            <img src={householdImg} alt="Jamuna Gas 12kg household LPG cylinder" loading="lazy" className="max-h-[400px] object-contain drop-shadow-xl" />
           </div>
         </div>
         <div className="hidden">
