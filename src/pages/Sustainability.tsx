@@ -6,7 +6,7 @@ import {
   ArrowRight, Target, TrendingUp, Shield,
   Heart, Award
 } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import sustainabilityHero from "@/assets/sustainability-hero.jpg";
 
 const pillars = [
   {
