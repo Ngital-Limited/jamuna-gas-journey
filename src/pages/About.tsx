@@ -14,11 +14,16 @@ const values = [
   { icon: Trophy, title: "Goal", desc: "Ensure customer satisfaction by consistently providing the best product and service. Develop and promote environmentally friendly technologies." },
 ];
 
+import iso9001 from "@/assets/iso-9001.png";
+import iso14001 from "@/assets/iso-14001.png";
+import iso45001 from "@/assets/iso-45001.png";
+import wlpgaImg from "@/assets/wlpga.png";
+
 const certifications = [
-  { icon: Award, title: "ISO 9001:2015", desc: "Quality Management System certified by Bureau Veritas (UKAS) — a testament to relentless pursuit of quality." },
-  { icon: Leaf, title: "ISO 14001", desc: "Environmental Management System — upholding global standards in environmental management." },
-  { icon: Shield, title: "ISO 45001:2018", desc: "Occupational Health & Safety — globally recognized framework for managing workplace risks." },
-  { icon: Globe, title: "WLPGA Member", desc: "World LPG Association — connecting with global leaders for safe, sustainable LPG solutions." },
+  { img: iso9001, title: "ISO 9001:2015", desc: "Quality Management System certified by Bureau Veritas (UKAS) — a testament to relentless pursuit of quality." },
+  { img: iso14001, title: "ISO 14001", desc: "Environmental Management System — upholding global standards in environmental management." },
+  { img: iso45001, title: "ISO 45001:2018", desc: "Occupational Health & Safety — globally recognized framework for managing workplace risks." },
+  { img: wlpgaImg, title: "WLPGA Member", desc: "World LPG Association — connecting with global leaders for safe, sustainable LPG solutions." },
 ];
 
 const timeline = [
@@ -163,8 +168,8 @@ const About = () => (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {certifications.map((c) => (
             <div key={c.title} className="text-center rounded-xl bg-primary-foreground/10 p-6 border border-primary-foreground/10">
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-accent/20">
-                <c.icon className="h-7 w-7 text-accent" />
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-white p-2">
+                <img src={c.img} alt={c.title} className="h-14 w-auto object-contain" />
               </div>
               <h3 className="font-semibold mb-2">{c.title}</h3>
               <p className="text-sm text-primary-foreground/70">{c.desc}</p>

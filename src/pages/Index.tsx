@@ -32,11 +32,16 @@ const values = [
   { icon: Trophy, title: "Goal", desc: "Ensure customer satisfaction by consistently providing the best product and service that meet ultimate expectations." },
 ];
 
+import iso9001 from "@/assets/iso-9001.png";
+import iso14001 from "@/assets/iso-14001.png";
+import iso45001 from "@/assets/iso-45001.png";
+import wlpga from "@/assets/wlpga.png";
+
 const certifications = [
-  { icon: Award, title: "ISO 9001:2015", desc: "Quality Management System certified by Bureau Veritas." },
-  { icon: Leaf, title: "ISO 14001", desc: "Environmental Management System — global environmental standards." },
-  { icon: Shield, title: "ISO 45001:2018", desc: "Occupational Health & Safety — workplace risk management." },
-  { icon: Globe, title: "WLPGA Member", desc: "World LPG Association — safe, sustainable LPG leadership." },
+  { img: iso9001, title: "ISO 9001:2015", desc: "Quality Management System certified by Bureau Veritas." },
+  { img: iso14001, title: "ISO 14001", desc: "Environmental Management System — global environmental standards." },
+  { img: iso45001, title: "ISO 45001:2018", desc: "Occupational Health & Safety — workplace risk management." },
+  { img: wlpga, title: "WLPGA Member", desc: "World LPG Association — safe, sustainable LPG leadership." },
 ];
 
 const timeline = [
@@ -169,8 +174,8 @@ const Index = () => (
             {certifications.map((c) => (
               <Card key={c.title} className="border-border/50 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                 <CardContent className="p-6 text-center">
-                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-accent/10">
-                    <c.icon className="h-6 w-6 text-accent" />
+                  <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center">
+                    <img src={c.img} alt={c.title} className="h-16 w-auto object-contain" />
                   </div>
                   <h3 className="font-bold text-sm mb-1">{c.title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">{c.desc}</p>
