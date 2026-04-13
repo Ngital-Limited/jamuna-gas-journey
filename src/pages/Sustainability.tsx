@@ -254,7 +254,7 @@ const Sustainability = () => (
                     <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10 px-10 rounded-xl h-13">
+                <Button asChild variant="outline" size="lg" className="border-white/40 text-white bg-transparent hover:bg-white/10 px-10 rounded-xl h-13">
                   <Link to="/products">Explore Products</Link>
                 </Button>
               </div>

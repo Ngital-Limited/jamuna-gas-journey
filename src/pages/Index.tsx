@@ -81,7 +81,7 @@ const Index = () => (
                 <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 hover:border-white/50 text-base px-8 h-13 rounded-xl backdrop-blur-sm transition-all duration-300">
+            <Button asChild variant="outline" size="lg" className="border-white/30 text-white bg-transparent hover:bg-white/10 hover:border-white/50 text-base px-8 h-13 rounded-xl backdrop-blur-sm transition-all duration-300">
               <Link to="/about">Learn More</Link>
             </Button>
           </div>
@@ -453,7 +453,7 @@ const Index = () => (
                   <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10 px-10 rounded-xl h-13">
+              <Button asChild variant="outline" size="lg" className="border-white/40 text-white bg-transparent hover:bg-white/10 px-10 rounded-xl h-13">
                 <Link to="/products">Our Products</Link>
               </Button>
             </div>

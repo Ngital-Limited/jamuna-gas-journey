@@ -264,7 +264,7 @@ const Services = () => (
                 <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-10 rounded-xl h-14 text-base backdrop-blur-sm">
+            <Button asChild variant="outline" size="lg" className="border-white/20 text-white bg-transparent hover:bg-white/10 px-10 rounded-xl h-14 text-base backdrop-blur-sm">
               <a href="tel:+88029844940">
                 <Phone className="h-4 w-4 mr-2" />
                 Call Us Now
