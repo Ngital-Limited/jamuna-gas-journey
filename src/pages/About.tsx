@@ -82,6 +82,35 @@ const About = () => (
       </div>
     </section>
 
+    {/* Board of Directors */}
+    <section className="py-20 bg-muted/50">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-4">Board of Directors</h2>
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
+          Meet the leadership team driving Jamuna Gas toward excellence and sustainable growth.
+        </p>
+        <div className="space-y-20">
+          {boardMembers.map((member, i) => (
+            <div key={member.name} className={`grid grid-cols-1 lg:grid-cols-3 gap-10 items-start ${i % 2 !== 0 ? "lg:direction-rtl" : ""}`}>
+              <div className={`flex flex-col items-center text-center ${i % 2 !== 0 ? "lg:order-3" : ""}`}>
+                <div className="w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-primary/20 mb-4">
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <h3 className="text-xl font-bold">{member.name}</h3>
+                <p className="text-sm text-primary font-medium">{member.title}</p>
+              </div>
+              <div className={`lg:col-span-2 ${i % 2 !== 0 ? "lg:order-1" : ""}`}>
+                <h3 className="text-2xl font-bold mb-4 text-primary">{member.heading}</h3>
+                {member.message.split("\n\n").map((para, j) => (
+                  <p key={j} className="text-muted-foreground leading-relaxed mb-4">{para}</p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     {/* Values */}
     <section className="py-20 bg-muted/50">
       <div className="container mx-auto px-4">
