@@ -5,6 +5,9 @@ import {
   Tent, Hotel, Truck, Droplets, Leaf, Box, ShieldCheck,
   Fuel, DollarSign, Wrench, Shield,
 } from "lucide-react";
+import householdImg from "@/assets/household-lpg.jpg";
+import commercialImg from "@/assets/commercial-lpg.jpg";
+import autoGasImg from "@/assets/auto-gas.jpg";
 
 const householdApps = [
   { icon: UtensilsCrossed, title: "Household Cooking", desc: "Primarily used in home kitchens for daily cooking needs." },
