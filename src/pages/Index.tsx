@@ -9,6 +9,7 @@ import {
 import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
 import heroBg from "@/assets/hero-bg.jpg";
+import sustainabilityImg from "@/assets/sustainability-section.jpg";
 
 const stats = [
   { icon: Calendar, value: "24+", label: "Years of Excellence" },
@@ -404,34 +405,39 @@ const Index = () => (
         <div className="text-center mb-16">
           <span className="section-badge"><Leaf className="h-4 w-4" /> Sustainability</span>
           <h2 className="section-title">Committed to a Greener Future</h2>
-          <p className="section-subtitle">LPG is a cleaner-burning fuel that reduces emissions and protects forests — powering progress sustainably.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto mb-10">
-          {[
-            { icon: Wind, value: "40%", label: "Less CO₂ vs Coal", color: "primary" as const },
-            { icon: TreePine, value: "1,000+", label: "Trees Saved Annually", color: "accent" as const },
-            { icon: Recycle, value: "15+ Yr", label: "Cylinder Lifespan", color: "primary" as const },
-            { icon: Leaf, value: "Zero", label: "Particulate Emissions", color: "accent" as const },
-          ].map((item) => (
-            <div key={item.label} className="relative rounded-2xl border border-border/40 bg-card p-7 text-center group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              <div className={`mx-auto mb-4 h-14 w-14 rounded-2xl bg-gradient-to-br ${item.color === "primary" ? "from-primary/10 to-primary/5" : "from-accent/10 to-accent/5"} flex items-center justify-center`}>
-                <item.icon className={`h-7 w-7 ${item.color === "primary" ? "text-primary" : "text-accent"}`} />
-              </div>
-              <div className="text-2xl font-extrabold tracking-tight mb-1">{item.value}</div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wider font-medium">{item.label}</div>
-            </div>
-          ))}
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+          {/* Image */}
+          <div className="rounded-3xl overflow-hidden shadow-xl border border-border/30">
+            <img
+              src={sustainabilityImg}
+              alt="Sustainable energy infrastructure surrounded by lush green forests"
+              className="w-full h-full object-cover"
+              loading="lazy"
+              width={1280}
+              height={720}
+            />
+          </div>
 
-        <div className="text-center">
-          <Button asChild variant="outline" size="lg" className="rounded-xl border-primary/30 text-primary hover:bg-primary/5 group">
-            <Link to="/sustainability">
-              Learn About Our Sustainability
-              <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
+          {/* Text content */}
+          <div className="space-y-6">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              At Jamuna Gas, sustainability isn't just a commitment — it's the foundation of everything we do. LPG is one of the cleanest conventional fuels available, producing significantly lower carbon emissions compared to coal, wood, and other traditional energy sources.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              By choosing LPG over firewood and biomass, we help protect Bangladesh's forests and reduce harmful particulate matter that affects air quality and public health. Our operations are designed to minimize environmental impact at every stage — from sourcing and storage to distribution and usage.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              We actively promote the transition to cleaner energy across households and industries, contributing to a healthier planet for future generations. Every cylinder we deliver is a step toward a more sustainable Bangladesh.
+            </p>
+            <Button asChild variant="outline" size="lg" className="rounded-xl border-primary/30 text-primary hover:bg-primary/5 group mt-4">
+              <Link to="/sustainability">
+                Learn About Our Sustainability
+                <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
