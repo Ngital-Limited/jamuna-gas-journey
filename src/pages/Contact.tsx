@@ -205,7 +205,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Depot Addresses */}
+      {/* Depot Addresses with Map */}
       <section className="py-28 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3" />
 
@@ -216,9 +216,39 @@ const Contact = () => {
             <p className="section-subtitle">Our nationwide depot network ensures fast and reliable LPG delivery to every corner of Bangladesh.</p>
           </div>
 
+          {/* Interactive Map */}
+          <div className="relative rounded-3xl border border-border/30 overflow-hidden mb-12 shadow-xl">
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-accent via-primary to-accent rounded-t-3xl z-[1000]" />
+            <div className="h-[500px] w-full">
+              <MapContainer
+                center={[23.8, 90.4]}
+                zoom={7}
+                scrollWheelZoom={false}
+                className="h-full w-full"
+                style={{ borderRadius: "1.5rem" }}
+              >
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                {depots.map((d) => (
+                  <Marker key={d.name} position={[d.lat, d.lng]}>
+                    <Popup>
+                      <div className="text-sm">
+                        <strong className="block text-base mb-1">{d.name}</strong>
+                        <span className="block text-muted-foreground mb-1">{d.address}</span>
+                        <a href={`tel:${d.phone.replace(/\s/g, "")}`} className="text-primary font-medium">{d.phone}</a>
+                      </div>
+                    </Popup>
+                  </Marker>
+                ))}
+              </MapContainer>
+            </div>
+          </div>
+
+          {/* Depot Table */}
           <div className="relative rounded-3xl border border-border/30 bg-gradient-to-br from-card via-card to-muted/30 overflow-hidden">
             <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-accent via-primary to-accent rounded-t-3xl" />
 
             <div className="relative z-10 overflow-x-auto">
               <table className="w-full text-sm">
