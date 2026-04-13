@@ -397,47 +397,38 @@ const Index = () => (
 
 
     {/* Sustainability Section */}
-    <section className="py-28 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/3" />
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+    <section className="relative overflow-hidden">
+      {/* Full-width background image */}
+      <div className="absolute inset-0">
+        <img
+          src={sustainabilityImg}
+          alt="Sustainable energy infrastructure surrounded by lush green forests"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
+      </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <span className="section-badge"><Leaf className="h-4 w-4" /> Sustainability</span>
-          <h2 className="section-title">Committed to a Greener Future</h2>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
-          {/* Image */}
-          <div className="rounded-3xl overflow-hidden shadow-xl border border-border/30">
-            <img
-              src={sustainabilityImg}
-              alt="Sustainable energy infrastructure surrounded by lush green forests"
-              className="w-full h-full object-cover"
-              loading="lazy"
-              width={1280}
-              height={720}
-            />
-          </div>
-
-          {/* Text content */}
-          <div className="space-y-6">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              At Jamuna Gas, sustainability isn't just a commitment — it's the foundation of everything we do. LPG is one of the cleanest conventional fuels available, producing significantly lower carbon emissions compared to coal, wood, and other traditional energy sources.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              By choosing LPG over firewood and biomass, we help protect Bangladesh's forests and reduce harmful particulate matter that affects air quality and public health. Our operations are designed to minimize environmental impact at every stage — from sourcing and storage to distribution and usage.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              We actively promote the transition to cleaner energy across households and industries, contributing to a healthier planet for future generations. Every cylinder we deliver is a step toward a more sustainable Bangladesh.
-            </p>
-            <Button asChild variant="outline" size="lg" className="rounded-xl border-primary/30 text-primary hover:bg-primary/5 group mt-4">
-              <Link to="/sustainability">
-                Learn About Our Sustainability
-                <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
+      <div className="container mx-auto px-4 relative z-10 py-32 md:py-40">
+        <div className="max-w-2xl">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-5 py-2 text-sm font-medium text-emerald-300 mb-6">
+            <Leaf className="h-4 w-4" /> Sustainability
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+            Committed to a<br />Greener Future
+          </h2>
+          <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-6 max-w-xl">
+            At Jamuna Gas, sustainability is the foundation of everything we do. LPG produces significantly lower carbon emissions compared to coal, wood, and other traditional energy sources.
+          </p>
+          <p className="text-white/60 leading-relaxed mb-10 max-w-xl">
+            We actively promote the transition to cleaner energy across households and industries — every cylinder we deliver is a step toward a more sustainable Bangladesh.
+          </p>
+          <Button asChild size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-10 rounded-xl h-14 shadow-lg shadow-emerald-500/25 group">
+            <Link to="/sustainability">
+              Learn About Our Sustainability
+              <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
