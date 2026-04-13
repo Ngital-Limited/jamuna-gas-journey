@@ -68,9 +68,6 @@ const SectorsCarousel = () => {
     }, AUTO_PLAY_INTERVAL);
     return () => clearInterval(timer);
   }, [maxIndex, isHovered]);
-    }, AUTO_PLAY_INTERVAL);
-    return () => clearInterval(timer);
-  }, [maxIndex, isHovered]);
 
   return (
     <section className="py-28 bg-foreground text-background relative overflow-hidden">
