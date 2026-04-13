@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,17 @@ import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, Factory, Building2, MessageSquare, ArrowRight, CheckCircle, Send, Flame } from "lucide-react";
 import { toast } from "sonner";
 import contactHero from "@/assets/contact-hero.jpg";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+
+// Fix default marker icon
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png",
+  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png",
+  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
+});
 
 const plants = [
   { name: "Kaligonj Plant", address: "Barihati, Sluice Gate, Kaliganj -1720", phone: "+88 01769-969496" },
@@ -17,21 +28,21 @@ const plants = [
 ];
 
 const depots = [
-  { name: "Chittagong Office", address: "House: 05, Lane:05, Road No: 01, Block: L Halishahar Housing Estate, Chittagong", phone: "+88 01755-555382" },
-  { name: "Demra Depot", address: "Bhanga Press, Demra Road, Jatrabari, Dhaka", phone: "+88 01755-555183" },
-  { name: "Gazipur Depot", address: "Member Bari, Mouna, Gazipur", phone: "+88 01769-969402" },
-  { name: "Barishal Depot", address: "Near Kimini Felling Station, West Rahamatpur, Barishal", phone: "+88 01755-555184" },
-  { name: "Bhairab Depot", address: "Kanchan Market, Lakhimpur, Bhairab", phone: "+88 01769-969388" },
-  { name: "Chittagong Depot", address: "Saltgola Crossing, Chittagong", phone: "+88 01769-969403" },
-  { name: "Companigonj Depot", address: "Companigonj, Cumilla", phone: "+88 01755-555388" },
-  { name: "Cumilla Depot", address: "Paduar Bazar, Comilla", phone: "+88 01769-969470" },
-  { name: "Jhenidah Depot", address: "Hamdho Bypass Road, Jhenaidah", phone: "+88 01769-969488" },
-  { name: "Manikganj Depot", address: "Boitora, Jagir, Manikganj", phone: "+88 01769-969385" },
-  { name: "Madaripur Depot", address: "Katherpul, Daukendua, Madaripur", phone: "+88 01769-969399" },
-  { name: "Mymensingh Depot", address: "Highway Filling Station, Char Kalibari, Mymensingh", phone: "+88 01769-969366" },
-  { name: "Rangpur Depot", address: "Balabari, Taragonj, Rangpur", phone: "+88 01769-969377" },
-  { name: "Sylhet Depot", address: "Dokkhin Surma, Bypass Road, Sylhet", phone: "+88 01769-969388" },
-  { name: "Tangail Depot", address: "Gharinda, Tangail", phone: "+88 01769-969365" },
+  { name: "Chittagong Office", address: "House: 05, Lane:05, Road No: 01, Block: L Halishahar Housing Estate, Chittagong", phone: "+88 01755-555382", lat: 22.3569, lng: 91.7832 },
+  { name: "Demra Depot", address: "Bhanga Press, Demra Road, Jatrabari, Dhaka", phone: "+88 01755-555183", lat: 23.7186, lng: 90.4972 },
+  { name: "Gazipur Depot", address: "Member Bari, Mouna, Gazipur", phone: "+88 01769-969402", lat: 24.0023, lng: 90.4264 },
+  { name: "Barishal Depot", address: "Near Kimini Felling Station, West Rahamatpur, Barishal", phone: "+88 01755-555184", lat: 22.7010, lng: 90.3535 },
+  { name: "Bhairab Depot", address: "Kanchan Market, Lakhimpur, Bhairab", phone: "+88 01769-969388", lat: 24.0524, lng: 90.9787 },
+  { name: "Chittagong Depot", address: "Saltgola Crossing, Chittagong", phone: "+88 01769-969403", lat: 22.3384, lng: 91.8317 },
+  { name: "Companigonj Depot", address: "Companigonj, Cumilla", phone: "+88 01755-555388", lat: 23.2688, lng: 91.1168 },
+  { name: "Cumilla Depot", address: "Paduar Bazar, Comilla", phone: "+88 01769-969470", lat: 23.4607, lng: 91.1809 },
+  { name: "Jhenidah Depot", address: "Hamdho Bypass Road, Jhenaidah", phone: "+88 01769-969488", lat: 23.5448, lng: 89.1726 },
+  { name: "Manikganj Depot", address: "Boitora, Jagir, Manikganj", phone: "+88 01769-969385", lat: 23.8644, lng: 90.0047 },
+  { name: "Madaripur Depot", address: "Katherpul, Daukendua, Madaripur", phone: "+88 01769-969399", lat: 23.1641, lng: 90.1978 },
+  { name: "Mymensingh Depot", address: "Highway Filling Station, Char Kalibari, Mymensingh", phone: "+88 01769-969366", lat: 24.7471, lng: 90.4203 },
+  { name: "Rangpur Depot", address: "Balabari, Taragonj, Rangpur", phone: "+88 01769-969377", lat: 25.7439, lng: 89.2752 },
+  { name: "Sylhet Depot", address: "Dokkhin Surma, Bypass Road, Sylhet", phone: "+88 01769-969388", lat: 24.8949, lng: 91.8687 },
+  { name: "Tangail Depot", address: "Gharinda, Tangail", phone: "+88 01769-969365", lat: 24.2513, lng: 89.9164 },
 ];
 
 const Contact = () => {
