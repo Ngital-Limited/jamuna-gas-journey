@@ -112,6 +112,15 @@ const Navbar = () => {
         </div>
       </header>
 
+      {/* Background blur overlay on page content */}
+      <div
+        className={`fixed inset-0 z-[52] transition-all duration-700 ease-out ${
+          open
+            ? "backdrop-blur-md bg-black/20 pointer-events-none"
+            : "backdrop-blur-0 bg-transparent pointer-events-none"
+        }`}
+      />
+
       {/* Fullscreen Overlay Menu */}
       <div
         className={`fixed inset-0 z-[55] transition-all duration-500 ${
@@ -121,7 +130,9 @@ const Navbar = () => {
         }`}
       >
         {/* Dark overlay background */}
-        <div className="absolute inset-0 bg-foreground/98 backdrop-blur-xl" />
+        <div className={`absolute inset-0 transition-all duration-700 ease-out ${
+          open ? "bg-foreground/98 backdrop-blur-xl" : "bg-transparent backdrop-blur-0"
+        }`} />
 
         {/* Background decorations */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
