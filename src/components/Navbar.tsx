@@ -96,13 +96,13 @@ const Navbar = () => {
             >
               <div className="w-6 h-5 flex flex-col justify-between relative">
                 <span className={`block h-[2px] rounded-full transition-all duration-300 origin-center ${
-                  open ? "bg-white rotate-45 translate-y-[9px]" : scrolled ? "bg-foreground" : "bg-white"
+                  open ? "bg-white rotate-45 translate-y-[9px]" : "bg-foreground"
                 }`} />
                 <span className={`block h-[2px] rounded-full transition-all duration-300 ${
-                  open ? "opacity-0 scale-x-0" : scrolled ? "bg-foreground opacity-100" : "bg-white opacity-100"
+                  open ? "opacity-0 scale-x-0" : "bg-foreground opacity-100"
                 }`} />
                 <span className={`block h-[2px] rounded-full transition-all duration-300 origin-center ${
-                  open ? "bg-white -rotate-45 -translate-y-[9px]" : scrolled ? "bg-foreground" : "bg-white"
+                  open ? "bg-white -rotate-45 -translate-y-[9px]" : "bg-foreground"
                 }`} />
               </div>
             </button>
