@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import logo from "@/assets/jamuna-logo.png";
 
 const Footer = () => (
@@ -43,9 +43,10 @@ const Footer = () => (
         <div>
           <h4 className="font-semibold mb-4">Contact Info</h4>
           <ul className="space-y-3 text-sm text-primary-foreground/70">
-            <li className="flex items-center gap-2"><MapPin className="h-4 w-4 shrink-0" /> Dhaka, Bangladesh</li>
-            <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0" /> +880-XXXX-XXXXXX</li>
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 shrink-0 mt-0.5" /> House 99, Rupayan Golden Age (2nd Floor), Gulshan Avenue, Dhaka-1212</li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0" /> +880 2-9844940</li>
             <li className="flex items-center gap-2"><Mail className="h-4 w-4 shrink-0" /> info@jamunagas.com</li>
+            <li className="flex items-center gap-2"><Clock className="h-4 w-4 shrink-0" /> Sat–Thu: 9 am – 5 pm</li>
           </ul>
         </div>
       </div>

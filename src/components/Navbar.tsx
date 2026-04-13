@@ -31,9 +31,9 @@ const Navbar = () => {
         <div className="container mx-auto flex items-center justify-between px-4 py-1.5">
           <span>Bangladesh's Pioneer in LPG — Serving 1.5 Million+ Customers</span>
           <div className="flex items-center gap-4">
-            <a href="tel:+880XXXXXXXXXX" className="flex items-center gap-1 hover:text-accent transition-colors">
+            <a href="tel:+88029844940" className="flex items-center gap-1 hover:text-accent transition-colors">
               <Phone className="h-3 w-3" />
-              +880-XXXX-XXXXXX
+              +880 2-9844940
             </a>
             <a href="mailto:info@jamunagas.com" className="hover:text-accent transition-colors">
               info@jamunagas.com
