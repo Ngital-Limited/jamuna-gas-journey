@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Building, Home, Factory, Fuel, ShieldCheck, Wrench, CheckCircle, ChevronRight, ArrowRight, Zap, Settings, PenTool, Phone } from "lucide-react";
+import { Building, Home, Factory, Fuel, ShieldCheck, Wrench, CheckCircle, ChevronRight, ArrowRight, Zap, Settings, PenTool, Phone, Flame } from "lucide-react";
 import servicesHero from "@/assets/services-hero.jpg";
 import reticulationImg from "@/assets/reticulation-service.jpg";
 import autogasImg from "@/assets/autogas-station.jpg";
@@ -222,17 +222,62 @@ const Services = () => (
     </section>
 
     {/* CTA */}
-    <section className="py-20">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-4">Need a Custom Solution?</h2>
-        <p className="text-muted-foreground max-w-lg mx-auto mb-8">
-          Contact our team to discuss your project requirements — we'll design a tailored gas solution for you.
-        </p>
-        <Link to="/contact">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            Get in Touch
-          </Button>
-        </Link>
+    <section className="relative py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-foreground" />
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[150px] -translate-y-1/2" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[120px] translate-y-1/2" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px]" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80 mb-8 border border-white/10">
+            <Flame className="h-4 w-4 text-accent" /> Let's Build Together
+          </span>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+            Need a Custom<br />
+            <span className="bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent">Gas Solution?</span>
+          </h2>
+
+          <p className="text-white/50 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
+            Contact our team to discuss your project requirements — we'll design a tailored solution for you.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
+            {[
+              { value: "500+", label: "Projects Delivered" },
+              { value: "24/7", label: "Technical Support" },
+              { value: "100%", label: "Safety Record" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-3xl md:text-4xl font-extrabold text-white mb-1">{stat.value}</div>
+                <div className="text-xs text-white/40 uppercase tracking-wider font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-white hover:opacity-90 font-bold px-12 rounded-xl h-14 shadow-xl shadow-primary/20 group text-base">
+              <Link to="/contact">
+                Get in Touch
+                <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-10 rounded-xl h-14 text-base backdrop-blur-sm">
+              <a href="tel:+88029844940">
+                <Phone className="h-4 w-4 mr-2" />
+                Call Us Now
+              </a>
+            </Button>
+          </div>
+
+          <div className="flex items-center justify-center gap-6 mt-10 text-sm text-white/30">
+            <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent/60" /> Free Consultation</div>
+            <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent/60" /> Custom Design</div>
+            <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent/60" /> ISO Certified</div>
+          </div>
+        </div>
       </div>
     </section>
   </Layout>
