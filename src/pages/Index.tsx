@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import {
   Flame, Home, Building2, Car,
   Target, Eye, Trophy, Award, Shield,
-  Calendar, Users, TrendingUp, ArrowRight, Truck,
-  CheckCircle, Leaf, TreePine, Recycle, Wind,
+  Calendar, Users, TrendingUp, ArrowRight, Truck, Phone,
+  CheckCircle, Leaf,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
