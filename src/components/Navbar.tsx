@@ -149,8 +149,8 @@ const Navbar = () => {
                     key={link.to}
                     to={link.to}
                     onClick={() => setOpen(false)}
-                    className={`group flex items-center justify-between py-4 px-4 rounded-2xl transition-all duration-300 ${
-                      open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                    className={`group flex items-center justify-between py-4 px-4 rounded-2xl transition-all duration-500 ease-out ${
+                      open ? "translate-y-0 opacity-100 scale-100" : "translate-y-6 opacity-0 scale-90"
                     } ${
                       isActive
                         ? "bg-white/10 text-white"
