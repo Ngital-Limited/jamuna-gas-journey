@@ -459,30 +459,8 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Mission / Vision */}
-    <section className="py-24">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="section-badge"><Eye className="h-4 w-4" /> Our Purpose</span>
-          <h2 className="section-title">Have Faith in Our Vision</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {values.map((v) => (
-            <Card key={v.title} className="border-border/50 hover:shadow-md transition-all duration-300 overflow-hidden group">
-              <CardContent className="p-7 flex gap-5">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 group-hover:from-primary/25 group-hover:to-accent/10 transition-all duration-300">
-                  <v.icon className="h-7 w-7 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">{v.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
+
+
 
     {/* Timeline */}
     <section className="py-24 bg-foreground text-background">
