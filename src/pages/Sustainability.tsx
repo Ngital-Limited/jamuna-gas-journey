@@ -59,7 +59,7 @@ const Sustainability = () => (
   <Layout>
     {/* Hero */}
     <section className="relative min-h-[70vh] flex items-center justify-center">
-      <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={sustainabilityHero} alt="" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
       <div className="container mx-auto px-4 relative z-10 py-24 text-center">
         <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white border border-white/20 backdrop-blur-sm mb-6">
