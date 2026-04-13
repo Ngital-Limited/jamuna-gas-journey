@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronRight, Flame } from "lucide-react";
+import { Menu, X, ChevronRight, Flame, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/jamuna-logo.png";
 
@@ -25,105 +25,162 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close menu on route change
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
-    <header
-      className={`sticky top-0 z-50 w-full transition-all duration-500 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-xl shadow-[0_4px_30px_-4px_rgba(0,0,0,0.12)] border-b border-border/20"
-          : "bg-transparent backdrop-blur-sm"
-      }`}
-    >
-      <div className="container mx-auto flex items-center justify-between px-4 h-[72px]">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group shrink-0">
-          <img
-            src={logo}
-            alt="Jamuna Gas"
-            className="h-12 transition-all duration-300 group-hover:scale-[1.03]"
-          />
-        </Link>
-
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-0.5">
-          {navLinks.map((link) => {
-            const isActive = location.pathname === link.to;
-            return (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`relative px-4 py-2 text-[13px] font-semibold tracking-[0.03em] uppercase transition-all duration-300 rounded-lg ${
-                  isActive
-                    ? scrolled
-                      ? "text-primary"
-                      : "text-white"
-                    : scrolled
-                      ? "text-foreground/50 hover:text-foreground hover:bg-muted/50"
-                      : "text-white/60 hover:text-white hover:bg-white/10"
-                }`}
-              >
-                {link.label}
-                {isActive && (
-                  <span className={`absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-5 h-[3px] rounded-full ${scrolled ? "bg-primary" : "bg-white"}`} />
-                )}
-              </Link>
-            );
-          })}
-        </nav>
-
-        {/* CTA */}
-        <div className="hidden lg:flex items-center gap-3">
-          <Button asChild className={`font-semibold px-6 rounded-xl shadow-lg transition-all duration-300 group ${
-            scrolled
-              ? "bg-primary hover:bg-primary/90 text-primary-foreground hover:shadow-xl hover:shadow-primary/20"
-              : "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
-          }`}>
-            <Link to="/contact">
-              <Flame className="h-4 w-4 mr-1.5" />
-              Get a Quote
-              <ChevronRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </Button>
-        </div>
-
-        {/* Mobile toggle */}
-        <button
-          className={`lg:hidden p-2 rounded-lg transition-colors ${scrolled ? "hover:bg-muted/60" : "hover:bg-white/10 text-white"}`}
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      <div
-        className={`lg:hidden overflow-hidden transition-all duration-400 ${
-          open ? "max-h-[600px] border-t border-border/40" : "max-h-0"
+    <>
+      <header
+        className={`sticky top-0 z-50 w-full transition-all duration-500 ${
+          scrolled
+            ? "bg-background/95 backdrop-blur-xl shadow-[0_4px_30px_-4px_rgba(0,0,0,0.12)] border-b border-border/20"
+            : "bg-transparent backdrop-blur-sm"
         }`}
       >
-        <nav className="bg-background px-4 py-4 space-y-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              onClick={() => setOpen(false)}
-              className={`flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-semibold tracking-wide transition-all ${
-                location.pathname === link.to
-                  ? "bg-primary/10 text-primary"
-                  : "text-foreground/60 hover:bg-muted hover:text-foreground"
+        <div className="container mx-auto flex items-center justify-between px-4 h-[72px]">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3 group shrink-0 relative z-[60]">
+            <img
+              src={logo}
+              alt="Jamuna Gas"
+              className="h-12 transition-all duration-300 group-hover:scale-[1.03]"
+            />
+          </Link>
+
+          {/* Right side: CTA + Hamburger */}
+          <div className="flex items-center gap-3">
+            {/* Phone CTA - visible on larger screens */}
+            <a
+              href="tel:+88028844940"
+              className={`hidden sm:flex items-center gap-2 text-sm font-semibold transition-all duration-300 rounded-xl px-4 py-2 ${
+                scrolled
+                  ? "text-primary hover:bg-primary/5"
+                  : "text-white/80 hover:text-white"
               }`}
             >
-              {link.label}
-              <ChevronRight className="h-4 w-4 opacity-30" />
-            </Link>
-          ))}
-          <div className="pt-3 px-1">
-            <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl h-12">
-              <Link to="/contact" onClick={() => setOpen(false)}>Get a Quote</Link>
+              <Phone className="h-4 w-4" />
+              <span className="hidden md:inline">+880 2-9844940</span>
+            </a>
+
+            {/* Get a Quote - visible on md+ */}
+            <Button asChild className={`hidden md:inline-flex font-semibold px-5 rounded-xl shadow-lg transition-all duration-300 group ${
+              scrolled
+                ? "bg-primary hover:bg-primary/90 text-primary-foreground hover:shadow-xl hover:shadow-primary/20"
+                : "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
+            }`}>
+              <Link to="/contact">
+                <Flame className="h-4 w-4 mr-1.5" />
+                Get a Quote
+              </Link>
             </Button>
+
+            {/* Hamburger Button */}
+            <button
+              onClick={() => setOpen(!open)}
+              className={`relative z-[60] p-2.5 rounded-xl transition-all duration-300 ${
+                open
+                  ? "bg-white/10 text-white"
+                  : scrolled
+                    ? "hover:bg-muted/60 text-foreground"
+                    : "hover:bg-white/10 text-white"
+              }`}
+              aria-label="Toggle menu"
+            >
+              <div className="w-6 h-5 flex flex-col justify-between relative">
+                <span className={`block h-[2px] rounded-full transition-all duration-300 origin-center ${
+                  open ? "bg-white rotate-45 translate-y-[9px]" : scrolled ? "bg-foreground" : "bg-white"
+                }`} />
+                <span className={`block h-[2px] rounded-full transition-all duration-300 ${
+                  open ? "opacity-0 scale-x-0" : scrolled ? "bg-foreground opacity-100" : "bg-white opacity-100"
+                }`} />
+                <span className={`block h-[2px] rounded-full transition-all duration-300 origin-center ${
+                  open ? "bg-white -rotate-45 -translate-y-[9px]" : scrolled ? "bg-foreground" : "bg-white"
+                }`} />
+              </div>
+            </button>
           </div>
-        </nav>
+        </div>
+      </header>
+
+      {/* Fullscreen Overlay Menu */}
+      <div
+        className={`fixed inset-0 z-[55] transition-all duration-500 ${
+          open
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {/* Dark overlay background */}
+        <div className="absolute inset-0 bg-foreground/98 backdrop-blur-xl" />
+
+        {/* Background decorations */}
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
+
+        {/* Menu Content */}
+        <div className="relative z-10 h-full flex flex-col pt-24 pb-8 overflow-y-auto">
+          <nav className="container mx-auto px-6 flex-1">
+            <div className="space-y-1">
+              {navLinks.map((link, i) => {
+                const isActive = location.pathname === link.to;
+                return (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    onClick={() => setOpen(false)}
+                    className={`group flex items-center justify-between py-4 px-4 rounded-2xl transition-all duration-300 ${
+                      open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                    } ${
+                      isActive
+                        ? "bg-white/10 text-white"
+                        : "text-white/60 hover:text-white hover:bg-white/5"
+                    }`}
+                    style={{ transitionDelay: open ? `${i * 60 + 100}ms` : "0ms" }}
+                  >
+                    <span className="text-2xl md:text-3xl font-bold tracking-tight">{link.label}</span>
+                    <ChevronRight className={`h-5 w-5 transition-transform duration-300 ${isActive ? "text-accent" : "opacity-30"} group-hover:translate-x-1`} />
+                  </Link>
+                );
+              })}
+            </div>
+          </nav>
+
+          {/* Bottom section */}
+          <div className="container mx-auto px-6 mt-auto space-y-6">
+            <div className="h-px bg-white/10" />
+
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:justify-between">
+              <div className="space-y-1">
+                <p className="text-white/40 text-xs uppercase tracking-wider font-medium">Contact Us</p>
+                <a href="tel:+88028844940" className="text-white/70 hover:text-white text-sm font-medium transition-colors flex items-center gap-2">
+                  <Phone className="h-3.5 w-3.5" /> +880 2-9844940
+                </a>
+              </div>
+
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl px-8 shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 hover:-translate-y-0.5 transition-all duration-300 group"
+              >
+                <Link to="/contact" onClick={() => setOpen(false)}>
+                  <Flame className="h-4 w-4 mr-2" />
+                  Get a Quote
+                  <ChevronRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
-    </header>
+    </>
   );
 };
 
