@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   Flame, Home, Building2, Factory, Car,
   Target, Eye, Compass, Trophy,
-  Award, Shield, Leaf, Globe,
   Calendar, Users, TrendingUp, ArrowRight, Truck,
   CheckCircle,
 } from "lucide-react";

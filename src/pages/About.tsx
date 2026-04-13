@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, Eye, Compass, Trophy, Award, Shield, Leaf, Globe, Calendar } from "lucide-react";
+import { Target, Eye, Compass, Trophy, Calendar } from "lucide-react";
 import aboutHero from "@/assets/about-hero.jpg";
 import shakiraImg from "@/assets/shakira-noor-chowdhury.jpg";
 import belayetImg from "@/assets/md-belayet-hossain.jpg";
