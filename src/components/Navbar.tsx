@@ -55,6 +55,30 @@ const Navbar = () => {
             />
           </Link>
 
+          {/* Desktop Nav Links */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.to;
+              return (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                    isActive
+                      ? scrolled
+                        ? "text-primary bg-primary/10"
+                        : "text-white bg-white/15"
+                      : scrolled
+                        ? "text-foreground/70 hover:text-foreground hover:bg-muted/60"
+                        : "text-white/70 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+
           {/* Right side: CTA + Hamburger */}
           <div className="flex items-center gap-3">
             {/* Phone CTA - visible on larger screens */}
@@ -82,10 +106,10 @@ const Navbar = () => {
               </Link>
             </Button>
 
-            {/* Hamburger Button */}
+            {/* Hamburger Button - only on mobile */}
             <button
               onClick={() => setOpen(!open)}
-              className={`relative z-[60] p-2.5 rounded-xl transition-all duration-300 ${
+              className={`lg:hidden relative z-[60] p-2.5 rounded-xl transition-all duration-300 ${
                 open
                   ? "bg-white/10 text-white"
                   : scrolled
