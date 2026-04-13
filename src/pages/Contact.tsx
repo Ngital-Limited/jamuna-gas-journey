@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { toast } from "sonner";
 import contactHero from "@/assets/contact-hero.jpg";
 
@@ -39,18 +39,21 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="space-y-6">
               {[
-                { icon: MapPin, title: "Address", info: "Dhaka, Bangladesh" },
-                { icon: Phone, title: "Phone", info: "+880-XXXX-XXXXXX" },
+                { icon: MapPin, title: "Corporate Address", info: "House 99, Rupayan Golden Age (2nd Floor), Gulshan Avenue, Dhaka-1212, Bangladesh" },
+                { icon: Clock, title: "Opening Hours", info: "Sat–Thu: 9 am – 5 pm\nFriday: Weekend" },
+                { icon: Phone, title: "Phone", info: "+880 2-9844940" },
                 { icon: Mail, title: "Email", info: "info@jamunagas.com" },
               ].map((c) => (
                 <Card key={c.title} className="border-border/60">
-                  <CardContent className="p-5 flex items-center gap-4">
-                    <div className="h-10 w-10 shrink-0 rounded-lg bg-accent/10 flex items-center justify-center">
+                  <CardContent className="p-5 flex items-start gap-4">
+                    <div className="h-10 w-10 shrink-0 rounded-lg bg-accent/10 flex items-center justify-center mt-0.5">
                       <c.icon className="h-5 w-5 text-accent" />
                     </div>
                     <div>
                       <div className="font-medium">{c.title}</div>
-                      <div className="text-sm text-muted-foreground">{c.info}</div>
+                      {c.info.split("\n").map((line, i) => (
+                        <div key={i} className="text-sm text-muted-foreground">{line}</div>
+                      ))}
                     </div>
                   </CardContent>
                 </Card>
