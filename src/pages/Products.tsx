@@ -3,12 +3,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   Home, Building2, Car, Flame, UtensilsCrossed, Building,
   Tent, Hotel, Truck, Droplets, Leaf, Box, ShieldCheck,
-  Fuel, DollarSign, Wrench, Shield,
+  Fuel, DollarSign, Wrench, Shield, Factory, Zap, Paintbrush, Cog, Sparkles,
 } from "lucide-react";
 import householdImg from "@/assets/jamuna-12kg-cylinder.png";
 import commercialImg from "@/assets/jamuna-45kg-cylinder.png";
 import autoGasImg from "@/assets/auto-gas.jpg";
 import productsHero from "@/assets/products-hero.jpg";
+import bulkImg from "@/assets/bulk-lpg-truck.png";
 
 const householdApps = [
   { icon: UtensilsCrossed, title: "Household Cooking", desc: "Primarily used in home kitchens for daily cooking needs." },
@@ -150,6 +151,72 @@ const Products = () => (
               </Card>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Bulk LPG System */}
+    <section className="py-20">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center"><Truck className="h-5 w-5 text-primary" /></div>
+          <h2 className="text-3xl font-bold">Bulk LPG System</h2>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+          <div>
+            <p className="text-muted-foreground mb-4 text-lg">
+              The bulk system is specifically designed for high-consumption industrial operations.
+            </p>
+            <p className="text-muted-foreground mb-8">
+              Jamuna Gas Bulk LPG is a modern, large-scale energy solution where liquefied petroleum gas (LPG) is transported via specialized tank trucks and stored in high-capacity containers at the user's site. Designed for uninterrupted and high-demand usage, Bulk Gas ensures efficient, safe, and cost-effective energy supply for diverse sectors.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Card className="border-primary/20 bg-primary/5">
+                <CardContent className="p-5 flex gap-3">
+                  <DollarSign className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold mb-1">Cost Efficiency</h4>
+                    <p className="text-sm text-muted-foreground">Buying LPG in bulk often comes with lower per-unit costs, helping businesses save significantly over time.</p>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="border-primary/20 bg-primary/5">
+                <CardContent className="p-5 flex gap-3">
+                  <Zap className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold mb-1">Reliable Supply</h4>
+                    <p className="text-sm text-muted-foreground">On-site bulk storage ensures a continuous supply, reducing the risk of downtime in operations due to fuel shortages.</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <img src={bulkImg} alt="Jamuna Gas bulk LPG transport truck" loading="lazy" className="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        <h3 className="text-2xl font-bold mb-2">Applications</h3>
+        <p className="text-muted-foreground mb-8">We support any industry with high LPG consumption, providing reliable bulk supply solutions to meet your energy needs.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { icon: Building2, title: "Cement Industry", desc: "In the process of making cement, raw ingredients are heated using LPG." },
+            { icon: Paintbrush, title: "Textile Industry", desc: "High-temperature procedures in the textile industry require LPG." },
+            { icon: Sparkles, title: "Glass & Ceramic", desc: "LPG is used for heating in the production of glass and ceramics." },
+            { icon: Cog, title: "Metal Industry", desc: "Metals are melted and processed using LPG." },
+            { icon: Car, title: "Automotive Industry", desc: "LPG is used in the production and testing of vehicles." },
+            { icon: Box, title: "Aerosol Industry", desc: "Aerosol products use LPG as a propellant." },
+          ].map((app) => (
+            <Card key={app.title} className="border-border/60 hover:shadow-md transition-shadow">
+              <CardContent className="p-6 text-center">
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                  <app.icon className="h-7 w-7 text-primary" />
+                </div>
+                <h4 className="font-semibold text-lg mb-2">{app.title}</h4>
+                <p className="text-sm text-muted-foreground">{app.desc}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
