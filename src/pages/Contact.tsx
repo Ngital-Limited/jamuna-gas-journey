@@ -49,12 +49,13 @@ const Contact = () => {
 
   return (
     <Layout>
-      <section className="relative min-h-[60vh] flex items-center justify-center">
+      <section className="relative min-h-[70vh] flex items-center justify-center">
         <img src={contactHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
-        <div className="container mx-auto px-4 relative z-10 py-20">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">Contact Us</h1>
-          <p className="text-white/70 text-lg max-w-xl">We'd love to hear from you. Reach out for inquiries, partnerships, or support.</p>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+        <div className="container mx-auto px-4 relative z-10 py-24 text-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white border border-white/20 backdrop-blur-sm mb-6"><MessageSquare className="h-4 w-4" /> Get in Touch</span>
+          <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">Contact Us</h1>
+          <p className="text-white/70 text-lg max-w-2xl mx-auto">We'd love to hear from you. Reach out for inquiries, partnerships, or support.</p>
         </div>
       </section>
 
