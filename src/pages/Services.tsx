@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Building, Home, Factory, Fuel, ShieldCheck, Wrench, CheckCircle } from "lucide-react";
+import { Building, Home, Factory, Fuel, ShieldCheck, Wrench, CheckCircle, ChevronRight } from "lucide-react";
 import servicesHero from "@/assets/services-hero.jpg";
 import reticulationImg from "@/assets/reticulation-service.jpg";
 import autogasImg from "@/assets/autogas-station.jpg";
@@ -28,19 +28,32 @@ const autogasFeatures = [
 const Services = () => (
   <Layout>
     {/* Hero */}
-    <section className="relative min-h-[60vh] flex items-center justify-center">
+    <section className="relative min-h-[70vh] flex items-center justify-center">
       <img src={servicesHero} alt="" className="absolute inset-0 w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
-      <div className="container mx-auto px-4 relative z-10 py-20">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">Our Services</h1>
-        <p className="text-white/70 text-lg max-w-xl">
-          Expert gas reticulation and auto gas station solutions — from design to installation and beyond.
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+      <div className="container mx-auto px-4 relative z-10 py-24 text-center">
+        <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white border border-white/20 backdrop-blur-sm mb-6"><Wrench className="h-4 w-4" /> Our Services</span>
+        <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">Expert Gas<br />Solutions</h1>
+        <p className="text-white/70 text-lg max-w-2xl mx-auto mb-12">
+          From gas reticulation systems to auto gas station installations — we deliver end-to-end solutions with safety and precision.
         </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          {[
+            { id: "reticulation", label: "Reticulation", icon: Building },
+            { id: "autogas-station", label: "Auto Gas Station", icon: Fuel },
+          ].map((p) => (
+            <a key={p.id} href={`#${p.id}`} className="group flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3 text-white hover:bg-white/20 transition-all duration-300">
+              <p.icon className="h-4 w-4 text-accent" />
+              <span className="text-sm font-medium">{p.label}</span>
+              <ChevronRight className="h-3 w-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+            </a>
+          ))}
+        </div>
       </div>
     </section>
 
     {/* Reticulation Services */}
-    <section className="py-20">
+    <section id="reticulation" className="py-20 scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -84,7 +97,7 @@ const Services = () => (
     </section>
 
     {/* Auto Gas Station Installation */}
-    <section className="py-20 bg-muted/50">
+    <section id="autogas-station" className="py-20 bg-muted/50 scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1">
