@@ -369,36 +369,8 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Certifications & Memberships */}
-    <section className="py-24 bg-muted/40">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="section-badge"><Shield className="h-4 w-4" /> Quality Assurance</span>
-          <h2 className="section-title">Certifications & Memberships</h2>
-          <p className="section-subtitle">Internationally certified and globally recognized — your guarantee of quality, safety, and excellence.</p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {certifications.map((c) => (
-            <div key={c.title} className="relative rounded-2xl border border-border/40 bg-card p-8 text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-              <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-2xl bg-muted/60 group-hover:bg-muted transition-colors p-3">
-                <img src={c.img} alt={c.title} className="h-full w-auto object-contain" />
-              </div>
-              <h3 className="font-bold mb-1.5">{c.title}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">{c.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-
-
-
     {/* Sustainability Section */}
     <section className="relative overflow-hidden">
-      {/* Full-width background image */}
       <div className="absolute inset-0">
         <img
           src={sustainabilityImg}
@@ -408,7 +380,6 @@ const Index = () => (
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
       </div>
-
       <div className="container mx-auto px-4 relative z-10 py-32 md:py-40">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-5 py-2 text-sm font-medium text-emerald-300 mb-6">
@@ -429,6 +400,29 @@ const Index = () => (
               <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
+        </div>
+      </div>
+    </section>
+
+    {/* Certifications & Memberships */}
+    <section className="py-24 bg-muted/40">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <span className="section-badge"><Shield className="h-4 w-4" /> Quality Assurance</span>
+          <h2 className="section-title">Certifications & Memberships</h2>
+          <p className="section-subtitle">Internationally certified and globally recognized — your guarantee of quality, safety, and excellence.</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          {certifications.map((c) => (
+            <div key={c.title} className="relative rounded-2xl border border-border/40 bg-card p-8 text-center group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-2xl bg-muted/60 group-hover:bg-muted transition-colors p-3">
+                <img src={c.img} alt={c.title} className="h-full w-auto object-contain" />
+              </div>
+              <h3 className="font-bold mb-1.5">{c.title}</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">{c.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
