@@ -112,7 +112,92 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Products */}
+    {/* About Section */}
+    <section className="py-24 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="section-badge"><Users className="h-4 w-4" /> Who We Are</span>
+            <h2 className="section-title">About Jamuna Gas</h2>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              Incorporated in 1998 as Jamuna Spacetech Joint Venture Limited (JSJVL), we commenced operations in 2000 as the <strong className="text-foreground">first government-approved private LPG plant</strong> in Bangladesh.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              With over two decades of excellence, Jamuna Gas has grown into a nationwide energy brand — powering millions of households and industries through a robust network of 4 bottling plants and 15+ distribution depots across the country.
+            </p>
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                <span className="text-sm">Pioneer in private LPG sector</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                <span className="text-sm">ISO 9001, 14001 & 45001 certified</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                <span className="text-sm">WLPGA member organization</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                <span className="text-sm">Best Brand Award winner</span>
+              </div>
+            </div>
+            <Button asChild size="lg" className="rounded-xl group">
+              <Link to="/about">
+                Learn Our Story
+                <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+          </div>
+          <div className="space-y-6">
+            <div className="grid grid-cols-2 gap-4">
+              <Card className="border-border/50">
+                <CardContent className="p-6 text-center">
+                  <Calendar className="h-8 w-8 text-primary mx-auto mb-3" />
+                  <div className="text-3xl font-extrabold text-foreground">1998</div>
+                  <div className="text-sm text-muted-foreground mt-1">Year Established</div>
+                </CardContent>
+              </Card>
+              <Card className="border-border/50">
+                <CardContent className="p-6 text-center">
+                  <Trophy className="h-8 w-8 text-accent mx-auto mb-3" />
+                  <div className="text-3xl font-extrabold text-foreground">24+</div>
+                  <div className="text-sm text-muted-foreground mt-1">Years of Excellence</div>
+                </CardContent>
+              </Card>
+            </div>
+            <Card className="border-border/50 bg-primary/5">
+              <CardContent className="p-6">
+                <div className="flex gap-4">
+                  <Target className="h-8 w-8 text-primary shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold mb-1">Our Mission</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      To be the leading energy provider ensuring safe, sustainable, and accessible LPG solutions across Bangladesh.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-border/50 bg-accent/5">
+              <CardContent className="p-6">
+                <div className="flex gap-4">
+                  <Eye className="h-8 w-8 text-accent shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-bold mb-1">Our Vision</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Empowering progress through clean energy — reaching every doorstep with quality, trust, and innovation.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section className="py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
