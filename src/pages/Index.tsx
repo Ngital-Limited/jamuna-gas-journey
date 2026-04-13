@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { toast } from "sonner";
 import {
+  Flame, Home, Building2, Car,
+  Target, Eye, Trophy, Award, Shield,
+  Calendar, Users, TrendingUp, ArrowRight, Truck,
+  CheckCircle,
+  Leaf, TreePine, Recycle, Wind,
+} from "lucide-react";
   Flame, Home, Building2, Car,
   Target, Eye, Compass, Trophy, Award, Shield,
   Calendar, Users, TrendingUp, ArrowRight, Truck,
