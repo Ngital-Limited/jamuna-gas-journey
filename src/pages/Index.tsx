@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import {
   Flame, Home, Building2, Car,
   Target, Eye, Trophy, Award, Shield,
-  Calendar, Users, TrendingUp, ArrowRight, Truck,
-  CheckCircle, Leaf, TreePine, Recycle, Wind,
+  Calendar, Users, TrendingUp, ArrowRight, Truck, Phone,
+  CheckCircle, Leaf,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
@@ -434,25 +434,56 @@ const Index = () => (
     </section>
 
     {/* CTA */}
-    <section className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="relative rounded-3xl bg-gradient-to-br from-primary via-primary to-primary/80 p-12 md:p-16 text-center overflow-hidden">
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Ready to Get Started?</h2>
-            <p className="text-white/80 mb-10 max-w-lg mx-auto text-lg">
-              Join over 1.5 million satisfied customers. Contact us for reliable LPG solutions tailored to your needs.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-10 rounded-xl h-13 shadow-lg group">
-                <Link to="/contact">
-                  Contact Us
-                  <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/40 text-white bg-transparent hover:bg-white/10 px-10 rounded-xl h-13">
-                <Link to="/products">Our Products</Link>
-              </Button>
+    <section className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-br from-primary via-[#0d2d4a] to-foreground">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-accent/20 rounded-full blur-[200px] -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/30 rounded-full blur-[180px] translate-x-1/3 translate-y-1/3" />
+      <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-accent/20 border border-accent/30 text-accent text-sm font-semibold mb-8">
+            <Flame className="h-4 w-4" />
+            1.5 Million+ Happy Customers
+          </div>
+
+          <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
+            Switch to <span className="text-accent">Clean Energy</span> Today
+          </h2>
+          <p className="text-white/70 mb-12 max-w-xl mx-auto text-lg md:text-xl leading-relaxed">
+            Get reliable, affordable LPG delivered to your doorstep. Join Bangladesh's most trusted energy provider.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-foreground font-bold px-10 rounded-xl h-14 text-base shadow-xl shadow-accent/25 group">
+              <Link to="/contact">
+                Get a Free Quote
+                <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+            <Button asChild size="lg" className="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 font-semibold px-10 rounded-xl h-14 text-base">
+              <Link to="/products">
+                <Phone className="h-4 w-4 mr-2" />
+                Call +880 2-9844940
+              </Link>
+            </Button>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-white/50 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="h-2 w-2 rounded-full bg-emerald-400" />
+              ISO 9001 Certified
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="h-2 w-2 rounded-full bg-emerald-400" />
+              Govt. Approved
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="h-2 w-2 rounded-full bg-emerald-400" />
+              24/7 Support
             </div>
           </div>
         </div>
