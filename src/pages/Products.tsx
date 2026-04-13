@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import {
   Home, Building2, Car, Flame, UtensilsCrossed, Building,
   Tent, Hotel, Truck, Droplets, Leaf, Box, ShieldCheck,
-  Fuel, DollarSign, Wrench, Shield, Factory, Zap, Paintbrush, Cog, Sparkles,
+  Fuel, DollarSign, Wrench, Shield, Factory, Zap, Paintbrush, Cog, Sparkles, Phone,
   ArrowRight, CheckCircle, ChevronRight,
 } from "lucide-react";
 import householdImg from "@/assets/jamuna-12kg-cylinder.png";
@@ -444,24 +444,68 @@ const Products = () => (
     </section>
 
     {/* CTA */}
-    <section className="py-24">
-      <div className="container mx-auto px-4">
-        <div className="relative rounded-3xl bg-gradient-to-br from-primary via-primary to-primary/80 p-12 md:p-16 text-center overflow-hidden">
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Need Help Choosing the Right Product?</h2>
-            <p className="text-white/80 mb-8 max-w-lg mx-auto text-lg">Our team is ready to help you find the perfect LPG solution for your home, business, or industry.</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-10 rounded-xl h-13 shadow-lg group">
-                <Link to="/contact">
-                  Get a Quote
-                  <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/40 text-white hover:bg-white/10 px-10 rounded-xl h-13">
-                <a href="tel:+88029844940">Call Us Now</a>
-              </Button>
-            </div>
+    <section className="relative py-32 overflow-hidden">
+      {/* Full-bleed dark background */}
+      <div className="absolute inset-0 bg-foreground" />
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+      
+      {/* Ambient glows */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[150px] -translate-y-1/2" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[120px] translate-y-1/2" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px]" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          {/* Badge */}
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/80 mb-8 border border-white/10">
+            <Flame className="h-4 w-4 text-accent" /> Let's Get Started
+          </span>
+
+          {/* Headline */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+            Need Help Choosing<br />
+            <span className="bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent">the Right Product?</span>
+          </h2>
+
+          <p className="text-white/50 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
+            Our team is ready to help you find the perfect LPG solution for your home, business, or industry.
+          </p>
+
+          {/* Stats row */}
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
+            {[
+              { value: "1.5M+", label: "Customers Served" },
+              { value: "24+", label: "Years of Trust" },
+              { value: "4", label: "Product Lines" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-3xl md:text-4xl font-extrabold text-white mb-1">{stat.value}</div>
+                <div className="text-xs text-white/40 uppercase tracking-wider font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-white hover:opacity-90 font-bold px-12 rounded-xl h-14 shadow-xl shadow-primary/20 group text-base">
+              <Link to="/contact">
+                Get a Free Quote
+                <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-10 rounded-xl h-14 text-base backdrop-blur-sm">
+              <a href="tel:+88029844940">
+                <Phone className="h-4 w-4 mr-2" />
+                Call Us Now
+              </a>
+            </Button>
+          </div>
+
+          {/* Trust line */}
+          <div className="flex items-center justify-center gap-6 mt-10 text-sm text-white/30">
+            <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent/60" /> Free Consultation</div>
+            <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent/60" /> Quick Response</div>
+            <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent/60" /> ISO Certified</div>
           </div>
         </div>
       </div>
