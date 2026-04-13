@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { toast } from "sonner";
 import {
   Flame, Home, Building2, Car,
   Target, Eye, Compass, Trophy, Award,
   Calendar, Users, TrendingUp, ArrowRight, Truck,
-  CheckCircle,
+  CheckCircle, Phone, MapPin, Mail, Clock,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import heroBg from "@/assets/hero-bg.jpg";
