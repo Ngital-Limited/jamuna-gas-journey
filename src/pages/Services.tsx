@@ -54,70 +54,101 @@ const Services = () => (
 
     {/* Reticulation Services */}
     <section id="reticulation" className="py-28 scroll-mt-20 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <span className="section-badge"><Building className="h-4 w-4" /> Core Service</span>
           <h2 className="section-title">Reticulation Services</h2>
-          <p className="section-subtitle">From residential to commercial and industrial spaces — safe, efficient, and reliable gas reticulation solutions tailored to your project.</p>
+          <p className="section-subtitle max-w-2xl mx-auto">Complete gas distribution systems for residential, commercial, and industrial spaces — engineered for safety and efficiency.</p>
+          <div className="mx-auto mt-6 h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full" />
         </div>
 
-        <div className="relative rounded-3xl border border-border/30 bg-gradient-to-br from-card via-card to-muted/30 overflow-hidden mb-16">
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-          <div className="grid grid-cols-1 lg:grid-cols-12 relative z-10">
-            <div className="lg:col-span-5 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5" />
-              <img src={reticulationImg} alt="Gas reticulation piping system" loading="lazy" className="w-full h-full min-h-[400px] object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/20 hidden lg:block" />
-            </div>
-            <div className="lg:col-span-7 p-8 lg:p-14 flex flex-col justify-center">
-              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Jamuna Gas provides comprehensive gas reticulation solutions — from initial <strong className="text-foreground">design and engineering</strong> to installation and ongoing maintenance — ensuring safety and efficiency at every step.
-              </p>
-              <div className="grid grid-cols-3 gap-3 mb-8">
-                {[
-                  { icon: Home, label: "Residential", tag: "Apartments" },
-                  { icon: Building, label: "Commercial", tag: "Offices" },
-                  { icon: Factory, label: "Industrial", tag: "Factories" },
-                ].map((t) => (
-                  <div key={t.label} className="relative rounded-2xl border border-primary/20 bg-card p-5 text-center group hover:shadow-lg hover:border-primary/40 transition-all duration-300 overflow-hidden">
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-t-2xl" />
-                    <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <t.icon className="h-6 w-6 text-primary" />
+        {/* Hero card with image */}
+        <div className="relative group rounded-3xl border border-border/30 overflow-hidden mb-20 shadow-xl">
+          <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-r from-primary/10 via-accent/5 to-primary/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+          <div className="relative bg-gradient-to-br from-card via-card to-muted/30 overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+            <div className="grid grid-cols-1 lg:grid-cols-12">
+              <div className="lg:col-span-5 relative">
+                <img src={reticulationImg} alt="Gas reticulation piping system" loading="lazy" className="w-full h-full min-h-[450px] object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-card/30" />
+                {/* Floating stats on image */}
+                <div className="absolute bottom-6 left-6 right-6 lg:bottom-8 lg:left-8 lg:right-8 flex gap-3">
+                  {[
+                    { value: "500+", label: "Systems Installed" },
+                    { value: "99.9%", label: "Uptime" },
+                  ].map((s) => (
+                    <div key={s.label} className="bg-black/60 backdrop-blur-md rounded-xl px-4 py-3 border border-white/10 flex-1 text-center">
+                      <p className="text-lg font-extrabold text-white">{s.value}</p>
+                      <p className="text-[10px] text-white/50 uppercase tracking-wider">{s.label}</p>
                     </div>
-                    <h4 className="font-bold text-sm">{t.label}</h4>
-                    <span className="text-[10px] font-medium bg-primary/10 text-primary rounded-full px-2.5 py-0.5 mt-2 inline-block">{t.tag}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-              <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> ISO Certified</div>
-                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> BPC Approved</div>
-                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary" /> 24/7 Support</div>
+              <div className="lg:col-span-7 p-8 lg:p-14 flex flex-col justify-center">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="h-10 w-1.5 bg-gradient-to-b from-primary via-accent to-primary/30 rounded-full" />
+                  <h3 className="text-2xl md:text-3xl font-bold">End-to-End Gas Distribution</h3>
+                </div>
+                <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                  Jamuna Gas provides comprehensive gas reticulation solutions — from initial <strong className="text-foreground">design and engineering</strong> to installation and ongoing maintenance — ensuring safety and efficiency at every step.
+                </p>
+
+                {/* Sector cards */}
+                <div className="grid grid-cols-3 gap-3 mb-8">
+                  {[
+                    { icon: Home, label: "Residential", tag: "Apartments & Homes", color: "primary" },
+                    { icon: Building, label: "Commercial", tag: "Offices & Malls", color: "accent" },
+                    { icon: Factory, label: "Industrial", tag: "Factories & Plants", color: "primary" },
+                  ].map((t) => (
+                    <div key={t.label} className="relative rounded-2xl border border-border/40 bg-card p-5 text-center group/card hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 origin-left" />
+                      <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 group-hover/card:from-primary/25 group-hover/card:to-accent/10 transition-all">
+                        <t.icon className="h-7 w-7 text-primary" />
+                      </div>
+                      <h4 className="font-bold text-sm mb-1">{t.label}</h4>
+                      <span className="text-[10px] font-medium text-muted-foreground">{t.tag}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                  {["ISO Certified", "BPC Approved", "24/7 Support"].map((badge) => (
+                    <div key={badge} className="flex items-center gap-2 bg-muted/50 rounded-full px-4 py-1.5">
+                      <CheckCircle className="h-3.5 w-3.5 text-primary" />
+                      <span className="text-xs font-medium">{badge}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Features grid */}
         <div>
-          <h3 className="text-2xl font-bold mb-3 flex items-center gap-3">
-            <div className="h-8 w-1 bg-primary rounded-full" />
-            What We Offer
-          </h3>
-          <p className="text-muted-foreground mb-8 ml-5">End-to-end reticulation services for every scale.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {reticulationFeatures.map((f) => (
-              <div key={f.title} className="relative rounded-2xl border border-border/40 bg-card p-6 group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] to-accent/[0.03] opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative z-10 flex gap-4">
-                  <div className="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center group-hover:from-primary/25 group-hover:to-accent/10 transition-all duration-300">
-                    <f.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-sm mb-0.5">{f.title}</h4>
-                    <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
+          <div className="flex items-center gap-3 mb-3">
+            <div className="h-8 w-1.5 bg-gradient-to-b from-primary to-accent rounded-full" />
+            <h3 className="text-2xl font-bold">What We Offer</h3>
+          </div>
+          <p className="text-muted-foreground mb-10 ml-5">End-to-end reticulation services for every scale.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {reticulationFeatures.map((f, idx) => (
+              <div key={f.title} className="relative rounded-2xl border border-border/40 bg-card p-7 group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] to-accent/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className="relative z-10">
+                  <div className="flex items-start gap-4">
+                    <div className="h-12 w-12 shrink-0 rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center group-hover:from-primary/25 group-hover:to-accent/15 transition-all duration-300 shadow-sm">
+                      <f.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-primary/60 mb-1 block">0{idx + 1}</span>
+                      <h4 className="font-bold mb-1.5">{f.title}</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                    </div>
                   </div>
                 </div>
               </div>
