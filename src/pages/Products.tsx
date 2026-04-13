@@ -325,35 +325,57 @@ const Products = () => (
       </div>
     </section>
 
-    {/* Auto Gas */}
-    <section id="autogas" className="py-24 scroll-mt-20">
-      <div className="container mx-auto px-4">
+    {/* Auto Gas - Premium Showcase */}
+    <section id="autogas" className="py-24 scroll-mt-20 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="section-badge"><Car className="h-4 w-4" /> Green Mobility</span>
           <h2 className="section-title">Auto Gas</h2>
           <p className="section-subtitle">Clean, efficient, and eco-friendly fuel alternative for vehicles — driving a greener Bangladesh.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="rounded-2xl overflow-hidden shadow-xl">
-            <img src={autoGasImg} alt="Jamuna Gas Auto Gas refueling station" loading="lazy" className="w-full h-[400px] object-cover" />
-          </div>
-          <div>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Auto Gas (Automotive LPG) is a clean, efficient, and eco-friendly fuel alternative for vehicles. Jamuna Gas offers high-quality Auto Gas solutions for cost-effective and environmentally responsible transportation.
-            </p>
-            <div className="grid gap-4">
-              {autoFeatures.map((f) => (
-                <div key={f.title} className="flex gap-4 items-start group">
-                  <div className="h-11 w-11 shrink-0 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                    <f.icon className="h-5 w-5 text-accent" />
+        <div className="relative rounded-3xl border border-border/30 bg-gradient-to-br from-card via-card to-muted/30 overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 relative z-10">
+            {/* Image */}
+            <div className="lg:col-span-5 relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5" />
+              <img src={autoGasImg} alt="Jamuna Gas Auto Gas refueling station" loading="lazy" className="w-full h-full min-h-[350px] object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/20 hidden lg:block" />
+            </div>
+
+            {/* Content */}
+            <div className="lg:col-span-7 p-8 lg:p-14 flex flex-col justify-center">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                Auto Gas (Automotive LPG) is a clean, efficient, and eco-friendly fuel alternative for vehicles. Jamuna Gas offers high-quality Auto Gas solutions for <strong className="text-foreground">cost-effective and environmentally responsible</strong> transportation.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                {autoFeatures.map((f) => (
+                  <div key={f.title} className="relative rounded-2xl border border-border/40 bg-card p-5 group hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/[0.02] to-primary/[0.03] opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="relative z-10 flex gap-4">
+                      <div className="h-11 w-11 shrink-0 rounded-xl bg-gradient-to-br from-accent/15 to-accent/5 flex items-center justify-center group-hover:from-accent/25 group-hover:to-accent/10 transition-all duration-300">
+                        <f.icon className="h-5 w-5 text-accent" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-sm mb-0.5">{f.title}</h3>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold mb-0.5">{f.title}</h3>
-                    <p className="text-sm text-muted-foreground">{f.desc}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Up to 40% Savings</div>
+                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Lower Emissions</div>
+                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Safe & Certified</div>
+              </div>
             </div>
           </div>
         </div>
