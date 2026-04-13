@@ -2,6 +2,10 @@ import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Compass, Trophy, Award, Shield, Leaf, Globe, Calendar } from "lucide-react";
 import aboutHero from "@/assets/about-hero.jpg";
+import shakiraImg from "@/assets/shakira-noor-chowdhury.jpg";
+import belayetImg from "@/assets/md-belayet-hossain.jpg";
+import yasinImg from "@/assets/mohammad-yasin-arafat.jpg";
+import fahimImg from "@/assets/fahim-shahrier.jpg";
 
 const values = [
   { icon: Target, title: "Mission", desc: "Continuously strive to meet customer needs by offering the best possible service, price, and support." },
@@ -22,6 +26,37 @@ const timeline = [
   { year: "2000", event: "Commenced operations as the first government-approved private LPG plant in Bangladesh." },
   { year: "2023", event: "Won the Best Brand Award for customer satisfaction and trust." },
   { year: "2024", event: "Entered 24th year of operations — 2 Decades Anniversary. Won Best Brand Award again." },
+];
+
+const boardMembers = [
+  {
+    name: "Shakira Noor Chowdhury",
+    title: "Chairman",
+    image: shakiraImg,
+    heading: "Chairman's Note",
+    message: "At Jamuna Gas, we believe that energy is the backbone of progress, and our mission is to ensure its accessibility in the most sustainable and responsible manner. Through continuous investment in cutting-edge technology, infrastructure, and safety standards, we have built a robust distribution network that delivers LPG to households and industries with unmatched efficiency.\n\nAs we look toward the future, our focus remains on excellence, sustainability, and growth. We are committed to expanding our reach, adopting eco-friendly solutions, and enhancing the customer experience through innovation and service excellence.",
+  },
+  {
+    name: "Md. Belayet Hossain",
+    title: "Managing Director, JSJVL",
+    image: belayetImg,
+    heading: "Managing Director's Address",
+    message: "In today's fast-evolving world, energy plays a vital role in driving progress, and we at Jamuna Gas are devoted to ensuring that our customers receive the highest quality LPG products with the utmost safety and convenience. Our state-of-the-art bottling, marketing, and distribution network is built on the foundation of trust and excellence, enabling us to meet the growing energy demands of Bangladesh.\n\nOur skilled manpower, cutting-edge technology, and efficient distribution network, we are committed to reaching every doorstep across the nation very soon. Our goal is to ensure that clean, efficient, and affordable energy is accessible to all, contributing to economic growth and a better quality of life.",
+  },
+  {
+    name: "Mohammad Yasin Arafat",
+    title: "Director, JSJVL",
+    image: yasinImg,
+    heading: "Director's Message",
+    message: "I am proud to lead a company that stands at the forefront of delivering reliable and high-quality LPG solutions through Jamuna Gas. Our commitment to safety, sustainability, and customer satisfaction drives everything we do.\n\nTo our customers, thank you for choosing Jamuna Gas as your trusted partner. We are dedicated to providing you with the best products and services, ensuring your homes and businesses run smoothly and efficiently.\n\nTo our dedicated employees, your hard work and passion are the backbone of our success. Together, we are building a brighter, safer, and more sustainable future for everyone.",
+  },
+  {
+    name: "Fahim Shahrier",
+    title: "Director, JSJVL",
+    image: fahimImg,
+    heading: "Director's Message",
+    message: "I would like to take this opportunity to express my heartfelt gratitude to each and every one of you for your hard work, dedication, and commitment to the success of Jamuna Gas. It is your unwavering passion and continuous efforts that have helped us grow and become a leader in the LPG industry.\n\nAs we move forward, let's continue to strive for excellence in everything we do. Our success relies on each team member's contribution, and together, we will reach new heights.\n\nLet's stay focused, stay motivated, and continue to work as a united team to achieve our goals and deliver exceptional service to our customers.",
+  },
 ];
 
 const About = () => (
