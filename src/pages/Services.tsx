@@ -8,21 +8,21 @@ import reticulationImg from "@/assets/reticulation-service.jpg";
 import autogasImg from "@/assets/autogas-station.jpg";
 
 const reticulationFeatures = [
-  "Residential apartment gas distribution",
-  "Commercial building reticulation systems",
-  "Industrial facility gas piping",
-  "System design and engineering",
-  "Safety compliance and certification",
-  "Ongoing maintenance and support",
+  { icon: Home, title: "Residential Distribution", desc: "Apartment gas distribution systems with metered supply for each unit." },
+  { icon: Building, title: "Commercial Systems", desc: "Large-scale reticulation for commercial buildings and complexes." },
+  { icon: Factory, title: "Industrial Piping", desc: "Heavy-duty gas piping for industrial facilities and manufacturing plants." },
+  { icon: PenTool, title: "System Design", desc: "Complete engineering design and planning tailored to your project." },
+  { icon: ShieldCheck, title: "Safety Compliance", desc: "Full certification and compliance with national and international standards." },
+  { icon: Settings, title: "Maintenance & Support", desc: "Ongoing maintenance, inspections, and 24/7 technical support." },
 ];
 
 const autogasFeatures = [
-  "Complete station design and setup",
-  "Fuel dispenser installation",
-  "Safety equipment and fire suppression",
-  "Underground tank installation",
-  "Regulatory compliance and permits",
-  "Staff training and certification",
+  { icon: PenTool, title: "Station Design & Setup", desc: "Complete turnkey design from site planning to commissioning." },
+  { icon: Fuel, title: "Dispenser Installation", desc: "High-precision fuel dispensers with digital metering systems." },
+  { icon: ShieldCheck, title: "Fire Safety Systems", desc: "Advanced safety equipment and fire suppression installations." },
+  { icon: Settings, title: "Tank Installation", desc: "Underground and above-ground tank installation with leak detection." },
+  { icon: Wrench, title: "Regulatory Compliance", desc: "End-to-end permits, licensing, and regulatory approvals." },
+  { icon: Zap, title: "Staff Training", desc: "Comprehensive training and certification for station operators." },
 ];
 
 const Services = () => (
