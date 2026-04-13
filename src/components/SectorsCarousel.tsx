@@ -59,7 +59,15 @@ const SectorsCarousel = () => {
   useEffect(() => {
     if (isHovered) return;
     const timer = setInterval(() => {
-      setCurrent((c) => (c >= maxIndex ? 0 : c + 1));
+      setCurrent((c) => {
+        const next = c >= maxIndex ? 0 : c + 1;
+        setPrevCurrent(c);
+        setAnimKey((k) => k + 1);
+        return next;
+      });
+    }, AUTO_PLAY_INTERVAL);
+    return () => clearInterval(timer);
+  }, [maxIndex, isHovered]);
     }, AUTO_PLAY_INTERVAL);
     return () => clearInterval(timer);
   }, [maxIndex, isHovered]);
