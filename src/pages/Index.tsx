@@ -117,86 +117,103 @@ const Index = () => (
     </section>
 
     {/* About Section */}
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="section-badge"><Users className="h-4 w-4" /> Who We Are</span>
-            <h2 className="section-title">About Jamuna Gas</h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Incorporated in 1998 as Jamuna Spacetech Joint Venture Limited (JSJVL), we commenced operations in 2000 as the <strong className="text-foreground">first government-approved private LPG plant</strong> in Bangladesh.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              With over two decades of excellence, Jamuna Gas has grown into a nationwide energy brand — powering millions of households and industries through a robust network of 4 bottling plants and 15+ distribution depots across the country.
-            </p>
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="flex items-start gap-3">
-                <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                <span className="text-sm">Pioneer in private LPG sector</span>
+    <section className="py-24 relative overflow-hidden">
+      {/* Background Accents */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <span className="section-badge"><Users className="h-4 w-4" /> Who We Are</span>
+          <h2 className="section-title">About Jamuna Gas</h2>
+          <p className="section-subtitle">Bangladesh's pioneer in LPG — delivering energy, trust, and excellence since 2000.</p>
+        </div>
+
+        {/* Main Content Card */}
+        <div className="relative rounded-3xl border border-border/30 bg-gradient-to-br from-card via-card to-muted/30 overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 relative z-10">
+            {/* Left - Story */}
+            <div className="lg:col-span-7 p-8 md:p-12 lg:p-14">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <Flame className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <div className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Established</div>
+                  <div className="text-lg font-bold">Since 1998</div>
+                </div>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                <span className="text-sm">ISO 9001, 14001 & 45001 certified</span>
+              
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                Incorporated as <strong className="text-foreground">Jamuna Spacetech Joint Venture Limited (JSJVL)</strong>, we commenced operations in 2000 as the first government-approved private LPG plant in Bangladesh.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                With over two decades of excellence, Jamuna Gas has grown into a nationwide energy brand — powering millions of households and industries through a robust network of <strong className="text-foreground">4 bottling plants</strong> and <strong className="text-foreground">15+ distribution depots</strong> across the country.
+              </p>
+
+              {/* Highlights */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                {[
+                  { icon: CheckCircle, text: "Pioneer in private LPG sector", color: "text-primary" },
+                  { icon: CheckCircle, text: "ISO 9001, 14001 & 45001 certified", color: "text-primary" },
+                  { icon: CheckCircle, text: "WLPGA member organization", color: "text-primary" },
+                  { icon: CheckCircle, text: "Best Brand Award winner", color: "text-primary" },
+                ].map((item) => (
+                  <div key={item.text} className="flex items-center gap-2.5 bg-muted/50 rounded-xl px-4 py-3">
+                    <item.icon className={`h-4 w-4 ${item.color} shrink-0`} />
+                    <span className="text-sm font-medium">{item.text}</span>
+                  </div>
+                ))}
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                <span className="text-sm">WLPGA member organization</span>
+
+              <Button asChild size="lg" className="rounded-xl group shadow-lg shadow-primary/20">
+                <Link to="/about">
+                  Learn Our Full Story
+                  <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
+
+            {/* Right - Stats & Vision */}
+            <div className="lg:col-span-5 bg-foreground text-background p-8 md:p-12 lg:p-14 flex flex-col justify-center">
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {[
+                  { value: "1998", label: "Year Established", icon: Calendar },
+                  { value: "24+", label: "Years of Excellence", icon: Trophy },
+                  { value: "1.5M+", label: "Customers Served", icon: Users },
+                  { value: "15+", label: "Distribution Depots", icon: Truck },
+                ].map((s) => (
+                  <div key={s.label} className="rounded-xl bg-white/5 border border-white/10 p-4 text-center hover:bg-white/10 transition-colors">
+                    <s.icon className="h-5 w-5 text-accent mx-auto mb-2" />
+                    <div className="text-2xl font-extrabold text-white">{s.value}</div>
+                    <div className="text-[11px] text-white/50 mt-0.5">{s.label}</div>
+                  </div>
+                ))}
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                <span className="text-sm">Best Brand Award winner</span>
+
+              <div className="space-y-4">
+                <div className="rounded-xl bg-white/5 border border-white/10 p-5">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Target className="h-5 w-5 text-accent shrink-0" />
+                    <h3 className="font-bold text-white text-sm">Our Mission</h3>
+                  </div>
+                  <p className="text-xs text-white/60 leading-relaxed">
+                    To be the leading energy provider ensuring safe, sustainable, and accessible LPG solutions across Bangladesh.
+                  </p>
+                </div>
+                <div className="rounded-xl bg-white/5 border border-white/10 p-5">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Eye className="h-5 w-5 text-accent shrink-0" />
+                    <h3 className="font-bold text-white text-sm">Our Vision</h3>
+                  </div>
+                  <p className="text-xs text-white/60 leading-relaxed">
+                    Empowering progress through clean energy — reaching every doorstep with quality, trust, and innovation.
+                  </p>
+                </div>
               </div>
             </div>
-            <Button asChild size="lg" className="rounded-xl group">
-              <Link to="/about">
-                Learn Our Story
-                <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-          <div className="space-y-6">
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="border-border/50">
-                <CardContent className="p-6 text-center">
-                  <Calendar className="h-8 w-8 text-primary mx-auto mb-3" />
-                  <div className="text-3xl font-extrabold text-foreground">1998</div>
-                  <div className="text-sm text-muted-foreground mt-1">Year Established</div>
-                </CardContent>
-              </Card>
-              <Card className="border-border/50">
-                <CardContent className="p-6 text-center">
-                  <Trophy className="h-8 w-8 text-accent mx-auto mb-3" />
-                  <div className="text-3xl font-extrabold text-foreground">24+</div>
-                  <div className="text-sm text-muted-foreground mt-1">Years of Excellence</div>
-                </CardContent>
-              </Card>
-            </div>
-            <Card className="border-border/50 bg-primary/5">
-              <CardContent className="p-6">
-                <div className="flex gap-4">
-                  <Target className="h-8 w-8 text-primary shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-bold mb-1">Our Mission</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      To be the leading energy provider ensuring safe, sustainable, and accessible LPG solutions across Bangladesh.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="border-border/50 bg-accent/5">
-              <CardContent className="p-6">
-                <div className="flex gap-4">
-                  <Eye className="h-8 w-8 text-accent shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-bold mb-1">Our Vision</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Empowering progress through clean energy — reaching every doorstep with quality, trust, and innovation.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
