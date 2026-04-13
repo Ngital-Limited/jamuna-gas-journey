@@ -24,12 +24,6 @@ const products = [
   { icon: Car, title: "Auto Gas", desc: "Clean-burning, cost-effective LPG for vehicles.", link: "/products#autogas", tag: "Eco-Friendly", color: "accent" as const },
 ];
 
-const values = [
-  { icon: Target, title: "Mission", desc: "Continuously strive to meet customer needs by offering the best possible service, price, and support." },
-  { icon: Eye, title: "Vision", desc: "To lead the LP gas sector in Bangladesh by operating and providing a high standard of excellence." },
-  { icon: Compass, title: "Objective", desc: "Provide safe, reliable, and efficient LPG solutions while ensuring sustainability and customer satisfaction." },
-  { icon: Trophy, title: "Goal", desc: "Ensure customer satisfaction by consistently providing the best product and service that meet ultimate expectations." },
-];
 
 import iso9001 from "@/assets/iso-9001.png";
 import iso14001 from "@/assets/iso-14001.png";
