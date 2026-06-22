@@ -60,28 +60,28 @@ const Index = () => (
     {/* Hero */}
     <section className="relative min-h-[100vh] flex items-end overflow-hidden">
       <img src={heroFamily} alt="" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
-      <div className="absolute inset-0 bg-black/50" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
       <div className="container mx-auto px-4 relative z-10 pb-16 pt-40">
-        <div className="flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-fade-up">
+        <div className="flex flex-col items-start text-left max-w-2xl">
+          <div className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-fade-up">
             <Flame className="h-4 w-4 text-accent" />
             Since 2000 — Bangladesh's Pioneer in LPG
           </div>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-5 tracking-tight animate-fade-up max-w-4xl" style={{ animationDelay: "0.1s" }}>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-5 tracking-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Powering <span className="text-accent">Bangladesh's</span> Future
           </h1>
-          <p className="text-base md:text-lg text-white/80 mb-8 max-w-2xl leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <p className="text-base md:text-lg text-white/90 mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
             Delivering safe, reliable energy to over 1.5 million customers through cutting-edge LPG infrastructure.
           </p>
-          <div className="flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+          <div className="flex flex-wrap gap-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-6 h-11 rounded-xl shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 group">
               <Link to="/products">
                 Explore Products
                 <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="border-white/30 text-white bg-transparent hover:bg-white/10 hover:border-white/50 text-sm px-6 h-11 rounded-xl backdrop-blur-sm transition-all duration-300">
+            <Button asChild variant="outline" className="border-white/40 text-white bg-transparent hover:bg-white/10 hover:border-white/60 text-sm px-6 h-11 rounded-xl backdrop-blur-sm transition-all duration-300">
               <Link to="/about">Learn More</Link>
             </Button>
           </div>
