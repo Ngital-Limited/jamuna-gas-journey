@@ -43,7 +43,7 @@ const Footer = () => (
               <span className="text-sm text-white/70">Sat–Thu: 9am – 5pm</span>
             </div>
           </div>
-          <Button asChild size="sm" className="bg-accent hover:bg-accent/90 text-foreground font-bold rounded-lg px-5 shadow-md shadow-black/20 group">
+          <Button asChild size="sm" className="bg-gradient-to-br from-accent via-accent to-accent/90 border border-white/20 text-foreground font-bold rounded-lg px-5 shadow-[0_4px_14px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 active:translate-y-0 hover:brightness-110 transition-all duration-300 btn-shine group">
             <Link to="/contact">
               Get a Quote
               <ArrowRight className="h-3.5 w-3.5 ml-1.5 transition-transform group-hover:translate-x-0.5" />

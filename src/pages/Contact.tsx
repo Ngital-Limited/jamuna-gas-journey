@@ -234,7 +234,7 @@ const Contact = () => {
                         <Label htmlFor="message" className="text-sm font-semibold flex items-center gap-1">Message <span className="text-accent">*</span></Label>
                         <Textarea id="message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your requirements..." rows={5} maxLength={1000} className="rounded-xl border-border/50 bg-background/50 focus:border-primary focus:ring-1 focus:ring-primary/20 resize-none transition-all" />
                       </div>
-                      <Button type="submit" size="lg" className="w-full h-14 rounded-xl bg-gradient-to-r from-primary to-accent text-white hover:opacity-90 font-bold text-base shadow-lg shadow-primary/20 group">
+                      <Button type="submit" size="lg" variant="premium" className="w-full h-14 btn-shine text-base">
                         Send Message
                         <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
                       </Button>
