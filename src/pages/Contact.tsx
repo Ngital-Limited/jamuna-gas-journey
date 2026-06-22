@@ -5,64 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Clock, Factory, Building2, MessageSquare, ArrowRight, CheckCircle, Send, Flame } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Factory, MessageSquare, ArrowRight, CheckCircle, Send } from "lucide-react";
 import { toast } from "sonner";
 import contactHero from "@/assets/contact-hero.jpg";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-
-// Fix default marker icon
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png",
-  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
-});
 
 const plants = [
   { name: "Kaligonj Plant", address: "Barihati, Sluice Gate, Kaliganj -1720", phone: "+88 01769-969496", lat: 23.3975, lng: 90.2183 },
   { name: "Mongla Plant", address: "14, Mongla Port Industrial Area, Mongla, Bagerhat, Khulna", phone: "+88 01769-969482", lat: 22.4934, lng: 89.5977 },
   { name: "Bogra Plant", address: "Dhaka Rangpur Highway, Noymile, Bogra", phone: "+88 01755-555345", lat: 24.8465, lng: 89.3773 },
   { name: "Cumilla Plant", address: "Anandapur, Patodda Bazar, Chauddagram, Comilla", phone: "+88 01769-969420", lat: 23.2200, lng: 91.1800 },
-];
-
-const plantIcon = new L.Icon({
-  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
-  iconRetinaUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
-
-const depotIcon = new L.Icon({
-  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png",
-  iconRetinaUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
-
-const depots = [
-  { name: "Chittagong Office", address: "House: 05, Lane:05, Road No: 01, Block: L Halishahar Housing Estate, Chittagong", phone: "+88 01755-555382", lat: 22.3569, lng: 91.7832 },
-  { name: "Demra Depot", address: "Bhanga Press, Demra Road, Jatrabari, Dhaka", phone: "+88 01755-555183", lat: 23.7186, lng: 90.4972 },
-  { name: "Gazipur Depot", address: "Member Bari, Mouna, Gazipur", phone: "+88 01769-969402", lat: 24.0023, lng: 90.4264 },
-  { name: "Barishal Depot", address: "Near Kimini Felling Station, West Rahamatpur, Barishal", phone: "+88 01755-555184", lat: 22.7010, lng: 90.3535 },
-  { name: "Bhairab Depot", address: "Kanchan Market, Lakhimpur, Bhairab", phone: "+88 01769-969388", lat: 24.0524, lng: 90.9787 },
-  { name: "Chittagong Depot", address: "Saltgola Crossing, Chittagong", phone: "+88 01769-969403", lat: 22.3384, lng: 91.8317 },
-  { name: "Companigonj Depot", address: "Companigonj, Cumilla", phone: "+88 01755-555388", lat: 23.2688, lng: 91.1168 },
-  { name: "Cumilla Depot", address: "Paduar Bazar, Comilla", phone: "+88 01769-969470", lat: 23.4607, lng: 91.1809 },
-  { name: "Jhenidah Depot", address: "Hamdho Bypass Road, Jhenaidah", phone: "+88 01769-969488", lat: 23.5448, lng: 89.1726 },
-  { name: "Manikganj Depot", address: "Boitora, Jagir, Manikganj", phone: "+88 01769-969385", lat: 23.8644, lng: 90.0047 },
-  { name: "Madaripur Depot", address: "Katherpul, Daukendua, Madaripur", phone: "+88 01769-969399", lat: 23.1641, lng: 90.1978 },
-  { name: "Mymensingh Depot", address: "Highway Filling Station, Char Kalibari, Mymensingh", phone: "+88 01769-969366", lat: 24.7471, lng: 90.4203 },
-  { name: "Rangpur Depot", address: "Balabari, Taragonj, Rangpur", phone: "+88 01769-969377", lat: 25.7439, lng: 89.2752 },
-  { name: "Sylhet Depot", address: "Dokkhin Surma, Bypass Road, Sylhet", phone: "+88 01769-969388", lat: 24.8949, lng: 91.8687 },
-  { name: "Tangail Depot", address: "Gharinda, Tangail", phone: "+88 01769-969365", lat: 24.2513, lng: 89.9164 },
 ];
 
 const Contact = () => {
@@ -291,87 +242,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Depot Addresses with Map */}
-      <section className="py-28 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3" />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <span className="section-badge"><Building2 className="h-4 w-4" /> Distribution Network</span>
-            <h2 className="section-title">Depot Addresses</h2>
-            <p className="section-subtitle">Our nationwide depot network ensures fast and reliable LPG delivery to every corner of Bangladesh.</p>
-          </div>
-
-          {/* Interactive Map */}
-          <div className="relative rounded-3xl border border-border/30 overflow-hidden mb-12 shadow-xl">
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-accent via-primary to-accent rounded-t-3xl z-[1000]" />
-            <div className="h-[500px] w-full">
-              <MapContainer
-                center={[23.8, 90.4]}
-                zoom={7}
-                scrollWheelZoom={false}
-                className="h-full w-full"
-                style={{ borderRadius: "1.5rem" }}
-              >
-                <TileLayer
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                {plants.map((p) => (
-                  <Marker key={p.name} position={[p.lat, p.lng]} icon={plantIcon}>
-                    <Popup>
-                      <div className="text-sm">
-                        <span className="inline-block bg-red-100 text-red-700 text-[10px] font-bold uppercase px-2 py-0.5 rounded mb-1">Plant</span>
-                        <strong className="block text-base mb-1">{p.name}</strong>
-                        <span className="block text-muted-foreground mb-1">{p.address}</span>
-                        <a href={`tel:${p.phone.replace(/\s/g, "")}`} className="text-primary font-medium">{p.phone}</a>
-                      </div>
-                    </Popup>
-                  </Marker>
-                ))}
-                {depots.map((d) => (
-                  <Marker key={d.name} position={[d.lat, d.lng]} icon={depotIcon}>
-                    <Popup>
-                      <div className="text-sm">
-                        <span className="inline-block bg-blue-100 text-blue-700 text-[10px] font-bold uppercase px-2 py-0.5 rounded mb-1">Depot</span>
-                        <strong className="block text-base mb-1">{d.name}</strong>
-                        <span className="block text-muted-foreground mb-1">{d.address}</span>
-                        <a href={`tel:${d.phone.replace(/\s/g, "")}`} className="text-primary font-medium">{d.phone}</a>
-                      </div>
-                    </Popup>
-                  </Marker>
-                ))}
-              </MapContainer>
-            </div>
-            {/* Legend */}
-            <div className="absolute bottom-4 left-4 z-[1000] bg-white/90 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg border border-border/30 flex items-center gap-5 text-xs font-medium">
-              <div className="flex items-center gap-2">
-                <span className="inline-block w-3 h-3 rounded-full bg-red-500" />
-                Plants ({plants.length})
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="inline-block w-3 h-3 rounded-full bg-blue-500" />
-                Depots ({depots.length})
-              </div>
-            </div>
-          </div>
-
-
-          {/* Bottom stats */}
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mt-12">
-            {[
-              { value: "15+", label: "Depots Nationwide" },
-              { value: "4", label: "Bottling Plants" },
-              { value: "64", label: "Districts Covered" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-extrabold text-foreground mb-1">{stat.value}</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };
