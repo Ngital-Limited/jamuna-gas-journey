@@ -171,13 +171,13 @@ const Safety = () => (
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-white hover:opacity-90 font-bold px-12 rounded-xl h-14 shadow-xl shadow-primary/20 group text-base">
+            <Button asChild size="lg" variant="premium" className="btn-shine text-base">
               <Link to="/contact">
                 Contact Us
                 <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-white/20 text-white bg-transparent hover:bg-white/10 px-10 rounded-xl h-14 text-base backdrop-blur-sm">
+            <Button asChild variant="outline" size="lg" className="border-white/30 text-white bg-white/10 hover:bg-white/20 hover:border-white/50 px-10 rounded-xl h-14 text-base backdrop-blur-sm transition-all duration-300">
               <a href="tel:+88029844940">
                 <PhoneCall className="h-4 w-4 mr-2" />
                 Emergency Helpline
