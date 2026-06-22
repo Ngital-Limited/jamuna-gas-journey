@@ -77,31 +77,37 @@ const Index = () => {
       {/* Hero */}
       <section className="relative min-h-[100vh] flex items-end overflow-hidden">
         {slides.map((slide, i) => (
-          <img
+          <div
             key={slide.src}
-            src={slide.src}
-            alt={slide.alt}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              i === currentSlide ? "opacity-100" : "opacity-0"
+            className={`absolute inset-0 transition-opacity duration-[1400ms] ease-out ${
+              i === currentSlide ? "opacity-100 z-[1]" : "opacity-0 z-0"
             }`}
-            width={1920}
-            height={1080}
-          />
+          >
+            <img
+              src={slide.src}
+              alt={slide.alt}
+              className={`w-full h-full object-cover will-change-transform ${
+                i === currentSlide ? "animate-ken-burns" : ""
+              }`}
+              width={1920}
+              height={1080}
+            />
+          </div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-[2]" />
         <div className="container mx-auto px-4 relative z-10 pb-24 pt-40">
-          <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-fade-up">
+          <div key={currentSlide} className="flex flex-col items-center text-center max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-hero-reveal">
               <Flame className="h-4 w-4 text-accent" />
               Since 2000 — Bangladesh's Pioneer in LPG
             </div>
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] mb-5 tracking-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              Powering <span className="text-accent">Bangladesh's</span> Future
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] mb-5 tracking-tight animate-hero-reveal" style={{ animationDelay: "0.15s", animationFillMode: "both" }}>
+              Powering <span className="text-accent-sheen">Bangladesh's</span> Future
             </h1>
-            <p className="text-sm md:text-base text-white/90 mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <p className="text-sm md:text-base text-white/90 mb-8 leading-relaxed animate-hero-reveal" style={{ animationDelay: "0.3s", animationFillMode: "both" }}>
               Delivering safe, reliable energy to over 1.5 million customers through cutting-edge LPG infrastructure.
             </p>
-            <div className="flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <div className="flex flex-wrap justify-center gap-3 animate-hero-reveal" style={{ animationDelay: "0.45s", animationFillMode: "both" }}>
               <Button asChild variant="premium" className="text-sm px-6 h-11 btn-shine">
                 <Link to="/products">
                   Explore Products
@@ -113,16 +119,24 @@ const Index = () => {
               </Button>
             </div>
             {/* Slide Indicators */}
-            <div className="flex justify-center gap-2 mt-8">
+            <div className="flex justify-center items-center gap-2.5 mt-8">
               {slides.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentSlide(i)}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${
-                    i === currentSlide ? "w-8 bg-accent" : "w-1.5 bg-white/30 hover:bg-white/50"
-                  }`}
                   aria-label={`Go to slide ${i + 1}`}
-                />
+                  className={`relative h-1.5 rounded-full overflow-hidden transition-all duration-500 ${
+                    i === currentSlide ? "w-10 bg-white/25" : "w-1.5 bg-white/30 hover:bg-white/50"
+                  }`}
+                >
+                  {i === currentSlide && (
+                    <span
+                      key={currentSlide}
+                      className="absolute inset-y-0 left-0 bg-accent rounded-full"
+                      style={{ animation: "slide-progress 6s linear forwards" }}
+                    />
+                  )}
+                </button>
               ))}
             </div>
           </div>
