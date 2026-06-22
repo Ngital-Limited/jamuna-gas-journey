@@ -74,13 +74,13 @@ const Index = () => (
             Delivering safe, reliable energy to over 1.5 million customers through cutting-edge LPG infrastructure.
           </p>
           <div className="flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-6 h-11 rounded-xl shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 group">
+            <Button asChild variant="premium" className="text-sm px-6 h-11 btn-shine">
               <Link to="/products">
                 Explore Products
                 <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="border-white/40 text-white bg-transparent hover:bg-white/10 hover:border-white/60 text-sm px-6 h-11 rounded-xl backdrop-blur-sm transition-all duration-300">
+            <Button asChild variant="outline" className="border-white/40 text-white bg-white/10 hover:bg-white/20 hover:border-white/60 text-sm px-6 h-11 rounded-xl backdrop-blur-sm transition-all duration-300">
               <Link to="/about">Learn More</Link>
             </Button>
           </div>
