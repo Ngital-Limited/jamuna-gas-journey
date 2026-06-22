@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +11,7 @@ import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroFamily from "@/assets/hero-family.webp.asset.json";
+import heroCommercial from "@/assets/hero-commercial.webp.asset.json";
 import sustainabilityImg from "@/assets/sustainability-section.jpg";
 
 const stats = [
