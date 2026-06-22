@@ -12,6 +12,7 @@ const navLinks = [
   { label: "About Us", to: "/about" },
   { label: "Safety Tips", to: "/safety" },
   { label: "Dealer", to: "/dealer" },
+  { label: "Career", to: "/career" },
   { label: "Contact", to: "/contact" },
 ];
 
