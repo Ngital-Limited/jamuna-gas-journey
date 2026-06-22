@@ -58,11 +58,11 @@ const whyChoose = [
 const Index = () => (
   <Layout>
     {/* Hero */}
-    <section className="relative min-h-[100vh] flex items-center overflow-hidden">
+    <section className="relative min-h-[100vh] flex items-end overflow-hidden">
       <img src={heroFamily} alt="" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
-      <div className="absolute inset-0 bg-black/70" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
-      <div className="container mx-auto px-4 relative z-10 py-20">
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+      <div className="container mx-auto px-4 relative z-10 pb-16 pt-40">
         <div className="flex flex-col items-center text-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-fade-up">
             <Flame className="h-4 w-4 text-accent" />
