@@ -341,21 +341,21 @@ const Index = () => {
             },
           ].map((solution) => (
             <Link to={solution.link} key={solution.title} className="group">
-              <div className="relative h-full rounded-3xl border border-border/30 bg-gradient-to-br from-card via-card to-muted/30 p-8 lg:p-10 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
-                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
-                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${solution.color === "primary" ? "from-primary via-primary/70 to-primary/30" : "from-accent via-accent/70 to-accent/30"} rounded-t-3xl`} />
+              <div className="relative h-full rounded-3xl bg-white shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-border/20 p-8 lg:p-10 overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-500">
+                {/* Top accent bar */}
+                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${solution.color === "primary" ? "from-primary via-primary/80 to-primary/40" : "from-accent via-accent/80 to-accent/40"}`} />
 
                 <div className="relative z-10">
-                  <span className={`inline-block text-[10px] font-semibold uppercase tracking-wider rounded-full px-3 py-1 mb-6 ${solution.color === "primary" ? "bg-primary/10 text-primary" : "bg-accent/10 text-accent"}`}>
+                  <span className={`inline-block text-[11px] font-semibold uppercase tracking-wider rounded-full px-3.5 py-1.5 mb-7 ${solution.color === "primary" ? "bg-primary/10 text-primary" : "bg-accent/10 text-accent"}`}>
                     {solution.tag}
                   </span>
 
-                  <div className={`mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${solution.color === "primary" ? "from-primary/15 to-primary/5 group-hover:from-primary/25 group-hover:to-accent/10" : "from-accent/15 to-accent/5 group-hover:from-accent/25 group-hover:to-primary/10"} transition-all duration-300`}>
-                    <solution.icon className={`h-8 w-8 ${solution.color === "primary" ? "text-primary" : "text-accent"}`} />
+                  <div className={`mb-7 flex h-14 w-14 items-center justify-center rounded-2xl ${solution.color === "primary" ? "bg-primary/10 group-hover:bg-primary/15" : "bg-accent/10 group-hover:bg-accent/15"} transition-colors duration-300`}>
+                    <solution.icon className={`h-7 w-7 ${solution.color === "primary" ? "text-primary" : "text-accent"}`} />
                   </div>
 
                   <h3 className="text-xl font-bold mb-3">{solution.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-8">{solution.desc}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-8">{solution.desc}</p>
 
                   <div className={`flex items-center gap-2 text-sm font-semibold ${solution.color === "primary" ? "text-primary" : "text-accent"} group-hover:gap-3 transition-all duration-300`}>
                     Learn More <ArrowRight className="h-4 w-4" />
