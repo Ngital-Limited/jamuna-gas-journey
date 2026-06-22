@@ -8,8 +8,9 @@ const quickLinks = [
   { label: "Products", to: "/products" },
   { label: "Services", to: "/services" },
   { label: "About Us", to: "/about" },
-  { label: "Safety Tips", to: "/safety" },
   { label: "Sustainability", to: "/sustainability" },
+  { label: "Safety Tips", to: "/safety" },
+  { label: "Sister Concerns", to: "/sister-concerns" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -18,6 +19,14 @@ const productLinks = [
   { label: "Commercial LPG", to: "/products#commercial" },
   { label: "Bulk LPG System", to: "/products#bulk" },
   { label: "Auto Gas", to: "/products#autogas" },
+];
+
+const resourceLinks = [
+  { label: "Dealer Network", to: "/dealer" },
+  { label: "Become a Dealer", to: "/dealer#apply" },
+  { label: "Bulk Service Enquiry", to: "/bulk-enquiry" },
+  { label: "Careers", to: "/career" },
+  { label: "Blog & Media", to: "/blog" },
 ];
 
 const Footer = () => (
@@ -55,7 +64,7 @@ const Footer = () => (
 
     {/* Main content */}
     <div className="container mx-auto px-4 py-14 relative z-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
 
         {/* Brand */}
         <div>
@@ -99,6 +108,21 @@ const Footer = () => (
           <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-white mb-5">Our Products</h4>
           <ul className="space-y-2.5">
             {productLinks.map((l) => (
+              <li key={l.label}>
+                <Link to={l.to} className="text-[13px] text-white/60 hover:text-accent transition-colors duration-200 flex items-center gap-1.5 group">
+                  <ChevronRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Resources */}
+        <div>
+          <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-white mb-5">Resources</h4>
+          <ul className="space-y-2.5">
+            {resourceLinks.map((l) => (
               <li key={l.label}>
                 <Link to={l.to} className="text-[13px] text-white/60 hover:text-accent transition-colors duration-200 flex items-center gap-1.5 group">
                   <ChevronRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
