@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Services", to: "/services" },
   { label: "Sustainability", to: "/sustainability" },
   { label: "About Us", to: "/about" },
+  { label: "Sister Concerns", to: "/sister-concerns" },
   { label: "Safety Tips", to: "/safety" },
   { label: "Dealer", to: "/dealer" },
   { label: "Career", to: "/career" },
