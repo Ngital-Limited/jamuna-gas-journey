@@ -489,6 +489,60 @@ const Index = () => {
       </div>
     </section>
 
+    {/* Blog & Media */}
+    <section className="py-24 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3" />
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div>
+            <span className="section-badge"><Newspaper className="h-4 w-4" /> Blog & Media</span>
+            <h2 className="section-title">Latest News & Stories</h2>
+            <p className="section-subtitle max-w-xl">Updates from Jamuna Gas — company news, safety guides, and sustainability initiatives.</p>
+          </div>
+          <Button asChild variant="outline" className="h-11 px-6 rounded-xl self-start md:self-auto">
+            <Link to="/blog">
+              View All Posts
+              <ArrowRight className="h-4 w-4 ml-2" />
+            </Link>
+          </Button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+          {blogPosts.map((p) => (
+            <Link
+              to="/blog"
+              key={p.title}
+              className="group rounded-2xl border border-border/40 bg-card overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  loading="lazy"
+                  width={1024}
+                  height={640}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-md rounded-full px-3 py-1 text-[10px] font-semibold text-foreground uppercase tracking-wider">
+                  {p.category}
+                </span>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-bold leading-snug mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                  {p.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-2">{p.excerpt}</p>
+                <div className="flex items-center justify-between text-xs text-muted-foreground/70 pt-4 border-t border-border/30">
+                  <span className="flex items-center gap-1.5"><Calendar className="h-3 w-3" />{p.date}</span>
+                  <span className="flex items-center gap-1.5"><Clock className="h-3 w-3" />{p.readTime}</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+
     {/* Certifications & Memberships */}
     <section className="py-24 bg-muted/40">
       <div className="container mx-auto px-4">
