@@ -225,6 +225,124 @@ const Dealer = () => {
           </div>
         </div>
       </section>
+
+      {/* Dealership Application */}
+      <section id="apply" className="py-28 bg-muted/30 relative overflow-hidden scroll-mt-24">
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3" />
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-14">
+            <span className="section-badge"><Handshake className="h-4 w-4" /> Partner With Us</span>
+            <h2 className="section-title">Dealership Application</h2>
+            <p className="section-subtitle max-w-2xl mx-auto">Join Bangladesh's most trusted LPG brand. Apply to become an authorized Jamuna Gas dealer in your area.</p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-6xl mx-auto">
+            {/* Benefits */}
+            <div className="lg:col-span-5 space-y-5">
+              <div className="rounded-3xl border border-border/40 bg-card p-8">
+                <h3 className="text-xl font-bold mb-5">Why Partner With Jamuna Gas</h3>
+                <ul className="space-y-4">
+                  {[
+                    { t: "Trusted National Brand", d: "Over 24 years of leadership in Bangladesh's LPG market." },
+                    { t: "Strong Supply Network", d: "4 bottling plants and 15+ depots ensure on-time delivery." },
+                    { t: "Marketing Support", d: "Branding, signage and promotional materials provided." },
+                    { t: "Competitive Margins", d: "Transparent pricing and attractive dealer commissions." },
+                  ].map((b) => (
+                    <li key={b.t} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-semibold text-sm">{b.t}</p>
+                        <p className="text-sm text-muted-foreground">{b.d}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="rounded-3xl border border-border/40 bg-gradient-to-br from-primary/5 to-accent/5 p-6 flex items-center gap-4">
+                <div className="h-12 w-12 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
+                  <Phone className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-0.5">Prefer to call?</p>
+                  <a href="tel:+88029844940" className="text-base font-bold hover:text-accent transition-colors">+880 2-9844940</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Form */}
+            <div className="lg:col-span-7">
+              <div className="relative rounded-3xl border border-border/30 bg-card overflow-hidden shadow-xl">
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-accent to-primary" />
+                <div className="p-8 lg:p-10">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center">
+                      <Send className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold">Apply Now</h3>
+                      <p className="text-sm text-muted-foreground">We'll respond within 3 business days</p>
+                    </div>
+                  </div>
+
+                  <form onSubmit={handleApply} className="space-y-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="d-name" className="text-sm font-semibold">Full Name <span className="text-accent">*</span></Label>
+                        <Input id="d-name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your full name" maxLength={100} className="h-12 rounded-xl" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="d-business" className="text-sm font-semibold">Business Name <span className="text-accent">*</span></Label>
+                        <Input id="d-business" value={form.businessName} onChange={(e) => setForm({ ...form, businessName: e.target.value })} placeholder="Your company / shop name" maxLength={150} className="h-12 rounded-xl" />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="d-email" className="text-sm font-semibold">Email <span className="text-accent">*</span></Label>
+                        <Input id="d-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="your@email.com" maxLength={255} className="h-12 rounded-xl" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="d-phone" className="text-sm font-semibold">Phone <span className="text-accent">*</span></Label>
+                        <Input id="d-phone" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="+880 1XXX-XXXXXX" maxLength={20} className="h-12 rounded-xl" />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="d-district" className="text-sm font-semibold">District / Area <span className="text-accent">*</span></Label>
+                        <Input id="d-district" value={form.district} onChange={(e) => setForm({ ...form, district: e.target.value })} placeholder="e.g. Dhaka, Sylhet" maxLength={100} className="h-12 rounded-xl" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="d-investment" className="text-sm font-semibold">Investment Capacity (BDT) <span className="text-accent">*</span></Label>
+                        <Input id="d-investment" value={form.investment} onChange={(e) => setForm({ ...form, investment: e.target.value })} placeholder="e.g. 5,00,000" maxLength={50} className="h-12 rounded-xl" />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="d-experience" className="text-sm font-semibold">Business Experience <span className="text-muted-foreground/60 font-normal">(optional)</span></Label>
+                      <Input id="d-experience" value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} placeholder="e.g. 5 years in retail / LPG distribution" maxLength={500} className="h-12 rounded-xl" />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="d-message" className="text-sm font-semibold">Additional Information <span className="text-muted-foreground/60 font-normal">(optional)</span></Label>
+                      <Textarea id="d-message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your location, existing business, or any questions..." rows={4} maxLength={1000} className="rounded-xl resize-none" />
+                    </div>
+
+                    <Button type="submit" size="lg" variant="premium" className="w-full h-14 btn-shine text-base">
+                      Submit Application
+                      <ArrowRight className="h-5 w-5 ml-2" />
+                    </Button>
+                    <p className="text-center text-xs text-muted-foreground/60">By submitting, you agree to be contacted by Jamuna Gas regarding your application.</p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };
