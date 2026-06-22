@@ -9,7 +9,7 @@ import {
 import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroFamily from "@/assets/hero-family.webp";
+import heroFamily from "@/assets/hero-family.webp.asset.json";
 import sustainabilityImg from "@/assets/sustainability-section.jpg";
 
 const stats = [
@@ -59,7 +59,7 @@ const Index = () => (
   <Layout>
     {/* Hero */}
     <section className="relative min-h-[100vh] flex items-end overflow-hidden">
-      <img src={heroFamily} alt="" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
+      <img src={heroFamily.url} alt="" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
       <div className="container mx-auto px-4 relative z-10 pb-24 pt-40">
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
