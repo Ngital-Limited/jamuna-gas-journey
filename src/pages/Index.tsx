@@ -101,7 +101,7 @@ const Index = () => {
               <Flame className="h-4 w-4 text-accent" />
               Since 2000 — Bangladesh's Pioneer in LPG
             </div>
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] mb-5 tracking-tight animate-hero-reveal" style={{ animationDelay: "0.15s", animationFillMode: "both" }}>
+            <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] mb-5 tracking-tight animate-hero-reveal whitespace-nowrap" style={{ animationDelay: "0.15s", animationFillMode: "both" }}>
               Powering <span className="text-accent-sheen">Bangladesh's</span> Future
             </h1>
             <p className="text-sm md:text-base text-white/90 mb-8 leading-relaxed animate-hero-reveal" style={{ animationDelay: "0.3s", animationFillMode: "both" }}>
