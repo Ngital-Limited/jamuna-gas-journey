@@ -57,38 +57,77 @@ const whyChoose = [
   { icon: Flame, title: "24+ Years Legacy", desc: "Two decades of trusted energy solutions since 2000." },
 ];
 
-const Index = () => (
-  <Layout>
-    {/* Hero */}
-    <section className="relative min-h-[100vh] flex items-end overflow-hidden">
-      <img src={heroFamily.url} alt="" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-      <div className="container mx-auto px-4 relative z-10 pb-24 pt-40">
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-fade-up">
-            <Flame className="h-4 w-4 text-accent" />
-            Since 2000 — Bangladesh's Pioneer in LPG
-          </div>
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] mb-5 tracking-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Powering <span className="text-accent">Bangladesh's</span> Future
-          </h1>
-          <p className="text-sm md:text-base text-white/90 mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Delivering safe, reliable energy to over 1.5 million customers through cutting-edge LPG infrastructure.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Button asChild variant="premium" className="text-sm px-6 h-11 btn-shine">
-              <Link to="/products">
-                Explore Products
-                <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" className="border-white/40 text-white bg-white/10 hover:bg-white/20 hover:border-white/60 text-sm px-6 h-11 rounded-xl backdrop-blur-sm transition-all duration-300">
-              <Link to="/about">Learn More</Link>
-            </Button>
+const slides = [
+  { src: heroFamily.url, alt: "Family enjoying safe LPG energy" },
+  { src: heroCommercial.url, alt: "Professional kitchen powered by Jamuna Gas" },
+];
+
+const Index = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <Layout>
+      {/* Hero */}
+      <section className="relative min-h-[100vh] flex items-end overflow-hidden">
+        {slides.map((slide, i) => (
+          <img
+            key={slide.src}
+            src={slide.src}
+            alt={slide.alt}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              i === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
+            width={1920}
+            height={1080}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-[1]" />
+        <div className="container mx-auto px-4 relative z-10 pb-24 pt-40">
+          <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-fade-up">
+              <Flame className="h-4 w-4 text-accent" />
+              Since 2000 — Bangladesh's Pioneer in LPG
+            </div>
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] mb-5 tracking-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
+              Powering <span className="text-accent">Bangladesh's</span> Future
+            </h1>
+            <p className="text-sm md:text-base text-white/90 mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              Delivering safe, reliable energy to over 1.5 million customers through cutting-edge LPG infrastructure.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+              <Button asChild variant="premium" className="text-sm px-6 h-11 btn-shine">
+                <Link to="/products">
+                  Explore Products
+                  <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="border-white/40 text-white bg-white/10 hover:bg-white/20 hover:border-white/60 text-sm px-6 h-11 rounded-xl backdrop-blur-sm transition-all duration-300">
+                <Link to="/about">Learn More</Link>
+              </Button>
+            </div>
+            {/* Slide Indicators */}
+            <div className="flex justify-center gap-2 mt-8">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentSlide(i)}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    i === currentSlide ? "w-8 bg-accent" : "w-1.5 bg-white/30 hover:bg-white/50"
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     {/* Stats bar */}
     <section className="relative -mt-16 z-20 pb-8">
