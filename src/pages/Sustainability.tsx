@@ -248,13 +248,13 @@ const Sustainability = () => (
                 Every cylinder of Jamuna Gas is a step towards a cleaner, healthier Bangladesh. Switch to LPG today.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-10 rounded-xl h-13 shadow-lg group">
+                <Button asChild size="lg" className="bg-gradient-to-br from-white via-white to-white/90 text-primary font-bold px-10 rounded-xl h-13 shadow-[0_4px_14px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 btn-shine group">
                   <Link to="/contact">
                     Get Started
                     <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-white/40 text-white bg-transparent hover:bg-white/10 px-10 rounded-xl h-13">
+                <Button asChild variant="outline" size="lg" className="border-white/30 text-white bg-white/10 hover:bg-white/20 hover:border-white/50 px-10 rounded-xl h-13 backdrop-blur-sm transition-all duration-300">
                   <Link to="/products">Explore Products</Link>
                 </Button>
               </div>

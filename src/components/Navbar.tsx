@@ -73,10 +73,10 @@ const Navbar = () => {
             </a>
 
             {/* Get a Quote - visible on md+ */}
-            <Button asChild className={`hidden md:inline-flex font-semibold px-5 rounded-xl shadow-lg transition-all duration-300 group ${
+            <Button asChild className={`hidden md:inline-flex font-semibold px-5 rounded-xl transition-all duration-300 group btn-shine ${
               scrolled
-                ? "bg-primary hover:bg-primary/90 text-primary-foreground hover:shadow-xl hover:shadow-primary/20"
-                : "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
+                ? "shadow-[0_4px_14px_rgba(0,0,0,0.15)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.2)]"
+                : "bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:border-white/40 shadow-lg"
             }`}>
               <Link to="/contact">
                 <Flame className="h-4 w-4 mr-1.5" />
