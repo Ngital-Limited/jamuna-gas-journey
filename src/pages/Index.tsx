@@ -522,7 +522,8 @@ const Index = () => {
         </div>
       </div>
     </section>
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export default Index;
