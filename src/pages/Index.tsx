@@ -60,8 +60,7 @@ const Index = () => (
     {/* Hero */}
     <section className="relative min-h-[100vh] flex items-end overflow-hidden">
       <img src={heroFamily} alt="" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
-      <div className="absolute inset-0 bg-black/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
       <div className="container mx-auto px-4 relative z-10 pb-16 pt-40">
         <div className="flex flex-col items-start text-left max-w-2xl">
           <div className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-fade-up">
