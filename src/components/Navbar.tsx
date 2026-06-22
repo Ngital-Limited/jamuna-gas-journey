@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Sustainability", to: "/sustainability" },
   { label: "About Us", to: "/about" },
   { label: "Safety Tips", to: "/safety" },
+  { label: "Dealer", to: "/dealer" },
   { label: "Contact", to: "/contact" },
 ];
 
