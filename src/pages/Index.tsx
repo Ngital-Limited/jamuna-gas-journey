@@ -5,7 +5,7 @@ import {
   Flame, Home, Building2, Car,
   Target, Eye, Trophy, Award, Shield,
   Calendar, Users, TrendingUp, ArrowRight, Truck, Phone,
-  CheckCircle, Leaf,
+  CheckCircle, Leaf, Newspaper, Clock,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
@@ -13,6 +13,36 @@ import heroBg from "@/assets/hero-bg.jpg";
 import heroFamily from "@/assets/hero-family.webp.asset.json";
 import heroCommercial from "@/assets/hero-commercial.webp.asset.json";
 import sustainabilityImg from "@/assets/sustainability-section.jpg";
+import blogAward from "@/assets/blog-award.jpg";
+import blogSafety from "@/assets/blog-safety.jpg";
+import blogSustainability from "@/assets/blog-sustainability.jpg";
+
+const blogPosts = [
+  {
+    image: blogAward,
+    category: "News",
+    title: "Jamuna Gas Wins Best LPG Brand Award 2025",
+    excerpt: "Recognized for customer trust, safety standards, and nationwide distribution excellence at the annual Bangladesh Brand Forum.",
+    date: "May 14, 2026",
+    readTime: "4 min",
+  },
+  {
+    image: blogSafety,
+    category: "Safety",
+    title: "5 Essential LPG Safety Tips Every Household Should Know",
+    excerpt: "From cylinder placement to leak detection — practical advice from our HSE team to keep your family safe.",
+    date: "April 28, 2026",
+    readTime: "6 min",
+  },
+  {
+    image: blogSustainability,
+    category: "Sustainability",
+    title: "Reducing Emissions: Our Net-Zero Roadmap to 2040",
+    excerpt: "How Jamuna Gas is investing in cleaner fuel, telemetry, and plant efficiency to shrink our carbon footprint.",
+    date: "April 10, 2026",
+    readTime: "8 min",
+  },
+];
 
 const stats = [
   { icon: Calendar, value: "24+", label: "Years of Excellence" },
