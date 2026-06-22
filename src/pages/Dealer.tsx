@@ -1,5 +1,12 @@
+import { useState } from "react";
+import { z } from "zod";
+import { toast } from "sonner";
 import Layout from "@/components/Layout";
-import { MapPin, Phone, Building2, Factory } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { MapPin, Phone, Building2, Factory, Handshake, Send, ArrowRight, CheckCircle } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -58,6 +65,39 @@ const depots = [
 ];
 
 const Dealer = () => {
+  const applicationSchema = z.object({
+    name: z.string().trim().min(2, "Name is required").max(100),
+    email: z.string().trim().email("Invalid email address").max(255),
+    phone: z.string().trim().min(6, "Phone is required").max(20),
+    businessName: z.string().trim().min(2, "Business name is required").max(150),
+    district: z.string().trim().min(2, "District is required").max(100),
+    investment: z.string().trim().min(1, "Investment capacity is required").max(50),
+    experience: z.string().trim().max(500).optional(),
+    message: z.string().trim().max(1000).optional(),
+  });
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    businessName: "",
+    district: "",
+    investment: "",
+    experience: "",
+    message: "",
+  });
+
+  const handleApply = (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = applicationSchema.safeParse(form);
+    if (!result.success) {
+      toast.error(result.error.errors[0]?.message ?? "Please complete the form");
+      return;
+    }
+    toast.success("Application submitted! Our team will contact you within 3 business days.");
+    setForm({ name: "", email: "", phone: "", businessName: "", district: "", investment: "", experience: "", message: "" });
+  };
+
   return (
     <Layout>
       {/* Hero */}
@@ -69,7 +109,14 @@ const Dealer = () => {
             <Building2 className="h-4 w-4 text-accent" /> Distribution Network
           </span>
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-5 tracking-tight">Dealer & Depot Network</h1>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">Our nationwide depot network ensures fast and reliable LPG delivery to every corner of Bangladesh.</p>
+          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-8">Our nationwide depot network ensures fast and reliable LPG delivery to every corner of Bangladesh.</p>
+          <Button asChild variant="premium" className="btn-shine h-12 px-7">
+            <a href="#apply">
+              <Handshake className="h-4 w-4 mr-2" />
+              Become a Dealer
+              <ArrowRight className="h-4 w-4 ml-2" />
+            </a>
+          </Button>
         </div>
       </section>
 
