@@ -12,6 +12,7 @@ import Services from "./pages/Services";
 import Sustainability from "./pages/Sustainability";
 import Dealer from "./pages/Dealer";
 import Career from "./pages/Career";
+import BulkEnquiry from "./pages/BulkEnquiry";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/sustainability" element={<Sustainability />} />
           <Route path="/dealer" element={<Dealer />} />
           <Route path="/career" element={<Career />} />
+          <Route path="/bulk-enquiry" element={<BulkEnquiry />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
