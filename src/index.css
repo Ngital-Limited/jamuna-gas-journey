@@ -119,4 +119,42 @@
   .btn-shine:hover::after {
     left: 140%;
   }
+
+  /* Ken Burns slow zoom for hero slides */
+  @keyframes ken-burns {
+    0% { transform: scale(1.08) translate3d(0, 0, 0); }
+    100% { transform: scale(1.18) translate3d(-1.5%, -1%, 0); }
+  }
+  .animate-ken-burns {
+    animation: ken-burns 7s ease-out forwards;
+  }
+
+  /* Hero reveal — soft rise + blur */
+  @keyframes hero-reveal {
+    0% { opacity: 0; transform: translateY(28px); filter: blur(8px); }
+    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+  }
+  .animate-hero-reveal {
+    animation: hero-reveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Animated underline shimmer for highlight word */
+  @keyframes accent-sheen {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .text-accent-sheen {
+    background: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--accent) / 0.6) 40%, hsl(var(--accent)) 80%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: accent-sheen 4s ease-in-out infinite;
+  }
+
+  /* Slide progress bar */
+  @keyframes slide-progress {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
 }
