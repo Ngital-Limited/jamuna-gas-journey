@@ -13,6 +13,7 @@ const navLinks = [
   { label: "Safety Tips", to: "/safety" },
   { label: "Dealer", to: "/dealer" },
   { label: "Career", to: "/career" },
+  { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
 ];
 
