@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import Sustainability from "./pages/Sustainability";
 import Dealer from "./pages/Dealer";
+import Career from "./pages/Career";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/sustainability" element={<Sustainability />} />
           <Route path="/dealer" element={<Dealer />} />
+          <Route path="/career" element={<Career />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
