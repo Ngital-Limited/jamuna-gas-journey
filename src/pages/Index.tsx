@@ -9,6 +9,7 @@ import {
 import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroFamily from "@/assets/hero-family.webp";
 import sustainabilityImg from "@/assets/sustainability-section.jpg";
 
 const stats = [
