@@ -130,18 +130,20 @@ const Index = () => {
       </section>
 
     {/* Stats bar */}
-    <section className="relative -mt-16 z-20 pb-8">
+    <section className="relative -mt-14 z-20 pb-8">
       <div className="container mx-auto px-4">
-        <div className="bg-card rounded-2xl shadow-xl border border-border/40 p-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center group">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 mx-auto mb-3 group-hover:bg-primary/20 transition-colors">
-                <s.icon className="h-6 w-6 text-primary" />
+        <div className="bg-white rounded-2xl border border-border/30 p-10 md:p-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4">
+            {stats.map((s, i) => (
+              <div key={s.label} className={`text-center ${i < stats.length - 1 ? 'md:border-r md:border-border/20' : ''}`}>
+                <div className="flex justify-center mb-4">
+                  <s.icon className="h-5 w-5 text-primary/60" strokeWidth={1.5} />
+                </div>
+                <div className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight leading-none">{s.value}</div>
+                <div className="text-[13px] text-muted-foreground mt-2 tracking-wide">{s.label}</div>
               </div>
-              <div className="text-3xl md:text-4xl font-extrabold text-foreground tracking-tight">{s.value}</div>
-              <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
