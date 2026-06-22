@@ -382,6 +382,20 @@ const Products = () => (
               </div>
             ))}
           </div>
+
+          {/* Bulk Enquiry CTA */}
+          <div className="mt-12 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.02] p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <h4 className="text-xl md:text-2xl font-bold text-white mb-2">Need a tailored bulk LPG solution?</h4>
+              <p className="text-white/50 text-sm md:text-base">Get a free site assessment, custom tank sizing, and a transparent quote within 24 hours.</p>
+            </div>
+            <Button asChild variant="premium" className="btn-shine h-12 px-7 shrink-0">
+              <Link to="/bulk-enquiry">
+                Submit Bulk Enquiry
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
