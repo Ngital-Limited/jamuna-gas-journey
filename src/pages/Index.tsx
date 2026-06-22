@@ -63,29 +63,40 @@ const Index = () => (
       <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       <div className="container mx-auto px-4 relative z-10 py-20">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 text-sm text-white/90 mb-8 animate-fade-up">
-            <Flame className="h-4 w-4 text-accent" />
-            Since 2000 — Bangladesh's Pioneer in LPG
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="max-w-xl">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-fade-up">
+              <Flame className="h-4 w-4 text-accent" />
+              Since 2000 — Bangladesh's Pioneer in LPG
+            </div>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-5 tracking-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
+              Powering <span className="text-accent">Bangladesh's</span> Future
+            </h1>
+            <p className="text-base md:text-lg text-white/75 mb-8 max-w-lg leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              Delivering safe, reliable energy to over 1.5 million customers through cutting-edge LPG infrastructure.
+            </p>
+            <div className="flex flex-wrap gap-3 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+              <Button asChild size="md" className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm px-6 h-11 rounded-xl shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 group">
+                <Link to="/products">
+                  Explore Products
+                  <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="md" className="border-white/30 text-white bg-transparent hover:bg-white/10 hover:border-white/50 text-sm px-6 h-11 rounded-xl backdrop-blur-sm transition-all duration-300">
+                <Link to="/about">Learn More</Link>
+              </Button>
+            </div>
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.05] mb-8 tracking-tight animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Powering <br />
-            <span className="text-accent">Bangladesh's</span> <br />
-            Future
-          </h1>
-          <p className="text-lg md:text-xl text-white/75 mb-10 max-w-xl leading-relaxed animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Delivering safe, reliable energy to over 1.5 million customers through cutting-edge LPG infrastructure.
-          </p>
-          <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8 h-13 rounded-xl shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 group">
-              <Link to="/products">
-                Explore Products
-                <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-white/30 text-white bg-transparent hover:bg-white/10 hover:border-white/50 text-base px-8 h-13 rounded-xl backdrop-blur-sm transition-all duration-300">
-              <Link to="/about">Learn More</Link>
-            </Button>
+          <div className="relative hidden lg:flex items-center justify-center animate-fade-up" style={{ animationDelay: "0.25s" }}>
+            <div className="relative w-full max-w-lg">
+              <img
+                src={heroFamily}
+                alt="Jamuna Gas - Safe energy for every family"
+                className="w-full h-auto rounded-3xl shadow-2xl shadow-black/30 border border-white/10"
+                width={800}
+                height={600}
+              />
+            </div>
           </div>
         </div>
       </div>
