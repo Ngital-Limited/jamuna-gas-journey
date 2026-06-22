@@ -157,7 +157,7 @@ const Index = () => (
                 ))}
               </div>
 
-              <Button asChild size="lg" className="rounded-xl group shadow-lg shadow-primary/20">
+              <Button asChild size="lg" variant="premium" className="btn-shine">
                 <Link to="/about">
                   Learn Our Full Story
                   <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
@@ -392,7 +392,7 @@ const Index = () => (
           <p className="text-white/60 leading-relaxed mb-10 max-w-xl">
             We actively promote the transition to cleaner energy across households and industries — every cylinder we deliver is a step toward a more sustainable Bangladesh.
           </p>
-          <Button asChild size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-10 rounded-xl h-14 shadow-lg shadow-emerald-500/25 group">
+          <Button asChild size="lg" className="bg-gradient-to-br from-emerald-500 via-emerald-500 to-emerald-600 border border-white/20 text-white font-bold px-10 rounded-xl h-14 shadow-[0_6px_20px_rgba(16,185,129,0.25)] hover:shadow-[0_10px_32px_rgba(16,185,129,0.35)] hover:-translate-y-0.5 active:translate-y-0 hover:brightness-110 transition-all duration-300 btn-shine group">
             <Link to="/sustainability">
               Learn About Our Sustainability
               <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
@@ -449,13 +449,13 @@ const Index = () => (
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-foreground font-bold px-10 rounded-xl h-14 text-base shadow-xl shadow-accent/25 group">
+            <Button asChild size="lg" className="bg-gradient-to-br from-accent via-accent to-accent/90 border border-white/20 text-foreground font-bold px-10 rounded-xl h-14 text-base shadow-[0_6px_20px_rgba(0,0,0,0.18)] hover:shadow-[0_10px_32px_rgba(0,0,0,0.25)] hover:-translate-y-0.5 active:translate-y-0 hover:brightness-110 transition-all duration-300 btn-shine group">
               <Link to="/contact">
                 Get a Free Quote
                 <ArrowRight className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button asChild size="lg" className="bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 font-semibold px-10 rounded-xl h-14 text-base">
+            <Button asChild size="lg" variant="outline" className="border-white/30 text-white bg-white/10 hover:bg-white/20 hover:border-white/50 font-semibold px-10 rounded-xl h-14 text-base backdrop-blur-sm transition-all duration-300">
               <Link to="/products">
                 <Phone className="h-4 w-4 mr-2" />
                 Call +880 2-9844940
