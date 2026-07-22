@@ -105,7 +105,7 @@ const Products = () => {
             <div className="lg:col-span-5 flex items-center justify-center p-10 lg:p-16">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-primary/10 rounded-full blur-3xl scale-75" />
-                <img src={householdImg} alt="Jamuna Gas 12kg household LPG cylinder" loading="lazy" className="relative max-h-[450px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" />
+                <img key={selectedHouseholdKg} src={householdImage} alt={`Jamuna Gas ${selectedHouseholdKg}kg household LPG cylinder`} loading="lazy" className="relative max-h-[450px] object-contain drop-shadow-2xl animate-fade-in" />
               </div>
             </div>
             
