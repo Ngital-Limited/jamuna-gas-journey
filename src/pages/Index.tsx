@@ -9,6 +9,7 @@ import {
 import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
 import sustainabilityBg from "@/assets/sustainability-bg.png.asset.json";
+import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import blogAward from "@/assets/blog-award.jpg";
 import blogSafety from "@/assets/blog-safety.jpg";
 import blogSustainability from "@/assets/blog-sustainability.jpg";
@@ -89,12 +90,14 @@ const Index = () => {
       {/* Hero */}
       <section className="relative min-h-[100vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <iframe
+          <video
             className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-[100vh] h-[56.25vw] -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
-            src="https://www.youtube.com/embed/5a3cgZqna98?autoplay=1&mute=1&loop=1&playlist=5a3cgZqna98&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&iv_load_policy=3&fs=0"
+            src={heroVideo.url}
+            autoPlay
+            muted
+            loop
+            playsInline
             title="Jamuna Gas Hero Video"
-            allow="autoplay; encrypted-media; fullscreen"
-            frameBorder="0"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-[2]" />
