@@ -228,7 +228,7 @@ const Products = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-l-3xl" />
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-primary/10 rounded-full blur-3xl scale-75" />
-                <img src={commercialImg} alt="Jamuna Gas 45kg commercial LPG cylinder" loading="lazy" className="relative max-h-[450px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" />
+                <img key={selectedCommercialKg} src={commercialImage} alt={`Jamuna Gas ${selectedCommercialKg}kg commercial LPG cylinder`} loading="lazy" className="relative max-h-[450px] object-contain drop-shadow-2xl animate-fade-in" />
               </div>
             </div>
 
