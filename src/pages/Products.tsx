@@ -228,7 +228,7 @@ const Products = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-l-3xl" />
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-primary/10 rounded-full blur-3xl scale-75" />
-                <img key={selectedCommercialKg} src={commercialImage} alt={`Jamuna Gas ${selectedCommercialKg}kg commercial LPG cylinder`} loading="lazy" className={`relative object-contain drop-shadow-2xl animate-fade-in ${selectedCommercialKg === "35" ? "max-h-[300px]" : "max-h-[480px]"}`} />
+                <img key={selectedCommercialKg} src={commercialImage} alt={`Jamuna Gas ${selectedCommercialKg}kg commercial LPG cylinder`} loading="lazy" className={`relative w-auto object-contain drop-shadow-2xl animate-fade-in ${selectedCommercialKg === "35" ? "h-[260px] md:h-[290px] lg:h-[310px]" : "h-[360px] md:h-[410px] lg:h-[450px]"}`} />
               </div>
             </div>
 
