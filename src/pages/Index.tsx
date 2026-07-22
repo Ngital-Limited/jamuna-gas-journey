@@ -379,7 +379,7 @@ const Index = () => {
             },
             {
               icon: Truck,
-              title: "For Business",
+              title: "For Industries",
               desc: "Jamuna Gas offers bulk LPG supply as per requirements. Where cylinders are not affordable or suitable for business, we support bulk LPG across the whole country.",
               color: "primary" as const,
               tag: "Bulk Supply",
