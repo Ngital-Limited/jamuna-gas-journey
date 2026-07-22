@@ -12,7 +12,7 @@ import SectorsCarousel from "@/components/SectorsCarousel";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroFamily from "@/assets/hero-family.webp.asset.json";
 import heroCommercial from "@/assets/hero-commercial.webp.asset.json";
-import sustainabilityImg from "@/assets/sustainability-section.jpg";
+import sustainabilityBg from "@/assets/sustainability-bg.png.asset.json";
 import blogAward from "@/assets/blog-award.jpg";
 import blogSafety from "@/assets/blog-safety.jpg";
 import blogSustainability from "@/assets/blog-sustainability.jpg";
@@ -458,8 +458,8 @@ const Index = () => {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={sustainabilityImg}
-          alt="Sustainable energy infrastructure surrounded by lush green forests"
+          src={sustainabilityBg.url}
+          alt="Jamuna Gas sustainable infrastructure by the river"
           className="w-full h-full object-cover"
           loading="lazy"
         />
