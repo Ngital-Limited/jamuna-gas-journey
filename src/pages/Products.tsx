@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,8 +9,10 @@ import {
   Fuel, DollarSign, Wrench, Shield, Factory, Zap, Paintbrush, Cog, Sparkles, Phone,
   ArrowRight, CheckCircle, ChevronRight,
 } from "lucide-react";
-import householdImg from "@/assets/jamuna-12kg-cylinder.png";
-import commercialImg from "@/assets/jamuna-45kg-cylinder.png";
+import householdImg12 from "@/assets/jamuna-12kg-cylinder.png";
+import householdImg5 from "@/assets/jamuna-5kg-cylinder.png";
+import commercialImg35 from "@/assets/jamuna-35kg-cylinder.png";
+import commercialImg45 from "@/assets/jamuna-45kg-cylinder.png";
 import autoGasImg from "@/assets/auto-gas.jpg";
 import productsHero from "@/assets/products-hero.jpg";
 import bulkImg from "@/assets/bulk-lpg-truck.png";
@@ -52,7 +55,14 @@ const productNav = [
   { id: "autogas", label: "Auto Gas", icon: Car },
 ];
 
-const Products = () => (
+const Products = () => {
+  const [selectedHouseholdKg, setSelectedHouseholdKg] = useState<"12" | "5.5">("12");
+  const [selectedCommercialKg, setSelectedCommercialKg] = useState<"35" | "45">("45");
+
+  const householdImage = selectedHouseholdKg === "12" ? householdImg12 : householdImg5;
+  const commercialImage = selectedCommercialKg === "35" ? commercialImg35 : commercialImg45;
+
+  return (
   <Layout>
     {/* Hero */}
     <section className="relative min-h-[70vh] flex items-center justify-center">
@@ -95,7 +105,7 @@ const Products = () => (
             <div className="lg:col-span-5 flex items-center justify-center p-10 lg:p-16">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-primary/10 rounded-full blur-3xl scale-75" />
-                <img src={householdImg} alt="Jamuna Gas 12kg household LPG cylinder" loading="lazy" className="relative max-h-[450px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" />
+                <img key={selectedHouseholdKg} src={householdImage} alt={`Jamuna Gas ${selectedHouseholdKg}kg household LPG cylinder`} loading="lazy" className="relative max-h-[450px] object-contain drop-shadow-2xl animate-fade-in" />
               </div>
             </div>
             
@@ -106,11 +116,11 @@ const Products = () => (
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <div className="relative rounded-2xl border border-primary/20 bg-card p-6 group hover:shadow-lg hover:border-primary/40 transition-all duration-300">
+                <button onClick={() => setSelectedHouseholdKg("12")} className={`relative rounded-2xl border p-6 text-left transition-all duration-300 ${selectedHouseholdKg === "12" ? "border-primary bg-primary/[0.04] shadow-lg" : "border-primary/20 bg-card hover:shadow-lg hover:border-primary/40"}`}>
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-t-2xl" />
                   <div className="flex items-center gap-3 mb-3 pt-1">
-                    <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Flame className="h-5 w-5 text-primary" />
+                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${selectedHouseholdKg === "12" ? "bg-primary text-white" : "bg-primary/10"}`}>
+                      <Flame className={`h-5 w-5 ${selectedHouseholdKg === "12" ? "text-white" : "text-primary"}`} />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold">12 kg</h3>
@@ -122,12 +132,12 @@ const Products = () => (
                     <span className="text-[10px] font-medium bg-primary/10 text-primary rounded-full px-2.5 py-1">~30 days</span>
                     <span className="text-[10px] font-medium bg-primary/10 text-primary rounded-full px-2.5 py-1">Portable</span>
                   </div>
-                </div>
-                <div className="relative rounded-2xl border border-accent/20 bg-card p-6 group hover:shadow-lg hover:border-accent/40 transition-all duration-300">
+                </button>
+                <button onClick={() => setSelectedHouseholdKg("5.5")} className={`relative rounded-2xl border p-6 text-left transition-all duration-300 ${selectedHouseholdKg === "5.5" ? "border-accent bg-accent/[0.04] shadow-lg" : "border-accent/20 bg-card hover:shadow-lg hover:border-accent/40"}`}>
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 rounded-t-2xl" />
                   <div className="flex items-center gap-3 mb-3 pt-1">
-                    <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center">
-                      <Flame className="h-5 w-5 text-accent" />
+                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${selectedHouseholdKg === "5.5" ? "bg-accent text-white" : "bg-accent/10"}`}>
+                      <Flame className={`h-5 w-5 ${selectedHouseholdKg === "5.5" ? "text-white" : "text-accent"}`} />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold">5.5 kg</h3>
@@ -139,7 +149,7 @@ const Products = () => (
                     <span className="text-[10px] font-medium bg-accent/10 text-accent rounded-full px-2.5 py-1">Lightweight</span>
                     <span className="text-[10px] font-medium bg-accent/10 text-accent rounded-full px-2.5 py-1">On-the-go</span>
                   </div>
-                </div>
+                </button>
               </div>
 
               <div className="flex items-center gap-6 text-sm text-muted-foreground">
@@ -218,7 +228,7 @@ const Products = () => (
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-l-3xl" />
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-primary/10 rounded-full blur-3xl scale-75" />
-                <img src={commercialImg} alt="Jamuna Gas 45kg commercial LPG cylinder" loading="lazy" className="relative max-h-[450px] object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700" />
+                <img key={selectedCommercialKg} src={commercialImage} alt={`Jamuna Gas ${selectedCommercialKg}kg commercial LPG cylinder`} loading="lazy" className="relative max-h-[450px] object-contain drop-shadow-2xl animate-fade-in" />
               </div>
             </div>
 
@@ -229,11 +239,11 @@ const Products = () => (
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <div className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-6 group hover:bg-white/[0.08] transition-all duration-300">
+                <button onClick={() => setSelectedCommercialKg("35")} className={`relative rounded-2xl border p-6 text-left transition-all duration-300 ${selectedCommercialKg === "35" ? "border-primary bg-primary/20 shadow-lg" : "bg-white/[0.04] border-white/10 hover:bg-white/[0.08]"}`}>
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-t-2xl" />
                   <div className="flex items-center gap-3 mb-3 pt-1">
-                    <div className="h-10 w-10 rounded-xl bg-primary/20 flex items-center justify-center">
-                      <Flame className="h-5 w-5 text-primary" />
+                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${selectedCommercialKg === "35" ? "bg-primary text-white" : "bg-primary/20"}`}>
+                      <Flame className={`h-5 w-5 ${selectedCommercialKg === "35" ? "text-white" : "text-primary"}`} />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white">35 kg</h3>
@@ -245,12 +255,12 @@ const Products = () => (
                     <span className="text-[10px] font-medium bg-primary/20 text-primary rounded-full px-2.5 py-1">High Output</span>
                     <span className="text-[10px] font-medium bg-primary/20 text-primary rounded-full px-2.5 py-1">Durable</span>
                   </div>
-                </div>
-                <div className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-6 group hover:bg-white/[0.08] transition-all duration-300">
+                </button>
+                <button onClick={() => setSelectedCommercialKg("45")} className={`relative rounded-2xl border p-6 text-left transition-all duration-300 ${selectedCommercialKg === "45" ? "border-accent bg-accent/20 shadow-lg" : "bg-white/[0.04] border-white/10 hover:bg-white/[0.08]"}`}>
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 rounded-t-2xl" />
                   <div className="flex items-center gap-3 mb-3 pt-1">
-                    <div className="h-10 w-10 rounded-xl bg-accent/20 flex items-center justify-center">
-                      <Flame className="h-5 w-5 text-accent" />
+                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${selectedCommercialKg === "45" ? "bg-accent text-white" : "bg-accent/20"}`}>
+                      <Flame className={`h-5 w-5 ${selectedCommercialKg === "45" ? "text-white" : "text-accent"}`} />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white">45 kg</h3>
@@ -262,7 +272,7 @@ const Products = () => (
                     <span className="text-[10px] font-medium bg-accent/20 text-accent rounded-full px-2.5 py-1">Max Capacity</span>
                     <span className="text-[10px] font-medium bg-accent/20 text-accent rounded-full px-2.5 py-1">Industrial</span>
                   </div>
-                </div>
+                </button>
               </div>
 
               <div className="flex flex-wrap gap-3">
@@ -526,5 +536,6 @@ const Products = () => (
     </section>
   </Layout>
 );
+};
 
 export default Products;
