@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Building, Home, Factory, Fuel, ShieldCheck, Wrench, CheckCircle, ChevronRight, ArrowRight, Zap, Settings, PenTool, Phone, Flame } from "lucide-react";
 import servicesHero from "@/assets/services-hero.jpg";
-import reticulationImg from "@/assets/reticulation-service.jpg";
+import reticulationImg from "@/assets/reticulation-commercial.png.asset.json";
 import autogasImg from "@/assets/autogas-station.jpg";
 
 const reticulationFeatures = [
