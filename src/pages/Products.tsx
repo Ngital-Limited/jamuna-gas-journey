@@ -133,11 +133,11 @@ const Products = () => {
                     <span className="text-[10px] font-medium bg-primary/10 text-primary rounded-full px-2.5 py-1">Portable</span>
                   </div>
                 </button>
-                <div className="relative rounded-2xl border border-accent/20 bg-card p-6 group hover:shadow-lg hover:border-accent/40 transition-all duration-300">
+                <button onClick={() => setSelectedHouseholdKg("5.5")} className={`relative rounded-2xl border p-6 text-left transition-all duration-300 ${selectedHouseholdKg === "5.5" ? "border-accent bg-accent/[0.04] shadow-lg" : "border-accent/20 bg-card hover:shadow-lg hover:border-accent/40"}`}>
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 rounded-t-2xl" />
                   <div className="flex items-center gap-3 mb-3 pt-1">
-                    <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center">
-                      <Flame className="h-5 w-5 text-accent" />
+                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${selectedHouseholdKg === "5.5" ? "bg-accent text-white" : "bg-accent/10"}`}>
+                      <Flame className={`h-5 w-5 ${selectedHouseholdKg === "5.5" ? "text-white" : "text-accent"}`} />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold">5.5 kg</h3>
@@ -149,7 +149,7 @@ const Products = () => {
                     <span className="text-[10px] font-medium bg-accent/10 text-accent rounded-full px-2.5 py-1">Lightweight</span>
                     <span className="text-[10px] font-medium bg-accent/10 text-accent rounded-full px-2.5 py-1">On-the-go</span>
                   </div>
-                </div>
+                </button>
               </div>
 
               <div className="flex items-center gap-6 text-sm text-muted-foreground">
