@@ -536,5 +536,6 @@ const Products = () => {
     </section>
   </Layout>
 );
+};
 
 export default Products;
