@@ -83,21 +83,7 @@ const whyChoose = [
   { icon: Flame, title: "24+ Years Legacy", desc: "Two decades of trusted energy solutions since 2000." },
 ];
 
-const slides = [
-  { src: heroFamily.url, alt: "Family enjoying safe LPG energy" },
-  { src: heroCommercial.url, alt: "Professional kitchen powered by Jamuna Gas" },
-];
-
 const Index = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <Layout>
       {/* Hero */}
