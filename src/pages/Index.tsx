@@ -458,8 +458,8 @@ const Index = () => {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={sustainabilityImg}
-          alt="Sustainable energy infrastructure surrounded by lush green forests"
+          src={sustainabilityBg.url}
+          alt="Jamuna Gas sustainable infrastructure by the river"
           className="w-full h-full object-cover"
           loading="lazy"
         />
