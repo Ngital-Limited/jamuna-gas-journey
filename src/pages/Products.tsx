@@ -256,11 +256,11 @@ const Products = () => {
                     <span className="text-[10px] font-medium bg-primary/20 text-primary rounded-full px-2.5 py-1">Durable</span>
                   </div>
                 </button>
-                <div className="relative rounded-2xl bg-white/[0.04] border border-white/10 p-6 group hover:bg-white/[0.08] transition-all duration-300">
+                <button onClick={() => setSelectedCommercialKg("45")} className={`relative rounded-2xl border p-6 text-left transition-all duration-300 ${selectedCommercialKg === "45" ? "border-accent bg-accent/20 shadow-lg" : "bg-white/[0.04] border-white/10 hover:bg-white/[0.08]"}`}>
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 rounded-t-2xl" />
                   <div className="flex items-center gap-3 mb-3 pt-1">
-                    <div className="h-10 w-10 rounded-xl bg-accent/20 flex items-center justify-center">
-                      <Flame className="h-5 w-5 text-accent" />
+                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${selectedCommercialKg === "45" ? "bg-accent text-white" : "bg-accent/20"}`}>
+                      <Flame className={`h-5 w-5 ${selectedCommercialKg === "45" ? "text-white" : "text-accent"}`} />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-white">45 kg</h3>
@@ -272,7 +272,7 @@ const Products = () => {
                     <span className="text-[10px] font-medium bg-accent/20 text-accent rounded-full px-2.5 py-1">Max Capacity</span>
                     <span className="text-[10px] font-medium bg-accent/20 text-accent rounded-full px-2.5 py-1">Industrial</span>
                   </div>
-                </div>
+                </button>
               </div>
 
               <div className="flex flex-wrap gap-3">
