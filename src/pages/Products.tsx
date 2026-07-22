@@ -105,7 +105,7 @@ const Products = () => {
             <div className="lg:col-span-5 flex items-center justify-center p-10 lg:p-16">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-primary/10 rounded-full blur-3xl scale-75" />
-                <img key={selectedHouseholdKg} src={householdImage} alt={`Jamuna Gas ${selectedHouseholdKg}kg household LPG cylinder`} loading="lazy" className="relative max-h-[450px] object-contain drop-shadow-2xl animate-fade-in" />
+                <img key={selectedHouseholdKg} src={householdImage} alt={`Jamuna Gas ${selectedHouseholdKg}kg household LPG cylinder`} loading="lazy" className={`relative object-contain drop-shadow-2xl animate-fade-in ${selectedHouseholdKg === "5.5" ? "max-h-[340px]" : "max-h-[450px]"}`} />
               </div>
             </div>
             
@@ -228,7 +228,7 @@ const Products = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-l-3xl" />
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-b from-accent/10 to-primary/10 rounded-full blur-3xl scale-75" />
-                <img key={selectedCommercialKg} src={commercialImage} alt={`Jamuna Gas ${selectedCommercialKg}kg commercial LPG cylinder`} loading="lazy" className="relative max-h-[450px] object-contain drop-shadow-2xl animate-fade-in" />
+                <img key={selectedCommercialKg} src={commercialImage} alt={`Jamuna Gas ${selectedCommercialKg}kg commercial LPG cylinder`} loading="lazy" className={`relative object-contain drop-shadow-2xl animate-fade-in ${selectedCommercialKg === "35" ? "max-h-[380px]" : "max-h-[450px]"}`} />
               </div>
             </div>
 
