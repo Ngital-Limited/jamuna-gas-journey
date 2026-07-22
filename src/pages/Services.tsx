@@ -72,7 +72,7 @@ const Services = () => (
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
             <div className="grid grid-cols-1 lg:grid-cols-12">
               <div className="lg:col-span-5 relative">
-                <img src={reticulationImg} alt="Gas reticulation piping system" loading="lazy" className="w-full h-full min-h-[450px] object-cover" />
+                <img src={reticulationImg.url} alt="Gas reticulation piping system" loading="lazy" className="w-full h-full min-h-[450px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-card/30" />
                 {/* Floating stats on image */}
                 <div className="absolute bottom-6 left-6 right-6 lg:bottom-8 lg:left-8 lg:right-8 flex gap-3">
