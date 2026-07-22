@@ -55,7 +55,14 @@ const productNav = [
   { id: "autogas", label: "Auto Gas", icon: Car },
 ];
 
-const Products = () => (
+const Products = () => {
+  const [selectedHouseholdKg, setSelectedHouseholdKg] = useState<"12" | "5.5">("12");
+  const [selectedCommercialKg, setSelectedCommercialKg] = useState<"35" | "45">("45");
+
+  const householdImage = selectedHouseholdKg === "12" ? householdImg12 : householdImg5;
+  const commercialImage = selectedCommercialKg === "35" ? commercialImg35 : commercialImg45;
+
+  return (
   <Layout>
     {/* Hero */}
     <section className="relative min-h-[70vh] flex items-center justify-center">
