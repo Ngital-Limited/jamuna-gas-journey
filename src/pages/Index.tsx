@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,9 +8,6 @@ import {
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
-import heroBg from "@/assets/hero-bg.jpg";
-import heroFamily from "@/assets/hero-family.webp.asset.json";
-import heroCommercial from "@/assets/hero-commercial.webp.asset.json";
 import sustainabilityBg from "@/assets/sustainability-bg.png.asset.json";
 import blogAward from "@/assets/blog-award.jpg";
 import blogSafety from "@/assets/blog-safety.jpg";
@@ -87,46 +83,23 @@ const whyChoose = [
   { icon: Flame, title: "24+ Years Legacy", desc: "Two decades of trusted energy solutions since 2000." },
 ];
 
-const slides = [
-  { src: heroFamily.url, alt: "Family enjoying safe LPG energy" },
-  { src: heroCommercial.url, alt: "Professional kitchen powered by Jamuna Gas" },
-];
-
 const Index = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[100vh] flex items-end overflow-hidden">
-        {slides.map((slide, i) => (
-          <div
-            key={slide.src}
-            className={`absolute inset-0 transition-opacity duration-[1400ms] ease-out ${
-              i === currentSlide ? "opacity-100 z-[1]" : "opacity-0 z-0"
-            }`}
-          >
-            <img
-              src={slide.src}
-              alt={slide.alt}
-              className={`w-full h-full object-cover will-change-transform ${
-                i === currentSlide ? "animate-ken-burns" : ""
-              }`}
-              width={1920}
-              height={1080}
-            />
-          </div>
-        ))}
+        <div className="absolute inset-0 z-0">
+          <iframe
+            className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-[100vh] h-[56.25vw] -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
+            src="https://www.youtube.com/embed/5a3cgZqna98?autoplay=1&mute=1&loop=1&playlist=5a3cgZqna98&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+            title="Jamuna Gas Hero Video"
+            allow="autoplay; encrypted-media; fullscreen"
+            frameBorder="0"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-[2]" />
         <div className="container mx-auto px-4 relative z-10 pb-24 pt-40">
-          <div key={currentSlide} className="flex flex-col items-center text-center max-w-2xl mx-auto">
+          <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-hero-reveal">
               <Flame className="h-4 w-4 text-accent" />
               Since 2000 — Bangladesh's Pioneer in LPG
@@ -147,27 +120,6 @@ const Index = () => {
               <Button asChild variant="outline" className="border-white/40 text-white bg-white/10 hover:bg-white/20 hover:border-white/60 text-sm px-6 h-11 rounded-xl backdrop-blur-sm transition-all duration-300">
                 <Link to="/about">Learn More</Link>
               </Button>
-            </div>
-            {/* Slide Indicators */}
-            <div className="flex justify-center items-center gap-2.5 mt-8">
-              {slides.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentSlide(i)}
-                  aria-label={`Go to slide ${i + 1}`}
-                  className={`relative h-1.5 rounded-full overflow-hidden transition-all duration-500 ${
-                    i === currentSlide ? "w-10 bg-white/25" : "w-1.5 bg-white/30 hover:bg-white/50"
-                  }`}
-                >
-                  {i === currentSlide && (
-                    <span
-                      key={currentSlide}
-                      className="absolute inset-y-0 left-0 bg-accent rounded-full"
-                      style={{ animation: "slide-progress 6s linear forwards" }}
-                    />
-                  )}
-                </button>
-              ))}
             </div>
           </div>
         </div>
