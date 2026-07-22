@@ -91,13 +91,14 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
           <iframe
             className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-[100vh] h-[56.25vw] -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
-            src="https://www.youtube.com/embed/5a3cgZqna98?autoplay=1&mute=1&loop=1&playlist=5a3cgZqna98&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+            src="https://www.youtube.com/embed/5a3cgZqna98?autoplay=1&mute=1&loop=1&playlist=5a3cgZqna98&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&iv_load_policy=3&fs=0"
             title="Jamuna Gas Hero Video"
             allow="autoplay; encrypted-media; fullscreen"
             frameBorder="0"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-[2]" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent z-[3]" />
         <div className="container mx-auto px-4 relative z-10 pb-24 pt-40">
           <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-hero-reveal">
