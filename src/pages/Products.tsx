@@ -9,8 +9,10 @@ import {
   Fuel, DollarSign, Wrench, Shield, Factory, Zap, Paintbrush, Cog, Sparkles, Phone,
   ArrowRight, CheckCircle, ChevronRight,
 } from "lucide-react";
-import householdImg from "@/assets/jamuna-12kg-cylinder.png";
-import commercialImg from "@/assets/jamuna-45kg-cylinder.png";
+import householdImg12 from "@/assets/jamuna-12kg-cylinder.png";
+import householdImg5 from "@/assets/jamuna-5kg-cylinder.png";
+import commercialImg35 from "@/assets/jamuna-35kg-cylinder.png";
+import commercialImg45 from "@/assets/jamuna-45kg-cylinder.png";
 import autoGasImg from "@/assets/auto-gas.jpg";
 import productsHero from "@/assets/products-hero.jpg";
 import bulkImg from "@/assets/bulk-lpg-truck.png";
