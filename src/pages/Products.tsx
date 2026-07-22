@@ -116,11 +116,11 @@ const Products = () => {
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <div className="relative rounded-2xl border border-primary/20 bg-card p-6 group hover:shadow-lg hover:border-primary/40 transition-all duration-300">
+                <button onClick={() => setSelectedHouseholdKg("12")} className={`relative rounded-2xl border p-6 text-left transition-all duration-300 ${selectedHouseholdKg === "12" ? "border-primary bg-primary/[0.04] shadow-lg" : "border-primary/20 bg-card hover:shadow-lg hover:border-primary/40"}`}>
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-t-2xl" />
                   <div className="flex items-center gap-3 mb-3 pt-1">
-                    <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                      <Flame className="h-5 w-5 text-primary" />
+                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center transition-colors ${selectedHouseholdKg === "12" ? "bg-primary text-white" : "bg-primary/10"}`}>
+                      <Flame className={`h-5 w-5 ${selectedHouseholdKg === "12" ? "text-white" : "text-primary"}`} />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold">12 kg</h3>
@@ -132,7 +132,7 @@ const Products = () => {
                     <span className="text-[10px] font-medium bg-primary/10 text-primary rounded-full px-2.5 py-1">~30 days</span>
                     <span className="text-[10px] font-medium bg-primary/10 text-primary rounded-full px-2.5 py-1">Portable</span>
                   </div>
-                </div>
+                </button>
                 <div className="relative rounded-2xl border border-accent/20 bg-card p-6 group hover:shadow-lg hover:border-accent/40 transition-all duration-300">
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-accent/50 rounded-t-2xl" />
                   <div className="flex items-center gap-3 mb-3 pt-1">
