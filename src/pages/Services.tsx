@@ -75,7 +75,7 @@ const Services = () => (
                 <img src={reticulationImg.url} alt="Gas reticulation piping system" loading="lazy" className="w-full h-full min-h-[450px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-card/30" />
                 {/* Floating stats on image */}
-                <div className="absolute bottom-6 left-6 right-6 lg:bottom-8 lg:left-8 lg:right-8 flex gap-3">
+                <div className="absolute top-6 left-6 right-6 lg:top-8 lg:left-8 lg:right-8 flex gap-3">
                   {[
                     { value: "500+", label: "Systems Installed" },
                     { value: "99.9%", label: "Uptime" },
