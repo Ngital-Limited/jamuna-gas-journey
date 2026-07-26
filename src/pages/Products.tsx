@@ -13,7 +13,7 @@ import householdImg12 from "@/assets/jamuna-12kg-cylinder.png";
 import householdImg5 from "@/assets/jamuna-5kg-cylinder.png";
 import commercialImg35 from "@/assets/jamuna-35kg-cylinder.png";
 import commercialImg45 from "@/assets/jamuna-45kg-cylinder.png";
-import autoGasImg from "@/assets/auto-gas.jpg";
+import autoGasAsset from "@/assets/auto-gas.jpg.asset.json";
 import productsHero from "@/assets/products-hero.jpg";
 import bulkImg from "@/assets/bulk-lpg-truck.png";
 
