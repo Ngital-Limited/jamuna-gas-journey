@@ -429,7 +429,7 @@ const Products = () => {
             {/* Image */}
             <div className="lg:col-span-5 relative">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5" />
-              <img src={autoGasImg} alt="Jamuna Gas Auto Gas refueling station" loading="lazy" className="w-full h-full min-h-[350px] object-cover" />
+              <img src={autoGasAsset.url} alt="Jamuna Gas Auto Gas refueling station" loading="lazy" className="w-full h-full min-h-[350px] object-cover" />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/20 hidden lg:block" />
             </div>
 
