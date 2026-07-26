@@ -13,7 +13,7 @@ import householdImg12 from "@/assets/jamuna-12kg-cylinder.png";
 import householdImg5 from "@/assets/jamuna-5kg-cylinder.png";
 import commercialImg35 from "@/assets/jamuna-35kg-cylinder.png";
 import commercialImg45 from "@/assets/jamuna-45kg-cylinder.png";
-import autoGasImg from "@/assets/auto-gas.jpg";
+import autoGasAsset from "@/assets/auto-gas.jpg.asset.json";
 import productsHero from "@/assets/products-hero.jpg";
 import bulkImg from "@/assets/bulk-lpg-truck.png";
 
@@ -429,7 +429,7 @@ const Products = () => {
             {/* Image */}
             <div className="lg:col-span-5 relative">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5" />
-              <img src={autoGasImg} alt="Jamuna Gas Auto Gas refueling station" loading="lazy" className="w-full h-full min-h-[350px] object-cover" />
+              <img src={autoGasAsset.url} alt="Jamuna Gas Auto Gas refueling station" loading="lazy" className="w-full h-full min-h-[350px] object-cover" />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-card/20 hidden lg:block" />
             </div>
 
