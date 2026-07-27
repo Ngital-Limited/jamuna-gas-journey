@@ -148,12 +148,12 @@ const SisterConcerns = () => {
                 {/* Cover */}
                 <div className="relative h-44 overflow-hidden bg-white border-b border-border/30">
                   <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${c.gradient}`} />
-                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <div className="absolute inset-0 flex items-center justify-center p-4">
                     <img
                       src={c.logo}
                       alt={`${c.name} logo`}
                       loading="lazy"
-                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
+                      className="h-full w-auto max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <span className="absolute top-4 left-4 bg-foreground/80 backdrop-blur-md rounded-full px-3 py-1 text-[10px] font-semibold text-white uppercase tracking-wider flex items-center gap-1.5">
