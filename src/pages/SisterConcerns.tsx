@@ -5,6 +5,12 @@ import {
   Building2, Paintbrush, Cylinder, Factory, Ship, Sprout, Store,
   ArrowRight, Network, MapPin, Calendar,
 } from "lucide-react";
+import classicPaintsLogo from "@/assets/sister/classic-paints.png.asset.json";
+import jbCylinderLogo from "@/assets/sister/jb-cylinder.png.asset.json";
+import jbrlLogo from "@/assets/sister/jbrl.png.asset.json";
+import jbDredgerLogo from "@/assets/sister/jb-dredger.png.asset.json";
+import jbAgroLogo from "@/assets/sister/jb-agro.png.asset.json";
+import jamunaEnterpriseLogo from "@/assets/sister/jamuna-enterprise.png.asset.json";
 
 const companies = [
   {
@@ -13,50 +19,55 @@ const companies = [
     desc: "A trusted name in decorative, industrial, and protective paints — delivering durable finishes for homes, factories, and infrastructure across Bangladesh.",
     sectors: ["Decorative", "Industrial", "Protective"],
     icon: Paintbrush,
+    logo: classicPaintsLogo.url,
     gradient: "from-rose-500 via-orange-500 to-amber-500",
     accent: "text-rose-500",
     location: "Dhaka, Bangladesh",
     since: "Since 2005",
   },
   {
-    name: "JB Cylinder Ltd.",
+    name: "JB Cylinder Limited",
     tagline: "LPG Cylinder Manufacturing",
     desc: "State-of-the-art manufacturing of high-quality LPG cylinders meeting international safety and quality standards, supplying domestic and industrial markets.",
     sectors: ["12 kg", "5.5 kg", "35–45 kg"],
     icon: Cylinder,
+    logo: jbCylinderLogo.url,
     gradient: "from-primary via-primary/80 to-accent",
     accent: "text-primary",
     location: "Kaligonj, Gazipur",
     since: "Since 2010",
   },
   {
-    name: "JBRL",
-    tagline: "Jamuna Bottlers & Refineries Ltd.",
+    name: "JB Refinery Limited",
+    tagline: "Refining & Bottling Operations",
     desc: "Modern refining and bottling operations powering Jamuna Group's energy distribution network with consistent quality and reliable throughput.",
     sectors: ["Refining", "Bottling", "Storage"],
     icon: Factory,
+    logo: jbrlLogo.url,
     gradient: "from-slate-700 via-slate-600 to-primary",
     accent: "text-slate-700",
     location: "Mongla, Bagerhat",
     since: "Since 2008",
   },
   {
-    name: "JB Dredger Ltd.",
+    name: "JB Dredger Limited",
     tagline: "Marine Dredging Services",
     desc: "Professional dredging services for ports, rivers, and industrial waterways — supporting Bangladesh's blue economy with modern equipment and skilled crews.",
     sectors: ["Port Dredging", "River", "Industrial"],
     icon: Ship,
+    logo: jbDredgerLogo.url,
     gradient: "from-sky-600 via-blue-600 to-indigo-600",
     accent: "text-sky-600",
     location: "Chittagong",
     since: "Since 2014",
   },
   {
-    name: "JB Agro Plantation Ltd.",
+    name: "JB Agro Plantation Limited",
     tagline: "Sustainable Agriculture & Plantations",
     desc: "Large-scale agricultural plantations focused on sustainable farming, agroforestry, and contributing to food security and rural employment.",
     sectors: ["Plantation", "Agroforestry", "Crops"],
     icon: Sprout,
+    logo: jbAgroLogo.url,
     gradient: "from-emerald-500 via-green-500 to-teal-500",
     accent: "text-emerald-600",
     location: "Multiple Districts",
@@ -68,6 +79,7 @@ const companies = [
     desc: "The flagship trading arm of Jamuna Group — handling import, export, and distribution of essential commodities and industrial goods nationwide.",
     sectors: ["Trading", "Import", "Distribution"],
     icon: Store,
+    logo: jamunaEnterpriseLogo.url,
     gradient: "from-amber-500 via-yellow-500 to-orange-500",
     accent: "text-amber-600",
     location: "Dhaka, Bangladesh",
@@ -134,13 +146,17 @@ const SisterConcerns = () => {
                 className="group relative rounded-3xl border border-border/40 bg-card overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 {/* Cover */}
-                <div className="relative h-44 overflow-hidden">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${c.gradient}`} />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.25),transparent_60%)]" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <c.icon className="h-20 w-20 text-white/40 group-hover:scale-110 transition-transform duration-500" strokeWidth={1.2} />
+                <div className="relative h-44 overflow-hidden bg-white border-b border-border/30">
+                  <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${c.gradient}`} />
+                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                    <img
+                      src={c.logo}
+                      alt={`${c.name} logo`}
+                      loading="lazy"
+                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <span className="absolute top-4 left-4 bg-white/15 backdrop-blur-md border border-white/20 rounded-full px-3 py-1 text-[10px] font-semibold text-white uppercase tracking-wider flex items-center gap-1.5">
+                  <span className="absolute top-4 left-4 bg-foreground/80 backdrop-blur-md rounded-full px-3 py-1 text-[10px] font-semibold text-white uppercase tracking-wider flex items-center gap-1.5">
                     <Calendar className="h-3 w-3" /> {c.since}
                   </span>
                 </div>
