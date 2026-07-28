@@ -148,7 +148,7 @@ const SisterConcerns = () => {
                 {/* Cover */}
                 <div className="relative h-52 overflow-hidden bg-white border-b border-border/30">
                   <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${c.gradient}`} />
-                  <div className="absolute inset-0 flex items-center justify-center p-5">
+                  <div className={`absolute inset-0 flex items-center justify-center ${c.name === "Classic Paints" ? "p-5" : "p-1"}`}>
                     <img
                       src={c.logo}
                       alt={`${c.name} logo`}
