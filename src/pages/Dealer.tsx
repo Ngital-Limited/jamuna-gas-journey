@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
 import Layout from "@/components/Layout";
@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Building2, Factory, Handshake, Send, ArrowRight, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Building2, Factory, Handshake, Send, ArrowRight, CheckCircle, Store, Search, User } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { dealers, dealerDistricts } from "@/data/dealers";
 
 // Fix default marker icon
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -39,6 +40,16 @@ const plantIcon = new L.Icon({
 const depotIcon = new L.Icon({
   iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png",
   iconRetinaUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png",
+  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
+
+const dealerIcon = new L.Icon({
+  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",
+  iconRetinaUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png",
   shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41],
@@ -86,6 +97,24 @@ const Dealer = () => {
     experience: "",
     message: "",
   });
+
+  const [dealerQuery, setDealerQuery] = useState("");
+  const [dealerDistrict, setDealerDistrict] = useState("All");
+  const [visibleCount, setVisibleCount] = useState(12);
+
+  const filteredDealers = useMemo(() => {
+    const q = dealerQuery.trim().toLowerCase();
+    return dealers.filter((d) => {
+      const matchesDistrict = dealerDistrict === "All" || d.district === dealerDistrict;
+      const matchesQuery =
+        !q ||
+        d.name.toLowerCase().includes(q) ||
+        d.district.toLowerCase().includes(q) ||
+        d.address.toLowerCase().includes(q) ||
+        d.contact.toLowerCase().includes(q);
+      return matchesDistrict && matchesQuery;
+    });
+  }, [dealerQuery, dealerDistrict]);
 
   const handleApply = (e: React.FormEvent) => {
     e.preventDefault();
