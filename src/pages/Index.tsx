@@ -297,7 +297,7 @@ const Index = () => {
         <div className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-white/30 text-sm">
           <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> ISO Certified Quality</span>
           <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> Nationwide Delivery</span>
-          <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> 24+ Years of Trust</span>
+          <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> 27+ Years of Trust</span>
           <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> 1.5M+ Customers</span>
         </div>
       </div>
