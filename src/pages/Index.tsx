@@ -42,7 +42,7 @@ const blogPosts = [
 ];
 
 const stats = [
-  { icon: Calendar, value: "24+", label: "Years of Excellence" },
+  { icon: Calendar, value: "27+", label: "Years of Excellence" },
   { icon: Users, value: "1.5M+", label: "Customers Served" },
   { icon: Trophy, value: "3+", label: "Brand Awards" },
   { icon: TrendingUp, value: "4", label: "Plants Nationwide" },
@@ -72,7 +72,7 @@ const timeline = [
   { year: "1998", title: "Company Founded", desc: "JSJVL incorporated under the Companies Act 1994." },
   { year: "2000", title: "Operations Began", desc: "First government-approved private LPG plant launched." },
   { year: "2023", title: "Best Brand Award", desc: "Recognized for customer satisfaction and trust." },
-  { year: "2024", title: "2 Decades Strong", desc: "24th year with 1.5M+ nationwide customers." },
+  { year: "2024", title: "2 Decades Strong", desc: "27th year with 1.5M+ nationwide customers." },
 ];
 
 const whyChoose = [
@@ -81,7 +81,7 @@ const whyChoose = [
   { icon: Users, title: "1.5M+ Customers", desc: "Serving over 1.5 million satisfied customers daily." },
   { icon: Award, title: "Award Winning", desc: "Best Brand Award winner for trust and customer satisfaction." },
   { icon: Truck, title: "Reliable Delivery", desc: "On-time delivery through our robust logistics network." },
-  { icon: Flame, title: "24+ Years Legacy", desc: "Two decades of trusted energy solutions since 2000." },
+  { icon: Flame, title: "27+ Years Legacy", desc: "Two decades of trusted energy solutions since 2000." },
 ];
 
 const Index = () => {
@@ -213,7 +213,7 @@ const Index = () => {
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
                   { value: "1998", label: "Year Established", icon: Calendar },
-                  { value: "24+", label: "Years of Excellence", icon: Trophy },
+                  { value: "27+", label: "Years of Excellence", icon: Trophy },
                   { value: "1.5M+", label: "Customers Served", icon: Users },
                   { value: "15+", label: "Distribution Depots", icon: Truck },
                 ].map((s) => (
@@ -297,7 +297,7 @@ const Index = () => {
         <div className="mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-white/30 text-sm">
           <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> ISO Certified Quality</span>
           <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> Nationwide Delivery</span>
-          <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> 24+ Years of Trust</span>
+          <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> 27+ Years of Trust</span>
           <span className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-primary/60" /> 1.5M+ Customers</span>
         </div>
       </div>
