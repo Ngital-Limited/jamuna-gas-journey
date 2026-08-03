@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
-import sustainabilityBg from "@/assets/sustainability-bg.png.asset.json";
+import sustainabilityBg from "@/assets/sustainability-facility.jpg.asset.json";
 import heroVideo from "@/assets/hero-video.mp4.asset.json";
 import blogAward from "@/assets/blog-award.jpg";
 import blogSafety from "@/assets/blog-safety.jpg";
