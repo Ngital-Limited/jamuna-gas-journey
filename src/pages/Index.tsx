@@ -213,7 +213,7 @@ const Index = () => {
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
                   { value: "1998", label: "Year Established", icon: Calendar },
-                  { value: "24+", label: "Years of Excellence", icon: Trophy },
+                  { value: "27+", label: "Years of Excellence", icon: Trophy },
                   { value: "1.5M+", label: "Customers Served", icon: Users },
                   { value: "15+", label: "Distribution Depots", icon: Truck },
                 ].map((s) => (
