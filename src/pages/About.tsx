@@ -26,7 +26,7 @@ const timeline = [
   { year: "1998", title: "Company Founded", event: "Jamuna Spacetech Joint Venture Limited (JSJVL) incorporated under the Companies Act 1994." },
   { year: "2000", title: "Operations Began", event: "Commenced operations as the first government-approved private LPG plant in Bangladesh." },
   { year: "2023", title: "Best Brand Award", event: "Won the Best Brand Award for customer satisfaction and trust." },
-  { year: "2024", title: "2 Decades Anniversary", event: "Entered 24th year of operations — 2 Decades Anniversary. Won Best Brand Award again." },
+  { year: "2024", title: "2 Decades Anniversary", event: "Entered 27th year of operations — 2 Decades Anniversary. Won Best Brand Award again." },
 ];
 
 const About = () => (
