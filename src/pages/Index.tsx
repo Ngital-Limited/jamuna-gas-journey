@@ -72,7 +72,7 @@ const timeline = [
   { year: "1998", title: "Company Founded", desc: "JSJVL incorporated under the Companies Act 1994." },
   { year: "2000", title: "Operations Began", desc: "First government-approved private LPG plant launched." },
   { year: "2023", title: "Best Brand Award", desc: "Recognized for customer satisfaction and trust." },
-  { year: "2024", title: "2 Decades Strong", desc: "24th year with 1.5M+ nationwide customers." },
+  { year: "2024", title: "2 Decades Strong", desc: "27th year with 1.5M+ nationwide customers." },
 ];
 
 const whyChoose = [
@@ -81,7 +81,7 @@ const whyChoose = [
   { icon: Users, title: "1.5M+ Customers", desc: "Serving over 1.5 million satisfied customers daily." },
   { icon: Award, title: "Award Winning", desc: "Best Brand Award winner for trust and customer satisfaction." },
   { icon: Truck, title: "Reliable Delivery", desc: "On-time delivery through our robust logistics network." },
-  { icon: Flame, title: "24+ Years Legacy", desc: "Two decades of trusted energy solutions since 2000." },
+  { icon: Flame, title: "27+ Years Legacy", desc: "Two decades of trusted energy solutions since 2000." },
 ];
 
 const Index = () => {
