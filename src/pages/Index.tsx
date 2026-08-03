@@ -42,7 +42,7 @@ const blogPosts = [
 ];
 
 const stats = [
-  { icon: Calendar, value: "24+", label: "Years of Excellence" },
+  { icon: Calendar, value: "27+", label: "Years of Excellence" },
   { icon: Users, value: "1.5M+", label: "Customers Served" },
   { icon: Trophy, value: "3+", label: "Brand Awards" },
   { icon: TrendingUp, value: "4", label: "Plants Nationwide" },
