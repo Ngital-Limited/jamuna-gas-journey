@@ -142,6 +142,15 @@ const Navbar = () => {
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
 
+        {/* Close button */}
+        <button
+          onClick={() => setOpen(false)}
+          className="absolute top-6 right-6 z-20 p-2.5 rounded-xl bg-white/10 text-white hover:bg-white/20 transition-all duration-300"
+          aria-label="Close menu"
+        >
+          <X className="h-6 w-6" />
+        </button>
+
         {/* Menu Content */}
         <div className="relative z-10 h-full flex flex-col pt-24 pb-8 overflow-y-auto">
           <nav className="container mx-auto px-6 flex-1">
