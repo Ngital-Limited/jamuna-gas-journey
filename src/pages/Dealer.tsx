@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Building2, Factory, Handshake, Send, ArrowRight, CheckCircle, Store, Search, User } from "lucide-react";
+import { MapPin, Phone, Building2, Factory, Handshake, Send, ArrowRight, CheckCircle, Store } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -100,24 +100,6 @@ const Dealer = () => {
     experience: "",
     message: "",
   });
-
-  const [dealerQuery, setDealerQuery] = useState("");
-  const [dealerDistrict, setDealerDistrict] = useState("All");
-  const [visibleCount, setVisibleCount] = useState(12);
-
-  const filteredDealers = useMemo(() => {
-    const q = dealerQuery.trim().toLowerCase();
-    return dealers.filter((d) => {
-      const matchesDistrict = dealerDistrict === "All" || d.district === dealerDistrict;
-      const matchesQuery =
-        !q ||
-        d.name.toLowerCase().includes(q) ||
-        d.district.toLowerCase().includes(q) ||
-        d.address.toLowerCase().includes(q) ||
-        d.contact.toLowerCase().includes(q);
-      return matchesDistrict && matchesQuery;
-    });
-  }, [dealerQuery, dealerDistrict]);
 
   const handleApply = (e: React.FormEvent) => {
     e.preventDefault();
