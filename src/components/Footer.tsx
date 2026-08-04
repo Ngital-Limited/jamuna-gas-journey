@@ -22,7 +22,7 @@ const productLinks = [
 ];
 
 const resourceLinks = [
-  { label: "Dealer Network", to: "/dealer" },
+  { label: "Dealer Network", to: "/dealer-network" },
   { label: "Become a Dealer", to: "/dealer#apply" },
   { label: "Bulk Service Enquiry", to: "/bulk-enquiry" },
   { label: "Careers", to: "/career" },

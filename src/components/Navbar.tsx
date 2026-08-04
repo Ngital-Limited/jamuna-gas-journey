@@ -14,6 +14,7 @@ const navLinks = [
   { label: "Sister Concerns", to: "/sister-concerns" },
   { label: "Safety Tips", to: "/safety" },
   { label: "Dealer", to: "/dealer" },
+  { label: "Dealer Network", to: "/dealer-network" },
   { label: "Career", to: "/career" },
   { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
