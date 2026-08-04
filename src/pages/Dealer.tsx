@@ -277,7 +277,7 @@ const Dealer = () => {
             <div className="h-[500px] w-full">
               <MapContainer
                 center={[23.8, 90.4]}
-                zoom={7}
+                zoom={8}
                 scrollWheelZoom={false}
                 className="h-full w-full"
                 style={{ borderRadius: "1.5rem" }}
