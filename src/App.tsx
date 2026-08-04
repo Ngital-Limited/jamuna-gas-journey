@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import Sustainability from "./pages/Sustainability";
 import Dealer from "./pages/Dealer";
+import DealerNetwork from "./pages/DealerNetwork";
 import Career from "./pages/Career";
 import BulkEnquiry from "./pages/BulkEnquiry";
 import Blog from "./pages/Blog";
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/sustainability" element={<Sustainability />} />
           <Route path="/dealer" element={<Dealer />} />
+          <Route path="/dealer-network" element={<DealerNetwork />} />
           <Route path="/career" element={<Career />} />
           <Route path="/bulk-enquiry" element={<BulkEnquiry />} />
           <Route path="/blog" element={<Blog />} />
