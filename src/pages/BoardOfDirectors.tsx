@@ -4,6 +4,7 @@ import shakiraAsset from "@/assets/shakira-noor-chowdhury.webp.asset.json";
 import belayetAsset from "@/assets/md-belayet-hossain.webp.asset.json";
 import yasinAsset from "@/assets/mohammad-yasin-arafat.webp.asset.json";
 import fahimAsset from "@/assets/fahim-shahrier.webp.asset.json";
+import fahmidAsset from "@/assets/fahmid-shahrier.png.asset.json";
 
 const boardMembers = [
   {
