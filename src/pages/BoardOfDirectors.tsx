@@ -4,6 +4,7 @@ import shakiraAsset from "@/assets/shakira-noor-chowdhury.webp.asset.json";
 import belayetAsset from "@/assets/md-belayet-hossain.webp.asset.json";
 import yasinAsset from "@/assets/mohammad-yasin-arafat.webp.asset.json";
 import fahimAsset from "@/assets/fahim-shahrier.webp.asset.json";
+import fahmidAsset from "@/assets/fahmid-shahrier.png.asset.json";
 
 const boardMembers = [
   {
@@ -33,6 +34,13 @@ const boardMembers = [
     image: fahimAsset.url,
     heading: "Director's Message",
     message: "I would like to take this opportunity to express my heartfelt gratitude to each and every one of you for your hard work, dedication, and commitment to the success of Jamuna Gas. It is your unwavering passion and continuous efforts that have helped us grow and become a leader in the LPG industry.\n\nAs we move forward, let's continue to strive for excellence in everything we do. Our success relies on each team member's contribution, and together, we will reach new heights.\n\nLet's stay focused, stay motivated, and continue to work as a united team to achieve our goals and deliver exceptional service to our customers.",
+  },
+  {
+    name: "Fahmid Shahrier",
+    title: "Director, JSJVL",
+    image: fahmidAsset.url,
+    heading: "Director's Message",
+    message: "I would like to express my heartfelt appreciation to every member of the Jamuna Gas family. Your dedication, professionalism, and unwavering commitment have been the driving force behind our growth and success. Through your hard work, we have earned the trust and confidence of customers across the country.\n\nEvery achievement reflects your collective effort. As we move forward, let us continue to uphold our core values of integrity, quality, innovation, and customer satisfaction. Together, with unity and determination, I am confident we will achieve even greater milestones and strengthen our position as a leader in the LPG industry.\n\nThank you for your loyalty, commitment, and continued support. I am proud to lead such an exceptional team and look forward to a bright and successful future together.",
   },
 ];
 
