@@ -21,7 +21,7 @@ const blogPosts = [
   {
     image: blogAward,
     category: "News",
-    title: "Jamuna Gas Wins Best LPG Brand Award 2025",
+    title: "Jamuna Gas Wins Best LPG Brand Award 2024",
     excerpt: "Recognized for customer trust, safety standards, and nationwide distribution excellence at the annual Bangladesh Brand Forum.",
     date: "May 14, 2026",
     readTime: "4 min",
