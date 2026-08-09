@@ -6,7 +6,7 @@ import {
   ArrowRight, Target, TrendingUp, Shield,
   Heart, Award
 } from "lucide-react";
-import sustainabilityHero from "@/assets/sustainability-hero.png.asset.json";
+import sustainabilityHero from "@/assets/sustainability-hero.jpg.asset.json";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const pillars = [
