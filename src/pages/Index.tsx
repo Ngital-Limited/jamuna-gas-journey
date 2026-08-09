@@ -473,14 +473,14 @@ const Index = () => {
               key={p.title}
               className="group rounded-2xl border border-border/40 bg-card overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative overflow-hidden bg-muted/30">
                 <img
                   src={p.image}
                   alt={p.title}
                   loading="lazy"
                   width={1024}
                   height={640}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-auto object-contain group-hover:scale-[1.02] transition-transform duration-500"
                 />
                 <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-md rounded-full px-3 py-1 text-[10px] font-semibold text-foreground uppercase tracking-wider">
                   {p.category}
