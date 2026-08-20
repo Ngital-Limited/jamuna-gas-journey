@@ -168,10 +168,24 @@ const Footer = () => (
         <p className="text-[11px] text-white/40">
           © {new Date().getFullYear()} Jamuna Spacetech Joint Venture Limited. All rights reserved.
         </p>
-        <span className="flex items-center gap-1.5 text-[11px] text-white/40">
-          <Flame className="h-3 w-3 text-accent/60" />
-          Powering Bangladesh's Future
-        </span>
+        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-[11px] text-white/40">
+          <span className="flex items-center gap-1.5">
+            <Flame className="h-3 w-3 text-accent/60" />
+            Powering Bangladesh's Future
+          </span>
+          <span className="hidden sm:inline text-white/20">|</span>
+          <span>
+            Design & Developed by{" "}
+            <a
+              href="https://ngital.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-accent transition-colors"
+            >
+              Ngital
+            </a>
+          </span>
+        </div>
       </div>
     </div>
   </footer>
