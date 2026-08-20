@@ -102,8 +102,6 @@ const Index = () => {
             frameBorder={0}
           />
         </div>
-        {/* Subtle ambient tone so text stays readable without darkening the video */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-[2] pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10 pb-24 pt-40">
           <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
             <div className="bg-black/30 backdrop-blur-md border border-white/20 rounded-2xl px-6 py-8 md:px-10 md:py-10 shadow-2xl animate-hero-reveal">
