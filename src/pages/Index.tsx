@@ -94,7 +94,7 @@ const Index = () => {
       <section className="relative min-h-[100vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <iframe
-            className="absolute top-1/2 left-1/2 w-[192vh] min-w-[108%] min-h-[108vh] h-[60vw] -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-[1.08]"
+            className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-[100vh] h-[56.25vw] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
             src="https://www.youtube.com/embed/UqCcZfbBfXA?autoplay=1&mute=1&loop=1&playlist=UqCcZfbBfXA&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&cc_load_policy=0&autohide=1&origin=https://localhost"
             title="Jamuna Gas Hero Video"
             allow="autoplay; encrypted-media; fullscreen"
@@ -102,37 +102,32 @@ const Index = () => {
             frameBorder={0}
           />
         </div>
-        {/* Base gradient for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20 z-[2]" />
-        {/* Aggressive top mask to hide YouTube title bar / watch-later / share overlays */}
-        <div className="absolute top-0 left-0 w-full h-60 bg-gradient-to-b from-black via-black/95 via-[75%] to-transparent z-[3] pointer-events-none" />
-        {/* Bottom mask to hide YouTube watermark / channel link */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black via-black/80 via-[40%] to-transparent z-[3] pointer-events-none" />
-        {/* Corner reinforcements for persistent logo / watermark areas */}
-        <div className="absolute top-0 left-0 h-56 w-2/5 bg-gradient-to-br from-black via-black/80 to-transparent z-[3] pointer-events-none" />
-        <div className="absolute bottom-0 right-0 h-44 w-2/5 bg-gradient-to-tl from-black via-black/80 to-transparent z-[3] pointer-events-none" />
+        {/* Subtle ambient tone so text stays readable without darkening the video */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-[2] pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10 pb-24 pt-40">
           <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-hero-reveal">
-              <Flame className="h-4 w-4 text-accent" />
-              Since 2000 — Bangladesh's Pioneer in LPG
-            </div>
-            <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] mb-5 tracking-tight animate-hero-reveal whitespace-nowrap" style={{ animationDelay: "0.15s", animationFillMode: "both" }}>
-              Powering <span className="text-accent-sheen">Bangladesh's</span> Future
-            </h1>
-            <p className="text-sm md:text-base text-white/90 mb-8 leading-relaxed animate-hero-reveal" style={{ animationDelay: "0.3s", animationFillMode: "both" }}>
-              Delivering safe, reliable energy to over 1.5 million customers through cutting-edge LPG infrastructure.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 animate-hero-reveal" style={{ animationDelay: "0.45s", animationFillMode: "both" }}>
-              <Button asChild variant="premium" className="text-sm px-6 h-11 btn-shine">
-                <Link to="/products">
-                  Explore Products
-                  <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="border-white/40 text-white bg-white/10 hover:bg-white/20 hover:border-white/60 text-sm px-6 h-11 rounded-xl backdrop-blur-sm transition-all duration-300">
-                <Link to="/about">Learn More</Link>
-              </Button>
+            <div className="bg-black/30 backdrop-blur-md border border-white/20 rounded-2xl px-6 py-8 md:px-10 md:py-10 shadow-2xl animate-hero-reveal">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-5 animate-hero-reveal" style={{ animationDelay: "0.05s", animationFillMode: "both" }}>
+                <Flame className="h-4 w-4 text-accent" />
+                Since 2000 — Bangladesh's Pioneer in LPG
+              </div>
+              <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-extrabold text-white leading-[1.1] mb-4 tracking-tight animate-hero-reveal whitespace-nowrap" style={{ animationDelay: "0.15s", animationFillMode: "both" }}>
+                Powering <span className="text-accent-sheen">Bangladesh's</span> Future
+              </h1>
+              <p className="text-sm md:text-base text-white/95 mb-6 leading-relaxed animate-hero-reveal" style={{ animationDelay: "0.3s", animationFillMode: "both" }}>
+                Delivering safe, reliable energy to over 1.5 million customers through cutting-edge LPG infrastructure.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3 animate-hero-reveal" style={{ animationDelay: "0.45s", animationFillMode: "both" }}>
+                <Button asChild variant="premium" className="text-sm px-6 h-11 btn-shine">
+                  <Link to="/products">
+                    Explore Products
+                    <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="border-white/40 text-white bg-white/10 hover:bg-white/20 hover:border-white/60 text-sm px-6 h-11 rounded-xl backdrop-blur-sm transition-all duration-300">
+                  <Link to="/about">Learn More</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
