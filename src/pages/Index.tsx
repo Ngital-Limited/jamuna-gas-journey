@@ -8,14 +8,14 @@ import {
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
-import sustainabilityBg from "@/assets/sustainability-facility.jpg.asset.json";
+const sustainabilityBg = "/media/sustainability-facility.jpg";
 import heroVideo from "@/assets/hero-video-new.mp4.asset.json";
-import blogAwardAsset from "@/assets/blog-award.png.asset.json";
-import blogSafetyAsset from "@/assets/blog-safety.png.asset.json";
+const blogAwardAsset = "/media/blog-award.png";
+const blogSafetyAsset = "/media/blog-safety.png";
 import blogSustainability from "@/assets/blog-sustainability.jpg";
 
-const blogAward = blogAwardAsset.url;
-const blogSafety = blogSafetyAsset.url;
+const blogAward = blogAwardAsset;
+const blogSafety = blogSafetyAsset;
 
 const blogPosts = [
   {
@@ -417,7 +417,7 @@ const Index = () => {
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={sustainabilityBg.url}
+          src={sustainabilityBg}
           alt="Jamuna Gas sustainable infrastructure by the river"
           className="w-full h-full object-cover"
           loading="lazy"

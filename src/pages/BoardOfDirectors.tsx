@@ -1,44 +1,44 @@
 import Layout from "@/components/Layout";
 import { Sparkles, Award } from "lucide-react";
-import shakiraAsset from "@/assets/shakira-noor-chowdhury.webp.asset.json";
-import belayetAsset from "@/assets/md-belayet-hossain.webp.asset.json";
-import yasinAsset from "@/assets/mohammad-yasin-arafat.webp.asset.json";
-import fahimAsset from "@/assets/fahim-shahrier.webp.asset.json";
-import fahmidAsset from "@/assets/fahmid-shahrier.png.asset.json";
+const shakiraAsset = "/media/shakira-noor-chowdhury.webp";
+const belayetAsset = "/media/md-belayet-hossain.webp";
+const yasinAsset = "/media/mohammad-yasin-arafat.webp";
+const fahimAsset = "/media/fahim-shahrier.webp";
+const fahmidAsset = "/media/fahmid-shahrier.png";
 
 const boardMembers = [
   {
     name: "Shakira Noor Chowdhury",
     title: "Chairman",
-    image: shakiraAsset.url,
+    image: shakiraAsset,
     heading: "Chairman's Note",
     message: "At Jamuna Gas, we believe that energy is the backbone of progress, and our mission is to ensure its accessibility in the most sustainable and responsible manner. Through continuous investment in cutting-edge technology, infrastructure, and safety standards, we have built a robust distribution network that delivers LPG to households and industries with unmatched efficiency.\n\nAs we look toward the future, our focus remains on excellence, sustainability, and growth. We are committed to expanding our reach, adopting eco-friendly solutions, and enhancing the customer experience through innovation and service excellence.",
   },
   {
     name: "Md. Belayet Hossain",
     title: "Managing Director, JSJVL",
-    image: belayetAsset.url,
+    image: belayetAsset,
     heading: "Managing Director's Address",
     message: "In today's fast-evolving world, energy plays a vital role in driving progress, and we at Jamuna Gas are devoted to ensuring that our customers receive the highest quality LPG products with the utmost safety and convenience. Our state-of-the-art bottling, marketing, and distribution network is built on the foundation of trust and excellence, enabling us to meet the growing energy demands of Bangladesh.\n\nOur skilled manpower, cutting-edge technology, and efficient distribution network, we are committed to reaching every doorstep across the nation very soon. Our goal is to ensure that clean, efficient, and affordable energy is accessible to all, contributing to economic growth and a better quality of life.",
   },
   {
     name: "Mohammad Yasin Arafat",
     title: "Director, JSJVL",
-    image: yasinAsset.url,
+    image: yasinAsset,
     heading: "Director's Message",
     message: "I am proud to lead a company that stands at the forefront of delivering reliable and high-quality LPG solutions through Jamuna Gas. Our commitment to safety, sustainability, and customer satisfaction drives everything we do.\n\nTo our customers, thank you for choosing Jamuna Gas as your trusted partner. We are dedicated to providing you with the best products and services, ensuring your homes and businesses run smoothly and efficiently.\n\nTo our dedicated employees, your hard work and passion are the backbone of our success. Together, we are building a brighter, safer, and more sustainable future for everyone.",
   },
   {
     name: "Fahim Shahrier",
     title: "Director, JSJVL",
-    image: fahimAsset.url,
+    image: fahimAsset,
     heading: "Director's Message",
     message: "I would like to take this opportunity to express my heartfelt gratitude to each and every one of you for your hard work, dedication, and commitment to the success of Jamuna Gas. It is your unwavering passion and continuous efforts that have helped us grow and become a leader in the LPG industry.\n\nAs we move forward, let's continue to strive for excellence in everything we do. Our success relies on each team member's contribution, and together, we will reach new heights.\n\nLet's stay focused, stay motivated, and continue to work as a united team to achieve our goals and deliver exceptional service to our customers.",
   },
   {
     name: "Fahmid Shahrier",
     title: "Director, JSJVL",
-    image: fahmidAsset.url,
+    image: fahmidAsset,
     heading: "Director's Message",
     message: "I would like to express my heartfelt appreciation to every member of the Jamuna Gas family. Your dedication, professionalism, and unwavering commitment have been the driving force behind our growth and success. Through your hard work, we have earned the trust and confidence of customers across the country.\n\nEvery achievement reflects your collective effort. As we move forward, let us continue to uphold our core values of integrity, quality, innovation, and customer satisfaction. Together, with unity and determination, I am confident we will achieve even greater milestones and strengthen our position as a leader in the LPG industry.\n\nThank you for your loyalty, commitment, and continued support. I am proud to lead such an exceptional team and look forward to a bright and successful future together.",
   },
