@@ -93,19 +93,14 @@ const Index = () => {
       {/* Hero */}
       <section className="relative min-h-[100vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <video
-            className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-[100vh] h-[56.25vw] -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
-            autoPlay
-            muted
-            loop
-            playsInline
+          <iframe
+            className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-[100vh] h-[56.25vw] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            src="https://www.youtube.com/embed/UqCcZfbBfXA?autoplay=1&mute=1&loop=1&playlist=UqCcZfbBfXA&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&cc_load_policy=0"
             title="Jamuna Gas Hero Video"
-          >
-            {/* Self-hosted copy (upload hero-video.mp4 to /media on your server) */}
-            <source src="/media/hero-video.mp4" type="video/mp4" />
-            {/* Fallback: Lovable CDN copy */}
-            <source src={heroVideo.url} type="video/mp4" />
-          </video>
+            allow="autoplay; encrypted-media; fullscreen"
+            allowFullScreen
+            frameBorder={0}
+          />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-[2]" />
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent z-[3]" />
