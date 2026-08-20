@@ -5,12 +5,12 @@ import {
   Building2, Paintbrush, Cylinder, Factory, Ship, Sprout, Store,
   ArrowRight, Network, MapPin, Calendar,
 } from "lucide-react";
-import classicPaintsLogo from "@/assets/sister/classic-paints.png.asset.json";
-import jbCylinderLogo from "@/assets/sister/jb-cylinder.png.asset.json";
-import jbrlLogo from "@/assets/sister/jbrl.png.asset.json";
-import jbDredgerLogo from "@/assets/sister/jb-dredger.png.asset.json";
-import jbAgroLogo from "@/assets/sister/jb-agro.png.asset.json";
-import jamunaEnterpriseLogo from "@/assets/sister/jamuna-enterprise.png.asset.json";
+const classicPaintsLogo = "/media/classic-paints.png";
+const jbCylinderLogo = "/media/jb-cylinder.png";
+const jbrlLogo = "/media/jbrl.png";
+const jbDredgerLogo = "/media/jb-dredger.png";
+const jbAgroLogo = "/media/jb-agro.png";
+const jamunaEnterpriseLogo = "/media/jamuna-enterprise.png";
 
 const companies = [
   {
@@ -19,7 +19,7 @@ const companies = [
     desc: "A trusted name in decorative, industrial, and protective paints — delivering durable finishes for homes, factories, and infrastructure across Bangladesh.",
     sectors: ["Decorative", "Industrial", "Protective"],
     icon: Paintbrush,
-    logo: classicPaintsLogo.url,
+    logo: classicPaintsLogo,
     gradient: "from-rose-500 via-orange-500 to-amber-500",
     accent: "text-rose-500",
     location: "Dhaka, Bangladesh",
@@ -31,7 +31,7 @@ const companies = [
     desc: "State-of-the-art manufacturing of high-quality LPG cylinders meeting international safety and quality standards, supplying domestic and industrial markets.",
     sectors: ["12 kg", "5.5 kg", "35–45 kg"],
     icon: Cylinder,
-    logo: jbCylinderLogo.url,
+    logo: jbCylinderLogo,
     gradient: "from-primary via-primary/80 to-accent",
     accent: "text-primary",
     location: "Kaligonj, Gazipur",
@@ -43,7 +43,7 @@ const companies = [
     desc: "Modern refining and bottling operations powering Jamuna Group's energy distribution network with consistent quality and reliable throughput.",
     sectors: ["Refining", "Bottling", "Storage"],
     icon: Factory,
-    logo: jbrlLogo.url,
+    logo: jbrlLogo,
     gradient: "from-slate-700 via-slate-600 to-primary",
     accent: "text-slate-700",
     location: "Mongla, Bagerhat",
@@ -55,7 +55,7 @@ const companies = [
     desc: "Professional dredging services for ports, rivers, and industrial waterways — supporting Bangladesh's blue economy with modern equipment and skilled crews.",
     sectors: ["Port Dredging", "River", "Industrial"],
     icon: Ship,
-    logo: jbDredgerLogo.url,
+    logo: jbDredgerLogo,
     gradient: "from-sky-600 via-blue-600 to-indigo-600",
     accent: "text-sky-600",
     location: "Chittagong",
@@ -67,7 +67,7 @@ const companies = [
     desc: "Large-scale agricultural plantations focused on sustainable farming, agroforestry, and contributing to food security and rural employment.",
     sectors: ["Plantation", "Agroforestry", "Crops"],
     icon: Sprout,
-    logo: jbAgroLogo.url,
+    logo: jbAgroLogo,
     gradient: "from-emerald-500 via-green-500 to-teal-500",
     accent: "text-emerald-600",
     location: "Multiple Districts",
@@ -79,7 +79,7 @@ const companies = [
     desc: "The flagship trading arm of Jamuna Group — handling import, export, and distribution of essential commodities and industrial goods nationwide.",
     sectors: ["Trading", "Import", "Distribution"],
     icon: Store,
-    logo: jamunaEnterpriseLogo.url,
+    logo: jamunaEnterpriseLogo,
     gradient: "from-amber-500 via-yellow-500 to-orange-500",
     accent: "text-amber-600",
     location: "Dhaka, Bangladesh",

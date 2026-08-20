@@ -6,7 +6,7 @@ import {
   ArrowRight, Target, TrendingUp, Shield,
   Heart, Award
 } from "lucide-react";
-import sustainabilityHero from "@/assets/sustainability-hero.jpg.asset.json";
+const sustainabilityHero = "/media/sustainability-hero.jpg";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const pillars = [
@@ -60,7 +60,7 @@ const Sustainability = () => (
   <Layout>
     {/* Hero */}
     <section className="relative min-h-[70vh] flex items-center justify-center">
-      <img src={sustainabilityHero.url} alt="" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
+      <img src={sustainabilityHero} alt="" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
       <div className="container mx-auto px-4 relative z-10 py-24 text-center">
         <ScrollReveal>

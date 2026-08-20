@@ -8,11 +8,11 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { dealers, dealerDistricts } from "@/data/dealers";
-import dealerPinLogo from "@/assets/dealer-pin-logo.png.asset.json";
+const dealerPinLogo = "/media/dealer-pin-logo.png";
 
 const dealerIcon = new L.Icon({
-  iconUrl: dealerPinLogo.url,
-  iconRetinaUrl: dealerPinLogo.url,
+  iconUrl: dealerPinLogo,
+  iconRetinaUrl: dealerPinLogo,
   iconSize: [36, 36],
   iconAnchor: [18, 36],
   popupAnchor: [0, -36],
