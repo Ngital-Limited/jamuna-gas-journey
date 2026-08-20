@@ -154,7 +154,7 @@ const Navbar = () => {
         {/* Menu Content */}
         <div className="relative z-10 h-full flex flex-col pt-24 pb-8 overflow-y-auto">
           <nav className="container mx-auto px-6 flex-1">
-            <div className="space-y-1">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {navLinks.map((link, i) => {
                 const isActive = location.pathname === link.to;
                 return (
@@ -162,7 +162,7 @@ const Navbar = () => {
                     key={link.to}
                     to={link.to}
                     onClick={() => setOpen(false)}
-                    className={`group flex items-center justify-between py-4 px-4 rounded-2xl transition-all duration-500 ease-out ${
+                    className={`group flex items-start justify-between p-4 rounded-2xl transition-all duration-500 ease-out min-h-[72px] ${
                       open ? "translate-y-0 opacity-100 scale-100" : "translate-y-6 opacity-0 scale-90"
                     } ${
                       isActive
@@ -171,8 +171,8 @@ const Navbar = () => {
                     }`}
                     style={{ transitionDelay: open ? `${i * 60 + 100}ms` : "0ms" }}
                   >
-                    <span className="text-2xl md:text-3xl font-bold tracking-tight">{link.label}</span>
-                    <ChevronRight className={`h-5 w-5 transition-transform duration-300 ${isActive ? "text-accent" : "opacity-30"} group-hover:translate-x-1`} />
+                    <span className="text-sm md:text-base font-semibold tracking-tight leading-tight">{link.label}</span>
+                    <ChevronRight className={`h-4 w-4 shrink-0 ml-2 transition-transform duration-300 ${isActive ? "text-accent" : "opacity-30"} group-hover:translate-x-1`} />
                   </Link>
                 );
               })}
