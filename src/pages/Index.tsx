@@ -95,7 +95,7 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
           <iframe
             className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-[100vh] h-[56.25vw] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-            src="https://www.youtube.com/embed/UqCcZfbBfXA?autoplay=1&mute=1&loop=1&playlist=UqCcZfbBfXA&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&cc_load_policy=0"
+            src="https://www.youtube.com/embed/UqCcZfbBfXA?autoplay=1&mute=1&loop=1&playlist=UqCcZfbBfXA&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&cc_load_policy=0&autohide=1"
             title="Jamuna Gas Hero Video"
             allow="autoplay; encrypted-media; fullscreen"
             allowFullScreen
@@ -103,6 +103,7 @@ const Index = () => {
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-[2]" />
+        <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-black via-black/95 via-[60%] to-transparent z-[2] pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent z-[3]" />
         <div className="container mx-auto px-4 relative z-10 pb-24 pt-40">
           <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
