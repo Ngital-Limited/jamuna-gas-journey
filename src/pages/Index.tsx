@@ -92,19 +92,25 @@ const Index = () => {
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[100vh] flex items-end overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <iframe
-            className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-[100vh] h-[56.25vw] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-            src="https://www.youtube.com/embed/UqCcZfbBfXA?autoplay=1&mute=1&loop=1&playlist=UqCcZfbBfXA&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&cc_load_policy=0&autohide=1"
+            className="absolute top-1/2 left-1/2 w-[192vh] min-w-[108%] min-h-[108vh] h-[60vw] -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-[1.08]"
+            src="https://www.youtube.com/embed/UqCcZfbBfXA?autoplay=1&mute=1&loop=1&playlist=UqCcZfbBfXA&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&cc_load_policy=0&autohide=1&origin=https://localhost"
             title="Jamuna Gas Hero Video"
             allow="autoplay; encrypted-media; fullscreen"
             allowFullScreen
             frameBorder={0}
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-[2]" />
-        <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-b from-black via-black/95 via-[60%] to-transparent z-[2] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent z-[3]" />
+        {/* Base gradient for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20 z-[2]" />
+        {/* Aggressive top mask to hide YouTube title bar / watch-later / share overlays */}
+        <div className="absolute top-0 left-0 w-full h-60 bg-gradient-to-b from-black via-black/95 via-[75%] to-transparent z-[3] pointer-events-none" />
+        {/* Bottom mask to hide YouTube watermark / channel link */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black via-black/80 via-[40%] to-transparent z-[3] pointer-events-none" />
+        {/* Corner reinforcements for persistent logo / watermark areas */}
+        <div className="absolute top-0 left-0 h-56 w-2/5 bg-gradient-to-br from-black via-black/80 to-transparent z-[3] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 h-44 w-2/5 bg-gradient-to-tl from-black via-black/80 to-transparent z-[3] pointer-events-none" />
         <div className="container mx-auto px-4 relative z-10 pb-24 pt-40">
           <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 px-4 py-1.5 text-sm text-white/90 mb-6 animate-hero-reveal">
