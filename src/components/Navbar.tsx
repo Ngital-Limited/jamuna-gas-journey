@@ -154,7 +154,7 @@ const Navbar = () => {
         {/* Menu Content */}
         <div className="relative z-10 h-full flex flex-col pt-24 pb-8 overflow-y-auto">
           <nav className="container mx-auto px-6 flex-1">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {navLinks.map((link, i) => {
                 const isActive = location.pathname === link.to;
                 return (
