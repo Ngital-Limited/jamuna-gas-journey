@@ -9,7 +9,7 @@ import {
 import Layout from "@/components/Layout";
 import SectorsCarousel from "@/components/SectorsCarousel";
 const sustainabilityBg = "/media/sustainability-facility.jpg";
-import heroVideo from "@/assets/hero-video-new.mp4.asset.json";
+
 const blogAwardAsset = "/media/blog-award.png";
 const blogSafetyAsset = "/media/blog-safety.png";
 import blogSustainability from "@/assets/blog-sustainability.jpg";
