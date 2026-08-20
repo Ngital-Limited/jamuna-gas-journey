@@ -95,13 +95,17 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
           <video
             className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-[100vh] h-[56.25vw] -translate-x-1/2 -translate-y-1/2 object-cover pointer-events-none"
-            src={heroVideo.url}
             autoPlay
             muted
             loop
             playsInline
             title="Jamuna Gas Hero Video"
-          />
+          >
+            {/* Self-hosted copy (upload hero-video.mp4 to /media on your server) */}
+            <source src="/media/hero-video.mp4" type="video/mp4" />
+            {/* Fallback: Lovable CDN copy */}
+            <source src={heroVideo.url} type="video/mp4" />
+          </video>
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 z-[2]" />
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent z-[3]" />
