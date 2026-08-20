@@ -95,7 +95,7 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
           <iframe
             className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full min-h-[100vh] h-[56.25vw] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-            src="https://www.youtube.com/embed/UqCcZfbBfXA?autoplay=1&mute=1&loop=1&playlist=UqCcZfbBfXA&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&cc_load_policy=0"
+            src="https://www.youtube.com/embed/UqCcZfbBfXA?autoplay=1&mute=1&loop=1&playlist=UqCcZfbBfXA&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=0&disablekb=1&playsinline=1&cc_load_policy=0&autohide=1"
             title="Jamuna Gas Hero Video"
             allow="autoplay; encrypted-media; fullscreen"
             allowFullScreen
